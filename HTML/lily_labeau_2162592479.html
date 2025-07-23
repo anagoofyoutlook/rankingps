@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -261,151 +262,151 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 25</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for AllGirlMassage Lily LaBeau & Nicole Vaunt - Pushing Yourself Too Hard - 35x - (July 21, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for AllGirlMassage Lily LaBeau & Nicole Vaunt - Pushing Yourself Too Hard - 35x - (July 21, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/4344' target='_blank'>AllGirlMassage Lily LaBeau & Nicole Vaunt - Pushing Yourself Too Hard - 35x - (July 21, 2025)</a></p>
                     <p class='date'>S.No: 25 | 2025-07-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Bellesa Films Katrina Colt Lily LaBeau Episode 243 Lily & Katrina 03 07 2025' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Bellesa Films Katrina Colt Lily LaBeau Episode 243 Lily & Katrina 03 07 2025' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/4332' target='_blank'>Bellesa Films Katrina Colt Lily LaBeau Episode 243 Lily & Katrina 03 07 2025</a></p>
                     <p class='date'>S.No: 24 | 2025-07-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Brazzers - DirtyMasseur 2012-07-20 Lily Labeau Lily Loves It' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Brazzers - DirtyMasseur 2012-07-20 Lily Labeau Lily Loves It' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/3688' target='_blank'>Brazzers - DirtyMasseur 2012-07-20 Lily Labeau Lily Loves It</a></p>
                     <p class='date'>S.No: 21 | 2025-06-13</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Lesbian Adventures Wet Panties Trib Vol 02 Scene 3 Bobbi Starr, Lily LaBeau' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Lesbian Adventures Wet Panties Trib Vol 02 Scene 3 Bobbi Starr, Lily LaBeau' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/3774' target='_blank'>Lesbian Adventures Wet Panties Trib Vol 02 Scene 3 Bobbi Starr, Lily LaBeau</a></p>
                     <p class='date'>S.No: 22 | 2025-06-13</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PennyPaxLive Penny Pax Lily LaBeau - Kitchen Party Hardcore 143x 2000px' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PennyPaxLive Penny Pax Lily LaBeau - Kitchen Party Hardcore 143x 2000px' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/4158' target='_blank'>PennyPaxLive Penny Pax Lily LaBeau - Kitchen Party Hardcore 143x 2000px</a></p>
                     <p class='date'>S.No: 23 | 2025-06-13</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for BellesaFilms - 25.06.01 - Lily Labeau The Dry Spell' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BellesaFilms - 25.06.01 - Lily Labeau The Dry Spell' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/3670' target='_blank'>BellesaFilms - 25.06.01 - Lily Labeau The Dry Spell</a></p>
                     <p class='date'>S.No: 20 | 2025-06-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for AllGirlMassage Katrina Colt And Lily Labeau 2160p' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for AllGirlMassage Katrina Colt And Lily Labeau 2160p' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/3659' target='_blank'>AllGirlMassage Katrina Colt And Lily Labeau 2160p</a></p>
                     <p class='date'>S.No: 19 | 2025-05-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Lily LaBeau, Octavia Red, Ivy Ireland, Karina Valentina - Holy Matri-Moly Scheming Bridesmaids' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Lily LaBeau, Octavia Red, Ivy Ireland, Karina Valentina - Holy Matri-Moly Scheming Bridesmaids' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/3358' target='_blank'>Lily LaBeau, Octavia Red, Ivy Ireland, Karina Valentina - Holy Matri-Moly Scheming Bridesmaids</a></p>
                     <p class='date'>S.No: 17 | 2025-04-22</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for GirlGirlXXX 2025-04-22 Jane Wilde & Lily LaBeau - Jane Wilde And Lily LaBeau Get More Than Curious - x272' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for GirlGirlXXX 2025-04-22 Jane Wilde & Lily LaBeau - Jane Wilde And Lily LaBeau Get More Than Curious - x272' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/3382' target='_blank'>GirlGirlXXX 2025-04-22 Jane Wilde & Lily LaBeau - Jane Wilde And Lily LaBeau Get More Than Curious - x272</a></p>
                     <p class='date'>S.No: 18 | 2025-04-22</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Free Love' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Free Love' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/804' target='_blank'>Free Love</a></p>
                     <p class='date'>S.No: 5 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for I Have a Wife' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for I Have a Wife' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/890' target='_blank'>I Have a Wife</a></p>
                     <p class='date'>S.No: 6 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Charlotte Stokely Paradise Pussy' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Charlotte Stokely Paradise Pussy' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/1374' target='_blank'>Charlotte Stokely Paradise Pussy</a></p>
                     <p class='date'>S.No: 7 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Conference Call' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Conference Call' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/1463' target='_blank'>Conference Call</a></p>
                     <p class='date'>S.No: 8 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Just Desserts' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Just Desserts' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/1769' target='_blank'>Just Desserts</a></p>
                     <p class='date'>S.No: 9 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Aerial Downward Doggystyle' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Aerial Downward Doggystyle' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/2144' target='_blank'>Aerial Downward Doggystyle</a></p>
                     <p class='date'>S.No: 10 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Pristine Lily' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Pristine Lily' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/2306' target='_blank'>Pristine Lily</a></p>
                     <p class='date'>S.No: 11 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Becoming The Mistress' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Becoming The Mistress' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/2401' target='_blank'>Becoming The Mistress</a></p>
                     <p class='date'>S.No: 12 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Arya Fae - We'll Do Anything to Get Closer to Him' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Arya Fae - We'll Do Anything to Get Closer to Him' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/2418' target='_blank'>Arya Fae - We'll Do Anything to Get Closer to Him</a></p>
                     <p class='date'>S.No: 13 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Hot Wife Celebrates' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Hot Wife Celebrates' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/2553' target='_blank'>Hot Wife Celebrates</a></p>
                     <p class='date'>S.No: 14 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Alexa Grace My Beautiful Unexpected' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Alexa Grace My Beautiful Unexpected' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/2556' target='_blank'>Alexa Grace My Beautiful Unexpected</a></p>
                     <p class='date'>S.No: 15 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Watch and Learn' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Watch and Learn' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/2558' target='_blank'>Watch and Learn</a></p>
                     <p class='date'>S.No: 16 | 2024-10-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Cock Hungry Hotties Eden Ivy And Lily LaBeau Bring In The New Year With A DP Gangbang' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Cock Hungry Hotties Eden Ivy And Lily LaBeau Bring In The New Year With A DP Gangbang' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/2' target='_blank'>Porn World Cock Hungry Hotties Eden Ivy And Lily LaBeau Bring In The New Year With A DP Gangbang</a></p>
                     <p class='date'>S.No: 1 | 2024-08-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for onlyfans Lou Charmelle Lily Labeau Swiss Vacation' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for onlyfans Lou Charmelle Lily Labeau Swiss Vacation' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/126' target='_blank'>onlyfans Lou Charmelle Lily Labeau Swiss Vacation</a></p>
                     <p class='date'>S.No: 2 | 2024-08-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Irresistible Realtor Lily LaBeau Bends Over For DP Drilling' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Irresistible Realtor Lily LaBeau Bends Over For DP Drilling' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/131' target='_blank'>Irresistible Realtor Lily LaBeau Bends Over For DP Drilling</a></p>
                     <p class='date'>S.No: 3 | 2024-08-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for BANGBROS Real Estate Gone Wild' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BANGBROS Real Estate Gone Wild' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2162592479/237' target='_blank'>BANGBROS Real Estate Gone Wild</a></p>
                     <p class='date'>S.No: 4 | 2024-08-07</p>
                 </div>
@@ -490,8 +491,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 

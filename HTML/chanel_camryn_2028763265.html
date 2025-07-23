@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -258,259 +259,259 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 43</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Deeper - Chanel Camryn Midnight Movie (25.06.05)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Deeper - Chanel Camryn Midnight Movie (25.06.05)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4901' target='_blank'>Deeper - Chanel Camryn Midnight Movie (25.06.05)</a></p>
                     <p class='date'>S.No: 43 | 2025-06-10</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MyPervyFamily Chanel Camryn - Sneakin' On My Stepsis' Sexy Feet - 76x - (March 27, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MyPervyFamily Chanel Camryn - Sneakin' On My Stepsis' Sexy Feet - 76x - (March 27, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4820' target='_blank'>MyPervyFamily Chanel Camryn - Sneakin' On My Stepsis' Sexy Feet - 76x - (March 27, 2025)</a></p>
                     <p class='date'>S.No: 42 | 2025-03-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Sweet Sinner Her Best Friend's Dad - Scene 3 - Craving Older Men 02/18/25' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Sweet Sinner Her Best Friend's Dad - Scene 3 - Craving Older Men 02/18/25' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4668' target='_blank'>Sweet Sinner Her Best Friend's Dad - Scene 3 - Craving Older Men 02/18/25</a></p>
                     <p class='date'>S.No: 40 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SweetSinner Chanel Camryn - Bucket List - Scene 2 - 133x - (March 11, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SweetSinner Chanel Camryn - Bucket List - Scene 2 - 133x - (March 11, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4682' target='_blank'>SweetSinner Chanel Camryn - Bucket List - Scene 2 - 133x - (March 11, 2025)</a></p>
                     <p class='date'>S.No: 41 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PornWorld Chanel Camryn - Tempts Her Boyfriend Into A DP Threesome With Their Personal Trainer! 02/09/25' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PornWorld Chanel Camryn - Tempts Her Boyfriend Into A DP Threesome With Their Personal Trainer! 02/09/25' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4648' target='_blank'>PornWorld Chanel Camryn - Tempts Her Boyfriend Into A DP Threesome With Their Personal Trainer! 02/09/25</a></p>
                     <p class='date'>S.No: 39 | 2025-02-10</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for EvilAngel Chanel Camryn - Double Penetration Fixation 5 - Scene 4 - 60x - (February 04, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for EvilAngel Chanel Camryn - Double Penetration Fixation 5 - Scene 4 - 60x - (February 04, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4582' target='_blank'>EvilAngel Chanel Camryn - Double Penetration Fixation 5 - Scene 4 - 60x - (February 04, 2025)</a></p>
                     <p class='date'>S.No: 38 | 2025-02-04</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Deeper Chanel Camryn - Hold It - 71x - 3000px - (05 Dec, 2024)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Deeper Chanel Camryn - Hold It - 71x - 3000px - (05 Dec, 2024)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4505' target='_blank'>Deeper Chanel Camryn - Hold It - 71x - 3000px - (05 Dec, 2024)</a></p>
                     <p class='date'>S.No: 37 | 2024-12-06</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for FamilyStrokes Chanel Camryn & Tiffani Madison - “Squirt Alert!” Fuck Before We Feast' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for FamilyStrokes Chanel Camryn & Tiffani Madison - “Squirt Alert!” Fuck Before We Feast' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4405' target='_blank'>FamilyStrokes Chanel Camryn & Tiffani Madison - “Squirt Alert!” Fuck Before We Feast</a></p>
                     <p class='date'>S.No: 36 | 2024-11-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DevilsFilm Chanel Camryn - I Made My Stepsister Squirt! - Scene 3' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DevilsFilm Chanel Camryn - I Made My Stepsister Squirt! - Scene 3' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4217' target='_blank'>DevilsFilm Chanel Camryn - I Made My Stepsister Squirt! - Scene 3</a></p>
                     <p class='date'>S.No: 35 | 2024-11-22</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Blind Date from Bellesa Plus Episode 104: Chanel & Nathan' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blind Date from Bellesa Plus Episode 104: Chanel & Nathan' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4209' target='_blank'>Blind Date from Bellesa Plus Episode 104: Chanel & Nathan</a></p>
                     <p class='date'>S.No: 34 | 2024-10-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms 2024-09-26 Chanel Camryn & Robby Echo - Sweet Surrender' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms 2024-09-26 Chanel Camryn & Robby Echo - Sweet Surrender' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/4093' target='_blank'>NubileFilms 2024-09-26 Chanel Camryn & Robby Echo - Sweet Surrender</a></p>
                     <p class='date'>S.No: 33 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Wicked Chanel Camryn, Savvy Suxx - Sunny Goldmelons - Scene 3' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Wicked Chanel Camryn, Savvy Suxx - Sunny Goldmelons - Scene 3' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/3988' target='_blank'>Wicked Chanel Camryn, Savvy Suxx - Sunny Goldmelons - Scene 3</a></p>
                     <p class='date'>S.No: 32 | 2024-08-19</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DeepLush Threesome With Chanel And Molly' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DeepLush Threesome With Chanel And Molly' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/3868' target='_blank'>DeepLush Threesome With Chanel And Molly</a></p>
                     <p class='date'>S.No: 31 | 2024-07-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for OopsFamily Chanel Camryn & Maria Anjel - OopsFamily It Wasn’t Planned' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for OopsFamily Chanel Camryn & Maria Anjel - OopsFamily It Wasn’t Planned' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/3760' target='_blank'>OopsFamily Chanel Camryn & Maria Anjel - OopsFamily It Wasn’t Planned</a></p>
                     <p class='date'>S.No: 30 | 2024-07-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for ZeroToleranceFilms Chanel Camryn - Taking It In The Booty Like A Champ' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for ZeroToleranceFilms Chanel Camryn - Taking It In The Booty Like A Champ' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/3185' target='_blank'>ZeroToleranceFilms Chanel Camryn - Taking It In The Booty Like A Champ</a></p>
                     <p class='date'>S.No: 29 | 2024-07-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for bang! originals Behind The Scenes w/ Chanel Camryn' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for bang! originals Behind The Scenes w/ Chanel Camryn' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/3177' target='_blank'>bang! originals Behind The Scenes w/ Chanel Camryn</a></p>
                     <p class='date'>S.No: 27 | 2024-06-20</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/3182' target='_blank'>ONLYFANS</a></p>
                     <p class='date'>S.No: 28 | 2024-06-20</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy Chanel Camryn - Worthy' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy Chanel Camryn - Worthy' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/3103' target='_blank'>Tushy Chanel Camryn - Worthy</a></p>
                     <p class='date'>S.No: 26 | 2024-06-19</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Gizelle Blanco Chanel Camryn The Unlikely Matchmaker' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Gizelle Blanco Chanel Camryn The Unlikely Matchmaker' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/2669' target='_blank'>Gizelle Blanco Chanel Camryn The Unlikely Matchmaker</a></p>
                     <p class='date'>S.No: 24 | 2024-06-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Chanel Camryn Millie Morgan Cum Trading' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Chanel Camryn Millie Morgan Cum Trading' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/2797' target='_blank'>Chanel Camryn Millie Morgan Cum Trading</a></p>
                     <p class='date'>S.No: 25 | 2024-06-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for LilSis Chanel Camryn, Lexi Lore - Teamwork Makes The Cream Work' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for LilSis Chanel Camryn, Lexi Lore - Teamwork Makes The Cream Work' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/2381' target='_blank'>LilSis Chanel Camryn, Lexi Lore - Teamwork Makes The Cream Work</a></p>
                     <p class='date'>S.No: 22 | 2024-06-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms Chanel Camryn, Elsa Violet - We Share Everything' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms Chanel Camryn, Elsa Violet - We Share Everything' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/2534' target='_blank'>NubileFilms Chanel Camryn, Elsa Violet - We Share Everything</a></p>
                     <p class='date'>S.No: 23 | 2024-06-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SweetheartVideo Kylie Rocket & Chanel Camryn - Sweetest Sister' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SweetheartVideo Kylie Rocket & Chanel Camryn - Sweetest Sister' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/2034' target='_blank'>SweetheartVideo Kylie Rocket & Chanel Camryn - Sweetest Sister</a></p>
                     <p class='date'>S.No: 21 | 2024-06-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Chanel Camryn Cums Like Crazy' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Chanel Camryn Cums Like Crazy' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/1796' target='_blank'>Chanel Camryn Cums Like Crazy</a></p>
                     <p class='date'>S.No: 19 | 2024-05-10</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SisSwap Jane Wilde and Chanel Camryn - Experimenting at Home' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SisSwap Jane Wilde and Chanel Camryn - Experimenting at Home' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/1850' target='_blank'>SisSwap Jane Wilde and Chanel Camryn - Experimenting at Home</a></p>
                     <p class='date'>S.No: 20 | 2024-05-10</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Slimthick Vic, Chanel Camryn - Lesbian Stepmother 8 - Scene 1 - Mommy Make Me' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Slimthick Vic, Chanel Camryn - Lesbian Stepmother 8 - Scene 1 - Mommy Make Me' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/1767' target='_blank'>Slimthick Vic, Chanel Camryn - Lesbian Stepmother 8 - Scene 1 - Mommy Make Me</a></p>
                     <p class='date'>S.No: 18 | 2024-05-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for TushyRaw Chanel Camryn - Gorgeous Gets Her Tight Hole Stretched Out' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for TushyRaw Chanel Camryn - Gorgeous Gets Her Tight Hole Stretched Out' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/1693' target='_blank'>TushyRaw Chanel Camryn - Gorgeous Gets Her Tight Hole Stretched Out</a></p>
                     <p class='date'>S.No: 17 | 2024-04-10</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Chanel Camryn, Freya Parker - Dress To Impress' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Chanel Camryn, Freya Parker - Dress To Impress' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/1665' target='_blank'>Chanel Camryn, Freya Parker - Dress To Impress</a></p>
                     <p class='date'>S.No: 16 | 2024-04-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for TUSHY Chanel Will Do Anything To Satisfy Her Anal Cravings' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for TUSHY Chanel Will Do Anything To Satisfy Her Anal Cravings' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/1597' target='_blank'>TUSHY Chanel Will Do Anything To Satisfy Her Anal Cravings</a></p>
                     <p class='date'>S.No: 15 | 2024-04-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Breeding Material If It Makes You Stay' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Breeding Material If It Makes You Stay' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/1380' target='_blank'>Breeding Material If It Makes You Stay</a></p>
                     <p class='date'>S.No: 13 | 2024-04-05</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms Chanel Camryn - April 2024 Fantasy Of The Month' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms Chanel Camryn - April 2024 Fantasy Of The Month' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/1469' target='_blank'>NubileFilms Chanel Camryn - April 2024 Fantasy Of The Month</a></p>
                     <p class='date'>S.No: 14 | 2024-04-05</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Nubile Films - Practice Makes Perfect - S45:E7 - Chanel Camryn, Liz Jordan' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Nubile Films - Practice Makes Perfect - S45:E7 - Chanel Camryn, Liz Jordan' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/2' target='_blank'>Nubile Films - Practice Makes Perfect - S45:E7 - Chanel Camryn, Liz Jordan</a></p>
                     <p class='date'>S.No: 1 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for InnocentHigh Chanel Camryn, Nova Vixen - Suck the Sickness Out Of Me' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for InnocentHigh Chanel Camryn, Nova Vixen - Suck the Sickness Out Of Me' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/95' target='_blank'>InnocentHigh Chanel Camryn, Nova Vixen - Suck the Sickness Out Of Me</a></p>
                     <p class='date'>S.No: 2 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for October 2023 Flavor Of The Month Chanel Camryn' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for October 2023 Flavor Of The Month Chanel Camryn' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/193' target='_blank'>October 2023 Flavor Of The Month Chanel Camryn</a></p>
                     <p class='date'>S.No: 3 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for TUSHY Gorgeous Baddie Ass Fucked By Sisters Hubby CHANEL CAMRYN' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for TUSHY Gorgeous Baddie Ass Fucked By Sisters Hubby CHANEL CAMRYN' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/294' target='_blank'>TUSHY Gorgeous Baddie Ass Fucked By Sisters Hubby CHANEL CAMRYN</a></p>
                     <p class='date'>S.No: 4 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for StepSiblingsCaught Wanna Play With Us Stepbro - S24:E8 Season 24, Episode 8 Chanel Camryn, Chloe Temple, Juan El' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for StepSiblingsCaught Wanna Play With Us Stepbro - S24:E8 Season 24, Episode 8 Chanel Camryn, Chloe Temple, Juan El' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/354' target='_blank'>StepSiblingsCaught Wanna Play With Us Stepbro - S24:E8 Season 24, Episode 8 Chanel Camryn, Chloe Temple, Juan El</a></p>
                     <p class='date'>S.No: 5 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for VIXEN 🎥video HD 1080p Thrill Seeking Baddie Takes What She Wants CHANEL CAMRYN' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for VIXEN 🎥video HD 1080p Thrill Seeking Baddie Takes What She Wants CHANEL CAMRYN' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/499' target='_blank'>VIXEN 🎥video HD 1080p Thrill Seeking Baddie Takes What She Wants CHANEL CAMRYN</a></p>
                     <p class='date'>S.No: 6 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for GirlsOnlyPorn Our Sugar Mamma Is A Goddess Chanel Camryn Freya Parker Sarah Taylor' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for GirlsOnlyPorn Our Sugar Mamma Is A Goddess Chanel Camryn Freya Parker Sarah Taylor' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/552' target='_blank'>GirlsOnlyPorn Our Sugar Mamma Is A Goddess Chanel Camryn Freya Parker Sarah Taylor</a></p>
                     <p class='date'>S.No: 7 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for CumSwappingSis Can I Please Fuck Your Friend - S5:E4 Season 5, Episode 4 Chanel Camryn, Katie Kus' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for CumSwappingSis Can I Please Fuck Your Friend - S5:E4 Season 5, Episode 4 Chanel Camryn, Katie Kus' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/662' target='_blank'>CumSwappingSis Can I Please Fuck Your Friend - S5:E4 Season 5, Episode 4 Chanel Camryn, Katie Kus</a></p>
                     <p class='date'>S.No: 8 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms You Cant Ignore This - S45:E9 Season 45, Episode 9 Aria Valencia, Chanel Camryn' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms You Cant Ignore This - S45:E9 Season 45, Episode 9 Aria Valencia, Chanel Camryn' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/759' target='_blank'>NubileFilms You Cant Ignore This - S45:E9 Season 45, Episode 9 Aria Valencia, Chanel Camryn</a></p>
                     <p class='date'>S.No: 9 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacks On Blondes HORNY MASSEUSE CHANEL' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacks On Blondes HORNY MASSEUSE CHANEL' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/797' target='_blank'>Blacks On Blondes HORNY MASSEUSE CHANEL</a></p>
                     <p class='date'>S.No: 10 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DFXtra Originals CHANEL'S HARD SEXUAL DRIVE' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DFXtra Originals CHANEL'S HARD SEXUAL DRIVE' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/1105' target='_blank'>DFXtra Originals CHANEL'S HARD SEXUAL DRIVE</a></p>
                     <p class='date'>S.No: 11 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Stepsis Loves A Good Man' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Stepsis Loves A Good Man' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2028763265/1263' target='_blank'>Stepsis Loves A Good Man</a></p>
                     <p class='date'>S.No: 12 | 2024-03-28</p>
                 </div>
@@ -595,8 +596,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 

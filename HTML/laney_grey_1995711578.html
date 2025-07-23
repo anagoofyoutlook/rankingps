@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -261,199 +262,199 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 33</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PornFidelity Laney Grey - Surprise (09.09.2019) - 283x' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PornFidelity Laney Grey - Surprise (09.09.2019) - 283x' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/2729' target='_blank'>PornFidelity Laney Grey - Surprise (09.09.2019) - 283x</a></p>
                     <p class='date'>S.No: 33 | 2025-07-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NewSensations Laney Grey - Laney Knew The Second He Touched Her - 177x - September 17, 2022' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NewSensations Laney Grey - Laney Knew The Second He Touched Her - 177x - September 17, 2022' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/2542' target='_blank'>NewSensations Laney Grey - Laney Knew The Second He Touched Her - 177x - September 17, 2022</a></p>
                     <p class='date'>S.No: 32 | 2025-07-03</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NewSensations Laney Grey - All His Friends Meat Laney At The Party - 5800px - 116X (31-12-2019)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NewSensations Laney Grey - All His Friends Meat Laney At The Party - 5800px - 116X (31-12-2019)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/2223' target='_blank'>NewSensations Laney Grey - All His Friends Meat Laney At The Party - 5800px - 116X (31-12-2019)</a></p>
                     <p class='date'>S.No: 29 | 2025-07-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Family Laney Grey - Step Sister Needs It that Way Too (03.04.2020) - 102x' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Family Laney Grey - Step Sister Needs It that Way Too (03.04.2020) - 102x' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/2225' target='_blank'>Family Laney Grey - Step Sister Needs It that Way Too (03.04.2020) - 102x</a></p>
                     <p class='date'>S.No: 30 | 2025-07-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NewSensations Laney Grey - Laney's Accommodation Is Bigger Than Expected 07 Mar' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NewSensations Laney Grey - Laney's Accommodation Is Bigger Than Expected 07 Mar' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/2227' target='_blank'>NewSensations Laney Grey - Laney's Accommodation Is Bigger Than Expected 07 Mar</a></p>
                     <p class='date'>S.No: 31 | 2025-07-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PureTaboo 22 05 24 Laney Grey The Responsible One XXX 480p MP4-XXX' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PureTaboo 22 05 24 Laney Grey The Responsible One XXX 480p MP4-XXX' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/2212' target='_blank'>PureTaboo 22 05 24 Laney Grey The Responsible One XXX 480p MP4-XXX</a></p>
                     <p class='date'>S.No: 28 | 2025-05-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MissaX She's No Angel' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MissaX She's No Angel' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/2193' target='_blank'>MissaX She's No Angel</a></p>
                     <p class='date'>S.No: 27 | 2025-05-20</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MissaX Laney Grey, Reagan Foxx Come Home' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MissaX Laney Grey, Reagan Foxx Come Home' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/1765' target='_blank'>MissaX Laney Grey, Reagan Foxx Come Home</a></p>
                     <p class='date'>S.No: 26 | 2025-05-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Lilly Bell & Laney Grey - For Business Purposes - 95x - 3000px - (05 Jun, 2021)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Lilly Bell & Laney Grey - For Business Purposes - 95x - 3000px - (05 Jun, 2021)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/1543' target='_blank'>Blacked Lilly Bell & Laney Grey - For Business Purposes - 95x - 3000px - (05 Jun, 2021)</a></p>
                     <p class='date'>S.No: 24 | 2025-04-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SheSeducedMe Laney Grey & Lilly Bell - Reluctant Massage Student - x114 - October 19 2020' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SheSeducedMe Laney Grey & Lilly Bell - Reluctant Massage Student - x114 - October 19 2020' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/1643' target='_blank'>SheSeducedMe Laney Grey & Lilly Bell - Reluctant Massage Student - x114 - October 19 2020</a></p>
                     <p class='date'>S.No: 25 | 2025-04-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MommysGirl 25.03.15 Laney Grey And Lexi Luna Keep Your eyes On The Road' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MommysGirl 25.03.15 Laney Grey And Lexi Luna Keep Your eyes On The Road' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/1517' target='_blank'>MommysGirl 25.03.15 Laney Grey And Lexi Luna Keep Your eyes On The Road</a></p>
                     <p class='date'>S.No: 23 | 2025-03-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Abbie Maley Laney Grey Tru Kait And Friends Have An Orgy' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Abbie Maley Laney Grey Tru Kait And Friends Have An Orgy' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/1399' target='_blank'>Abbie Maley Laney Grey Tru Kait And Friends Have An Orgy</a></p>
                     <p class='date'>S.No: 22 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PureTaboo Laney Grey, Leana Lovings - Roommate's Mixed Messages' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PureTaboo Laney Grey, Leana Lovings - Roommate's Mixed Messages' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/1376' target='_blank'>PureTaboo Laney Grey, Leana Lovings - Roommate's Mixed Messages</a></p>
                     <p class='date'>S.No: 21 | 2025-01-03</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Gal Ritchie - American Dick' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Gal Ritchie - American Dick' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/1171' target='_blank'>Gal Ritchie - American Dick</a></p>
                     <p class='date'>S.No: 20 | 2024-11-04</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Girlfriends FilmsSecret Lesbian Diaries #12 - Scene 2Skylar Snow, Laney Grey' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Girlfriends FilmsSecret Lesbian Diaries #12 - Scene 2Skylar Snow, Laney Grey' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/814' target='_blank'>Girlfriends FilmsSecret Lesbian Diaries #12 - Scene 2Skylar Snow, Laney Grey</a></p>
                     <p class='date'>S.No: 19 | 2024-09-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Touch My Wife - Laney Grey - Date Night Hall Pass' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Touch My Wife - Laney Grey - Date Night Hall Pass' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/775' target='_blank'>Touch My Wife - Laney Grey - Date Night Hall Pass</a></p>
                     <p class='date'>S.No: 18 | 2024-08-19</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Date Night Hall Pass' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Date Night Hall Pass' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/746' target='_blank'>Date Night Hall Pass</a></p>
                     <p class='date'>S.No: 17 | 2024-08-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for S3XUS E22 Laney Grey And Angel Youngs Eucharist' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for S3XUS E22 Laney Grey And Angel Youngs Eucharist' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/729' target='_blank'>S3XUS E22 Laney Grey And Angel Youngs Eucharist</a></p>
                     <p class='date'>S.No: 16 | 2024-07-31</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Laney Grey - Healthy Relationships' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Laney Grey - Healthy Relationships' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/716' target='_blank'>Laney Grey - Healthy Relationships</a></p>
                     <p class='date'>S.No: 15 | 2024-07-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for WET & READY LANEY GREY GETS HER PUSSY STRETCHED' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for WET & READY LANEY GREY GETS HER PUSSY STRETCHED' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/701' target='_blank'>WET & READY LANEY GREY GETS HER PUSSY STRETCHED</a></p>
                     <p class='date'>S.No: 14 | 2024-06-06</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PureTaboo 22 06 07 Laney Grey And Penny Barber Some Ground Rules' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PureTaboo 22 06 07 Laney Grey And Penny Barber Some Ground Rules' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/661' target='_blank'>PureTaboo 22 06 07 Laney Grey And Penny Barber Some Ground Rules</a></p>
                     <p class='date'>S.No: 13 | 2024-05-10</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for S3xus 24 04 19 Laney Grey And Gia Derza ET TU' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for S3xus 24 04 19 Laney Grey And Gia Derza ET TU' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/651' target='_blank'>S3xus 24 04 19 Laney Grey And Gia Derza ET TU</a></p>
                     <p class='date'>S.No: 12 | 2024-04-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Cucked By My Own Doc' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Cucked By My Own Doc' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/545' target='_blank'>Cucked By My Own Doc</a></p>
                     <p class='date'>S.No: 10 | 2024-04-05</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Slayed Anya Olsen, Laney Grey - Exhibitionists Anya And Laney Make Evidence Of Their Experiment' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Slayed Anya Olsen, Laney Grey - Exhibitionists Anya And Laney Make Evidence Of Their Experiment' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/574' target='_blank'>Slayed Anya Olsen, Laney Grey - Exhibitionists Anya And Laney Make Evidence Of Their Experiment</a></p>
                     <p class='date'>S.No: 11 | 2024-04-05</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for ShoplyfterCase No. 7906290 - The Virgin Thief' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for ShoplyfterCase No. 7906290 - The Virgin Thief' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/450' target='_blank'>ShoplyfterCase No. 7906290 - The Virgin Thief</a></p>
                     <p class='date'>S.No: 9 | 2024-04-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Laney Grey - Happy Wife' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Laney Grey - Happy Wife' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/365' target='_blank'>Blacked Laney Grey - Happy Wife</a></p>
                     <p class='date'>S.No: 8 | 2024-03-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Onlyfans' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Onlyfans' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/2' target='_blank'>Onlyfans</a></p>
                     <p class='date'>S.No: 1 | 2024-03-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Angel Youngs Laney Grey - Threesome' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Angel Youngs Laney Grey - Threesome' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/5' target='_blank'>Angel Youngs Laney Grey - Threesome</a></p>
                     <p class='date'>S.No: 2 | 2024-03-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Laney Grey Sinn Sage First Hookup' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Laney Grey Sinn Sage First Hookup' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/26' target='_blank'>Laney Grey Sinn Sage First Hookup</a></p>
                     <p class='date'>S.No: 3 | 2024-03-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DaughterSwap Laney Grey, Chanel Camryn - Now or Never' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DaughterSwap Laney Grey, Chanel Camryn - Now or Never' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/51' target='_blank'>DaughterSwap Laney Grey, Chanel Camryn - Now or Never</a></p>
                     <p class='date'>S.No: 4 | 2024-03-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PervTherapy Laney Grey - Bikini Treatment' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PervTherapy Laney Grey - Bikini Treatment' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/155' target='_blank'>PervTherapy Laney Grey - Bikini Treatment</a></p>
                     <p class='date'>S.No: 5 | 2024-03-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Brazzers Christie Stevens, Laney Grey - Boutique Booty Call' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Brazzers Christie Stevens, Laney Grey - Boutique Booty Call' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/275' target='_blank'>Brazzers Christie Stevens, Laney Grey - Boutique Booty Call</a></p>
                     <p class='date'>S.No: 6 | 2024-03-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Laney Grey, Bailey Blaze - Secret Santa Exchange' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Laney Grey, Bailey Blaze - Secret Santa Exchange' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1995711578/356' target='_blank'>Laney Grey, Bailey Blaze - Secret Santa Exchange</a></p>
                     <p class='date'>S.No: 7 | 2024-03-25</p>
                 </div>
@@ -538,8 +539,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 

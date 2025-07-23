@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -248,61 +249,61 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 10</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Richard Mann Clips Slut Training: Helena Price' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Richard Mann Clips Slut Training: Helena Price' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2188516463/1921' target='_blank'>Richard Mann Clips Slut Training: Helena Price</a></p>
                     <p class='date'>S.No: 10 | 2025-05-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2188516463/1704' target='_blank'>ONLYFANS</a></p>
                     <p class='date'>S.No: 8 | 2025-05-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PervMom Helena Price - Say Yes To Undress 209 pics 1620px Dec 15, 2018' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PervMom Helena Price - Say Yes To Undress 209 pics 1620px Dec 15, 2018' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2188516463/1707' target='_blank'>PervMom Helena Price - Say Yes To Undress 209 pics 1620px Dec 15, 2018</a></p>
                     <p class='date'>S.No: 9 | 2025-05-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Reality Kings Doing It' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Reality Kings Doing It' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2188516463/1211' target='_blank'>Reality Kings Doing It</a></p>
                     <p class='date'>S.No: 7 | 2025-05-05</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for RealityKings Helena Price, Carolina Sweets - Punishing the Freeloader 545x 1900x1600 04-02-2018' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for RealityKings Helena Price, Carolina Sweets - Punishing the Freeloader 545x 1900x1600 04-02-2018' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2188516463/45' target='_blank'>RealityKings Helena Price, Carolina Sweets - Punishing the Freeloader 545x 1900x1600 04-02-2018</a></p>
                     <p class='date'>S.No: 3 | 2025-05-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DigitalPlayground Helena Price - Cruising For A Fuck 103 Photos - 2495px | Aug 27, 2018' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DigitalPlayground Helena Price - Cruising For A Fuck 103 Photos - 2495px | Aug 27, 2018' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2188516463/593' target='_blank'>DigitalPlayground Helena Price - Cruising For A Fuck 103 Photos - 2495px | Aug 27, 2018</a></p>
                     <p class='date'>S.No: 4 | 2025-05-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for RealityKings Evelin Stone, Helena Price - Get Me Ready 179x 7952 × 5304 11-07-2018' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for RealityKings Evelin Stone, Helena Price - Get Me Ready 179x 7952 × 5304 11-07-2018' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2188516463/701' target='_blank'>RealityKings Evelin Stone, Helena Price - Get Me Ready 179x 7952 × 5304 11-07-2018</a></p>
                     <p class='date'>S.No: 5 | 2025-05-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NaughtyAmerica Helena Price - My Friends Hot Mom 321x 2500x1667 11-25-2018 (FUTURE RELEASE)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NaughtyAmerica Helena Price - My Friends Hot Mom 321x 2500x1667 11-25-2018 (FUTURE RELEASE)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2188516463/885' target='_blank'>NaughtyAmerica Helena Price - My Friends Hot Mom 321x 2500x1667 11-25-2018 (FUTURE RELEASE)</a></p>
                     <p class='date'>S.No: 6 | 2025-05-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Hairy Touch My Wife - Wife Makes Me Watch Her Fuck Our Son's Friend' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Hairy Touch My Wife - Wife Makes Me Watch Her Fuck Our Son's Friend' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2188516463/28' target='_blank'>Hairy Touch My Wife - Wife Makes Me Watch Her Fuck Our Son's Friend</a></p>
                     <p class='date'>S.No: 2 | 2024-07-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for XXX Pawn - Customers Wife Wants The D' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for XXX Pawn - Customers Wife Wants The D' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2188516463/2' target='_blank'>XXX Pawn - Customers Wife Wants The D</a></p>
                     <p class='date'>S.No: 1 | 2024-06-14</p>
                 </div>
@@ -387,8 +388,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 

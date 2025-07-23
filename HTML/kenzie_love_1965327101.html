@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -258,133 +259,133 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 22</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Touch My Wife Clips Baby...You Brought Him Back for Me' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Touch My Wife Clips Baby...You Brought Him Back for Me' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/2573' target='_blank'>Touch My Wife Clips Baby...You Brought Him Back for Me</a></p>
                     <p class='date'>S.No: 22 | 2025-07-17</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Hustler Kenzie Love - Caught My Busty Neighbor Masturbating 2 02-21-23' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Hustler Kenzie Love - Caught My Busty Neighbor Masturbating 2 02-21-23' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/2208' target='_blank'>Hustler Kenzie Love - Caught My Busty Neighbor Masturbating 2 02-21-23</a></p>
                     <p class='date'>S.No: 21 | 2025-06-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Cherry Pimps Kenzie Love Is Hungry For A Real Man-s Cock photo set - OK-PORN - 6_14_2025 9-28-32 PM' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Cherry Pimps Kenzie Love Is Hungry For A Real Man-s Cock photo set - OK-PORN - 6_14_2025 9-28-32 PM' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/1903' target='_blank'>Cherry Pimps Kenzie Love Is Hungry For A Real Man-s Cock photo set - OK-PORN - 6_14_2025 9-28-32 PM</a></p>
                     <p class='date'>S.No: 18 | 2025-06-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MomSwap Kenzie Love, Pristine Edge - Boot Camp Swap 148x 1620x1080 08-15-2022' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MomSwap Kenzie Love, Pristine Edge - Boot Camp Swap 148x 1620x1080 08-15-2022' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/2008' target='_blank'>MomSwap Kenzie Love, Pristine Edge - Boot Camp Swap 148x 1620x1080 08-15-2022</a></p>
                     <p class='date'>S.No: 19 | 2025-06-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MomSwap Kenzie Love, Pristine Edge - Boot Camp Swap Part Two 86x 1620x1080 09-12-2022' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MomSwap Kenzie Love, Pristine Edge - Boot Camp Swap Part Two 86x 1620x1080 09-12-2022' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/2113' target='_blank'>MomSwap Kenzie Love, Pristine Edge - Boot Camp Swap Part Two 86x 1620x1080 09-12-2022</a></p>
                     <p class='date'>S.No: 20 | 2025-06-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for InterracialPickups Kenzie Love - Interracial Pickups 09 Mar Kenzie Love - Interracial Pickups 03/09/23 - 258 mb, 203 pics, 3000x' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for InterracialPickups Kenzie Love - Interracial Pickups 09 Mar Kenzie Love - Interracial Pickups 03/09/23 - 258 mb, 203 pics, 3000x' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/1695' target='_blank'>InterracialPickups Kenzie Love - Interracial Pickups 09 Mar Kenzie Love - Interracial Pickups 03/09/23 - 258 mb, 203 pics, 3000x</a></p>
                     <p class='date'>S.No: 17 | 2025-02-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MYLF Aubree Valentine, Kenzie Love - Eat-In Kitchen 22 May' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MYLF Aubree Valentine, Kenzie Love - Eat-In Kitchen 22 May' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/1534' target='_blank'>MYLF Aubree Valentine, Kenzie Love - Eat-In Kitchen 22 May</a></p>
                     <p class='date'>S.No: 16 | 2025-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for BrattyMilf Stepmom Needs A Big Strong Man' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BrattyMilf Stepmom Needs A Big Strong Man' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/930' target='_blank'>BrattyMilf Stepmom Needs A Big Strong Man</a></p>
                     <p class='date'>S.No: 14 | 2024-07-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for JaysPOV My Step Sister Kenzie Love Has Big Natural Tits' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for JaysPOV My Step Sister Kenzie Love Has Big Natural Tits' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/1026' target='_blank'>JaysPOV My Step Sister Kenzie Love Has Big Natural Tits</a></p>
                     <p class='date'>S.No: 15 | 2024-07-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Hot Guys Fuck' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Hot Guys Fuck' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/923' target='_blank'>Hot Guys Fuck</a></p>
                     <p class='date'>S.No: 13 | 2024-06-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MYLF Kenzie Love - You Have To Cum' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MYLF Kenzie Love - You Have To Cum' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/852' target='_blank'>MYLF Kenzie Love - You Have To Cum</a></p>
                     <p class='date'>S.No: 12 | 2024-06-06</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Love Thy Neighbor Pt. 2: Christmas Party' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Love Thy Neighbor Pt. 2: Christmas Party' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/772' target='_blank'>Love Thy Neighbor Pt. 2: Christmas Party</a></p>
                     <p class='date'>S.No: 11 | 2024-02-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Naughty America - Busty brunette Kenzie Love needs Dr. Feelgood's hot beef injection' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Naughty America - Busty brunette Kenzie Love needs Dr. Feelgood's hot beef injection' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/314' target='_blank'>Naughty America - Busty brunette Kenzie Love needs Dr. Feelgood's hot beef injection</a></p>
                     <p class='date'>S.No: 10 | 2024-02-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NF Busty Horny' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NF Busty Horny' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/35' target='_blank'>NF Busty Horny</a></p>
                     <p class='date'>S.No: 9 | 2024-02-06</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Cory Chase Strip Pool' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Cory Chase Strip Pool' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/32' target='_blank'>Cory Chase Strip Pool</a></p>
                     <p class='date'>S.No: 8 | 2023-12-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PornHat' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PornHat' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/17' target='_blank'>PornHat</a></p>
                     <p class='date'>S.No: 4 | 2023-10-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Mom Swap Alexis Malone's blowjob movie' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Mom Swap Alexis Malone's blowjob movie' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/20' target='_blank'>Mom Swap Alexis Malone's blowjob movie</a></p>
                     <p class='date'>S.No: 5 | 2023-10-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Alex Coal and Kenzie Love's oral sex by Girlfriends Films' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Alex Coal and Kenzie Love's oral sex by Girlfriends Films' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/24' target='_blank'>Alex Coal and Kenzie Love's oral sex by Girlfriends Films</a></p>
                     <p class='date'>S.No: 6 | 2023-10-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for video Excellent Aria Valencia movie night' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for video Excellent Aria Valencia movie night' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/27' target='_blank'>video Excellent Aria Valencia movie night</a></p>
                     <p class='date'>S.No: 7 | 2023-10-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Family Strokes Freedom Fuck Day Featuring Sahara Skye' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Family Strokes Freedom Fuck Day Featuring Sahara Skye' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/2' target='_blank'>Family Strokes Freedom Fuck Day Featuring Sahara Skye</a></p>
                     <p class='date'>S.No: 1 | 2023-08-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MilfBody Kenzie’s Love Routine' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MilfBody Kenzie’s Love Routine' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/3' target='_blank'>MilfBody Kenzie’s Love Routine</a></p>
                     <p class='date'>S.No: 2 | 2023-08-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for HardX Kenzie Love Splashed' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for HardX Kenzie Love Splashed' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1965327101/4' target='_blank'>HardX Kenzie Love Splashed</a></p>
                     <p class='date'>S.No: 3 | 2023-08-21</p>
                 </div>
@@ -469,8 +470,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 

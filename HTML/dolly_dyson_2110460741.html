@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -262,109 +263,109 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 18</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for RoccoSiffredi Dolly Dyson & Ann Joy - Rocco's Sex Clinic: Treatment #17 - Scene 2 - 151x - (June 14, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for RoccoSiffredi Dolly Dyson & Ann Joy - Rocco's Sex Clinic: Treatment #17 - Scene 2 - 151x - (June 14, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/1409' target='_blank'>RoccoSiffredi Dolly Dyson & Ann Joy - Rocco's Sex Clinic: Treatment #17 - Scene 2 - 151x - (June 14, 2025)</a></p>
                     <p class='date'>S.No: 18 | 2025-06-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen Dolly Dyson - Naughty Redhead Fucks Her Ex - 119x - 3000px - (30 May, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen Dolly Dyson - Naughty Redhead Fucks Her Ex - 119x - 3000px - (30 May, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/1283' target='_blank'>Vixen Dolly Dyson - Naughty Redhead Fucks Her Ex - 119x - 3000px - (30 May, 2025)</a></p>
                     <p class='date'>S.No: 17 | 2025-06-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for TushyRaw Britney Dutch & Dolly Dyson - Anal-obsessed Besties Share A Hard Cock - 100x - 3000px - (07 Apr, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for TushyRaw Britney Dutch & Dolly Dyson - Anal-obsessed Besties Share A Hard Cock - 100x - 3000px - (07 Apr, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/1173' target='_blank'>TushyRaw Britney Dutch & Dolly Dyson - Anal-obsessed Besties Share A Hard Cock - 100x - 3000px - (07 Apr, 2025)</a></p>
                     <p class='date'>S.No: 16 | 2025-04-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Dolly Dyson, Cherry Candle You Want Them Wet, You Make Them Sweat, Face Riding Thresome' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Dolly Dyson, Cherry Candle You Want Them Wet, You Make Them Sweat, Face Riding Thresome' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/1160' target='_blank'>Dolly Dyson, Cherry Candle You Want Them Wet, You Make Them Sweat, Face Riding Thresome</a></p>
                     <p class='date'>S.No: 15 | 2025-03-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy Dolly Dyson - Stunning Redhead Has Intense DP Orgasm - 112x - 3000px - (02 Feb, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy Dolly Dyson - Stunning Redhead Has Intense DP Orgasm - 112x - 3000px - (02 Feb, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/1040' target='_blank'>Tushy Dolly Dyson - Stunning Redhead Has Intense DP Orgasm - 112x - 3000px - (02 Feb, 2025)</a></p>
                     <p class='date'>S.No: 14 | 2025-02-03</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Lady Lyne - Filthy Session' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Lady Lyne - Filthy Session' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/904' target='_blank'>Lady Lyne - Filthy Session</a></p>
                     <p class='date'>S.No: 13 | 2024-11-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for XVideosRED 2024 Dolly Dyson DP Fisting Threesome On The Balcony' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for XVideosRED 2024 Dolly Dyson DP Fisting Threesome On The Balcony' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/890' target='_blank'>XVideosRED 2024 Dolly Dyson DP Fisting Threesome On The Balcony</a></p>
                     <p class='date'>S.No: 12 | 2024-10-03</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Dolly Dyson, Ada Lapiedra - Dolly Dyson Squirts in a Threesome with Ada Lapiedra' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Dolly Dyson, Ada Lapiedra - Dolly Dyson Squirts in a Threesome with Ada Lapiedra' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/767' target='_blank'>Private Dolly Dyson, Ada Lapiedra - Dolly Dyson Squirts in a Threesome with Ada Lapiedra</a></p>
                     <p class='date'>S.No: 11 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy Dolly Dyson - Anal Obsessed Redhead Dolly Dyson First Appearance On TUSHY' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy Dolly Dyson - Anal Obsessed Redhead Dolly Dyson First Appearance On TUSHY' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/651' target='_blank'>Tushy Dolly Dyson - Anal Obsessed Redhead Dolly Dyson First Appearance On TUSHY</a></p>
                     <p class='date'>S.No: 10 | 2024-09-19</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Sexy Slut Gets Wild in an All-Anal Fuck' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Sexy Slut Gets Wild in an All-Anal Fuck' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/562' target='_blank'>Sexy Slut Gets Wild in an All-Anal Fuck</a></p>
                     <p class='date'>S.No: 9 | 2024-09-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt Love Gets Me High' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt Love Gets Me High' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/254' target='_blank'>SexArt Love Gets Me High</a></p>
                     <p class='date'>S.No: 7 | 2024-08-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Dolly Dyson's Private DP ALBERTO BLANCO DOLLY DYSON MARY POPIENSE POTRO DE BILBAO' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Dolly Dyson's Private DP ALBERTO BLANCO DOLLY DYSON MARY POPIENSE POTRO DE BILBAO' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/401' target='_blank'>Private Dolly Dyson's Private DP ALBERTO BLANCO DOLLY DYSON MARY POPIENSE POTRO DE BILBAO</a></p>
                     <p class='date'>S.No: 8 | 2024-08-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Dolly Dyson Enjoys an Anal Fuck with Squirting and a Creampie' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Dolly Dyson Enjoys an Anal Fuck with Squirting and a Creampie' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/26' target='_blank'>Private Dolly Dyson Enjoys an Anal Fuck with Squirting and a Creampie</a></p>
                     <p class='date'>S.No: 4 | 2024-06-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Dolly Dyson Squirts in a Hot POV Fuck' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Dolly Dyson Squirts in a Hot POV Fuck' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/119' target='_blank'>Private Dolly Dyson Squirts in a Hot POV Fuck</a></p>
                     <p class='date'>S.No: 5 | 2024-06-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Dolly Dyson Enjoys an Anal Threesome with Mary Popiense' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Dolly Dyson Enjoys an Anal Threesome with Mary Popiense' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/148' target='_blank'>Private Dolly Dyson Enjoys an Anal Threesome with Mary Popiense</a></p>
                     <p class='date'>S.No: 6 | 2024-06-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Dolly Dyson & Paigepbaby - Public 3some with random uber driver' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Dolly Dyson & Paigepbaby - Public 3some with random uber driver' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/22' target='_blank'>Dolly Dyson & Paigepbaby - Public 3some with random uber driver</a></p>
                     <p class='date'>S.No: 3 | 2024-06-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for New Dolly Dyson, Carmella DelX & Cassidy Luxe - DollyDyson Party in Berlin' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for New Dolly Dyson, Carmella DelX & Cassidy Luxe - DollyDyson Party in Berlin' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/15' target='_blank'>New Dolly Dyson, Carmella DelX & Cassidy Luxe - DollyDyson Party in Berlin</a></p>
                     <p class='date'>S.No: 2 | 2024-06-06</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2110460741/2' target='_blank'>ONLYFANS</a></p>
                     <p class='date'>S.No: 1 | 2024-04-17</p>
                 </div>
@@ -449,8 +450,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 

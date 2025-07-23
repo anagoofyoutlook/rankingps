@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -511,721 +512,721 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 120</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Confessions Of A Woman XXX (1977) Stars: Kristine Heller, John Leslie, Peter Johns' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Confessions Of A Woman XXX (1977) Stars: Kristine Heller, John Leslie, Peter Johns' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1142' target='_blank'>Confessions Of A Woman XXX (1977) Stars: Kristine Heller, John Leslie, Peter Johns</a></p>
                     <p class='date'>S.No: 118 | 2025-05-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Blue Confessions (1983)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blue Confessions (1983)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1162' target='_blank'>Blue Confessions (1983)</a></p>
                     <p class='date'>S.No: 119 | 2025-05-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Frauen wollen Sex (Mike Hunter Video) - Fantaisies pour couples (Alpha France) [1977]' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Frauen wollen Sex (Mike Hunter Video) - Fantaisies pour couples (Alpha France) [1977]' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1170' target='_blank'>Frauen wollen Sex (Mike Hunter Video) - Fantaisies pour couples (Alpha France) [1977]</a></p>
                     <p class='date'>S.No: 120 | 2025-05-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Die Wette (1979)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Die Wette (1979)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1119' target='_blank'>Die Wette (1979)</a></p>
                     <p class='date'>S.No: 115 | 2025-05-22</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Ladykiller (Casanova Returns) (1992)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Ladykiller (Casanova Returns) (1992)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1128' target='_blank'>Ladykiller (Casanova Returns) (1992)</a></p>
                     <p class='date'>S.No: 116 | 2025-05-22</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Lusthotel - Blutjungen Liebesschülerinnen (Mike Hunter Video) - Le professeur d'amour (Cinevog) [1981]' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Lusthotel - Blutjungen Liebesschülerinnen (Mike Hunter Video) - Le professeur d'amour (Cinevog) [1981]' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1136' target='_blank'>Lusthotel - Blutjungen Liebesschülerinnen (Mike Hunter Video) - Le professeur d'amour (Cinevog) [1981]</a></p>
                     <p class='date'>S.No: 117 | 2025-05-22</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Nackt und begehrlich (Mike Hunter Video) - Viens, je suis chaude (France Continental Films) - Голая и желанная [1978]' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Nackt und begehrlich (Mike Hunter Video) - Viens, je suis chaude (France Continental Films) - Голая и желанная [1978]' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1114' target='_blank'>Nackt und begehrlich (Mike Hunter Video) - Viens, je suis chaude (France Continental Films) - Голая и желанная [1978]</a></p>
                     <p class='date'>S.No: 114 | 2025-05-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Default L'Infirmière n'a pas de culotte (Erst weich dann hart!) (1978/80)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Default L'Infirmière n'a pas de culotte (Erst weich dann hart!) (1978/80)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1104' target='_blank'>Default L'Infirmière n'a pas de culotte (Erst weich dann hart!) (1978/80)</a></p>
                     <p class='date'>S.No: 113 | 2025-05-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Abenteuer der Lust (Sylvia's Abenteuer, P... Comme pénétration) (1976)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Abenteuer der Lust (Sylvia's Abenteuer, P... Comme pénétration) (1976)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1093' target='_blank'>Abenteuer der Lust (Sylvia's Abenteuer, P... Comme pénétration) (1976)</a></p>
                     <p class='date'>S.No: 112 | 2025-05-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Sexurlaub pur (1980)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Sexurlaub pur (1980)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1044' target='_blank'>Sexurlaub pur (1980)</a></p>
                     <p class='date'>S.No: 108 | 2025-04-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Sex for Sale (1981)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Sex for Sale (1981)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1052' target='_blank'>Sex for Sale (1981)</a></p>
                     <p class='date'>S.No: 109 | 2025-04-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for French Love (Mike Hunter Video) [1978] French Love (Mike Hunter Video) [1978]' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for French Love (Mike Hunter Video) [1978] French Love (Mike Hunter Video) [1978]' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1067' target='_blank'>French Love (Mike Hunter Video) [1978] French Love (Mike Hunter Video) [1978]</a></p>
                     <p class='date'>S.No: 110 | 2025-04-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Die Flasche zum ficken (Mike Hunter Video) [1978' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Die Flasche zum ficken (Mike Hunter Video) [1978' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1078' target='_blank'>Die Flasche zum ficken (Mike Hunter Video) [1978</a></p>
                     <p class='date'>S.No: 111 | 2025-04-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Default Body Lust (Pénétrations multiples) (1978) - Mike Hunter' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Default Body Lust (Pénétrations multiples) (1978) - Mike Hunter' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1035' target='_blank'>Default Body Lust (Pénétrations multiples) (1978) - Mike Hunter</a></p>
                     <p class='date'>S.No: 107 | 2025-04-22</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Tasty (1985)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Tasty (1985)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1025' target='_blank'>Tasty (1985)</a></p>
                     <p class='date'>S.No: 106 | 2025-04-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Good Girls Bad Girls (1984)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Good Girls Bad Girls (1984)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1016' target='_blank'>Good Girls Bad Girls (1984)</a></p>
                     <p class='date'>S.No: 105 | 2025-03-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for The Other Side of Julie (1978)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for The Other Side of Julie (1978)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/970' target='_blank'>The Other Side of Julie (1978)</a></p>
                     <p class='date'>S.No: 97 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for 1979 - Les Delice De Ladultier' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for 1979 - Les Delice De Ladultier' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/980' target='_blank'>1979 - Les Delice De Ladultier</a></p>
                     <p class='date'>S.No: 98 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for L'amour C'est Mon Metier (1978)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for L'amour C'est Mon Metier (1978)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/984' target='_blank'>L'amour C'est Mon Metier (1978)</a></p>
                     <p class='date'>S.No: 99 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Health Spa (1978)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Health Spa (1978)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/989' target='_blank'>Health Spa (1978)</a></p>
                     <p class='date'>S.No: 100 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Default The Backdoor Club (1985)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Default The Backdoor Club (1985)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/994' target='_blank'>Default The Backdoor Club (1985)</a></p>
                     <p class='date'>S.No: 101 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Up Desiree Lane / Сверху Дезри Лейн (1984)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Up Desiree Lane / Сверху Дезри Лейн (1984)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1001' target='_blank'>Up Desiree Lane / Сверху Дезри Лейн (1984)</a></p>
                     <p class='date'>S.No: 102 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Gang Way (1979)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Gang Way (1979)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1006' target='_blank'>Gang Way (1979)</a></p>
                     <p class='date'>S.No: 103 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Undercovers (1982)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Undercovers (1982)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/1011' target='_blank'>Undercovers (1982)</a></p>
                     <p class='date'>S.No: 104 | 2025-03-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Take Off / Снимать (1978)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Take Off / Снимать (1978)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/962' target='_blank'>Take Off / Снимать (1978)</a></p>
                     <p class='date'>S.No: 96 | 2025-02-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Hot & Saucy Pizza Girls (1978)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Hot & Saucy Pizza Girls (1978)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/940' target='_blank'>Hot & Saucy Pizza Girls (1978)</a></p>
                     <p class='date'>S.No: 95 | 2025-02-10</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Sea_Sex_And_Fun_–_Scandalo_Al_Sole_(1995)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Sea_Sex_And_Fun_–_Scandalo_Al_Sole_(1995)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/903' target='_blank'>Sea_Sex_And_Fun_–_Scandalo_Al_Sole_(1995)</a></p>
                     <p class='date'>S.No: 91 | 2025-02-04</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Tarzan-X: Shame of Jane (1994)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Tarzan-X: Shame of Jane (1994)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/912' target='_blank'>Tarzan-X: Shame of Jane (1994)</a></p>
                     <p class='date'>S.No: 92 | 2025-02-04</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Aberraciones sexuales de una rubia caliente Die Teuflischen Schwestern (aka Sexy Sisters) (1976)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Aberraciones sexuales de una rubia caliente Die Teuflischen Schwestern (aka Sexy Sisters) (1976)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/923' target='_blank'>Aberraciones sexuales de una rubia caliente Die Teuflischen Schwestern (aka Sexy Sisters) (1976)</a></p>
                     <p class='date'>S.No: 93 | 2025-02-04</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Her Last Fling (1976)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Her Last Fling (1976)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/933' target='_blank'>Her Last Fling (1976)</a></p>
                     <p class='date'>S.No: 94 | 2025-02-04</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Bedside Brat (1988)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Bedside Brat (1988)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/894' target='_blank'>Bedside Brat (1988)</a></p>
                     <p class='date'>S.No: 90 | 2025-01-31</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Taboo 4' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Taboo 4' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/890' target='_blank'>Taboo 4</a></p>
                     <p class='date'>S.No: 89 | 2025-01-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Couples Complices (1977)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Couples Complices (1977)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/838' target='_blank'>Couples Complices (1977)</a></p>
                     <p class='date'>S.No: 88 | 2025-01-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Arrogance: No Limits (1999)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Arrogance: No Limits (1999)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/765' target='_blank'>Arrogance: No Limits (1999)</a></p>
                     <p class='date'>S.No: 79 | 2024-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Teen-age Fantasies' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Teen-age Fantasies' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/776' target='_blank'>Teen-age Fantasies</a></p>
                     <p class='date'>S.No: 80 | 2024-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Flying Acquaintances (1973)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Flying Acquaintances (1973)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/781' target='_blank'>Flying Acquaintances (1973)</a></p>
                     <p class='date'>S.No: 81 | 2024-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Snow White & 7 Dwarfs (1995)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Snow White & 7 Dwarfs (1995)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/790' target='_blank'>Snow White & 7 Dwarfs (1995)</a></p>
                     <p class='date'>S.No: 82 | 2024-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Sex World / Sexworld / Sex Park / Ex World / El Mundo Del Sexo 1977' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Sex World / Sexworld / Sex Park / Ex World / El Mundo Del Sexo 1977' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/800' target='_blank'>Sex World / Sexworld / Sex Park / Ex World / El Mundo Del Sexo 1977</a></p>
                     <p class='date'>S.No: 83 | 2024-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Joy / Sex Crazy 1977' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Joy / Sex Crazy 1977' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/809' target='_blank'>Joy / Sex Crazy 1977</a></p>
                     <p class='date'>S.No: 84 | 2024-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Taboo American Style 1: The Ruthless Beginning / Nena - Das geile Biest von nebenan 1 (1985)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Taboo American Style 1: The Ruthless Beginning / Nena - Das geile Biest von nebenan 1 (1985)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/816' target='_blank'>Taboo American Style 1: The Ruthless Beginning / Nena - Das geile Biest von nebenan 1 (1985)</a></p>
                     <p class='date'>S.No: 85 | 2024-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for If My Mother... Only Knew (1986)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for If My Mother... Only Knew (1986)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/823' target='_blank'>If My Mother... Only Knew (1986)</a></p>
                     <p class='date'>S.No: 86 | 2024-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for The untamed' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for The untamed' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/830' target='_blank'>The untamed</a></p>
                     <p class='date'>S.No: 87 | 2024-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for bragas calientes 1983' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for bragas calientes 1983' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/750' target='_blank'>bragas calientes 1983</a></p>
                     <p class='date'>S.No: 77 | 2024-12-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Barbara Moose' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Barbara Moose' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/762' target='_blank'>Barbara Moose</a></p>
                     <p class='date'>S.No: 78 | 2024-12-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for The Filthy Rich 1980' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for The Filthy Rich 1980' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/724' target='_blank'>The Filthy Rich 1980</a></p>
                     <p class='date'>S.No: 75 | 2024-12-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Wanda Whips Wall Street' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Wanda Whips Wall Street' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/739' target='_blank'>Wanda Whips Wall Street</a></p>
                     <p class='date'>S.No: 76 | 2024-12-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Fantastic Orgy (1977)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Fantastic Orgy (1977)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/707' target='_blank'>Fantastic Orgy (1977)</a></p>
                     <p class='date'>S.No: 74 | 2024-12-17</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Chloë des Lysses' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Chloë des Lysses' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/646' target='_blank'>Chloë des Lysses</a></p>
                     <p class='date'>S.No: 73 | 2024-12-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Little Oral Annie Takes Manhattan (1985)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Little Oral Annie Takes Manhattan (1985)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/636' target='_blank'>Little Oral Annie Takes Manhattan (1985)</a></p>
                     <p class='date'>S.No: 72 | 2024-12-03</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Merle Michaels' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Merle Michaels' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/604' target='_blank'>Merle Michaels</a></p>
                     <p class='date'>S.No: 68 | 2024-11-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for That Lucky Stiff (1980)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for That Lucky Stiff (1980)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/608' target='_blank'>That Lucky Stiff (1980)</a></p>
                     <p class='date'>S.No: 69 | 2024-11-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for The Seduction of Cindy (1980)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for The Seduction of Cindy (1980)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/617' target='_blank'>The Seduction of Cindy (1980)</a></p>
                     <p class='date'>S.No: 70 | 2024-11-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for The Seduction Of Tessa (Le Fruit Defendu) (1983)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for The Seduction Of Tessa (Le Fruit Defendu) (1983)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/629' target='_blank'>The Seduction Of Tessa (Le Fruit Defendu) (1983)</a></p>
                     <p class='date'>S.No: 71 | 2024-11-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for dd' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for dd' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/572' target='_blank'>dd</a></p>
                     <p class='date'>S.No: 65 | 2024-11-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Auf Anmachtour in Brünn 1999' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Auf Anmachtour in Brünn 1999' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/588' target='_blank'>Auf Anmachtour in Brünn 1999</a></p>
                     <p class='date'>S.No: 66 | 2024-11-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Schulmädchen Porno II' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Schulmädchen Porno II' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/595' target='_blank'>Schulmädchen Porno II</a></p>
                     <p class='date'>S.No: 67 | 2024-11-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for The Amorous Sisters / Julchen und Jettchen, die verliebten Apothekerstöchter (1982)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for The Amorous Sisters / Julchen und Jettchen, die verliebten Apothekerstöchter (1982)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/521' target='_blank'>The Amorous Sisters / Julchen und Jettchen, die verliebten Apothekerstöchter (1982)</a></p>
                     <p class='date'>S.No: 64 | 2024-11-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Hoffmann & Söhne' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Hoffmann & Söhne' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/511' target='_blank'>Hoffmann & Söhne</a></p>
                     <p class='date'>S.No: 63 | 2024-10-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Twilight 20: Sperma Fighter' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Twilight 20: Sperma Fighter' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/379' target='_blank'>Twilight 20: Sperma Fighter</a></p>
                     <p class='date'>S.No: 52 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DBM - Sextra 20 - SE3220 - Fast Food' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DBM - Sextra 20 - SE3220 - Fast Food' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/392' target='_blank'>DBM - Sextra 20 - SE3220 - Fast Food</a></p>
                     <p class='date'>S.No: 53 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Bienenstich Im' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Bienenstich Im' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/402' target='_blank'>Bienenstich Im</a></p>
                     <p class='date'>S.No: 54 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Das Lustschloss der Josefine Mutzenbacher (Tabu Love)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Das Lustschloss der Josefine Mutzenbacher (Tabu Love)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/410' target='_blank'>Das Lustschloss der Josefine Mutzenbacher (Tabu Love)</a></p>
                     <p class='date'>S.No: 55 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Die hilfreiche Nachtschwester' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Die hilfreiche Nachtschwester' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/414' target='_blank'>Die hilfreiche Nachtschwester</a></p>
                     <p class='date'>S.No: 56 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Josefine Mutzenbacher Die Hure von Wien (Trimax)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Josefine Mutzenbacher Die Hure von Wien (Trimax)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/418' target='_blank'>Josefine Mutzenbacher Die Hure von Wien (Trimax)</a></p>
                     <p class='date'>S.No: 57 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Rosemarie's Schleckerland [1978]' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Rosemarie's Schleckerland [1978]' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/424' target='_blank'>Rosemarie's Schleckerland [1978]</a></p>
                     <p class='date'>S.No: 58 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Die Hasen von San Francisco' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Die Hasen von San Francisco' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/460' target='_blank'>Die Hasen von San Francisco</a></p>
                     <p class='date'>S.No: 59 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Heisse Locher geile Stecher' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Heisse Locher geile Stecher' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/466' target='_blank'>Heisse Locher geile Stecher</a></p>
                     <p class='date'>S.No: 60 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Im Haus Der Unzucht' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Im Haus Der Unzucht' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/470' target='_blank'>Im Haus Der Unzucht</a></p>
                     <p class='date'>S.No: 61 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Mdchen-im-Nachtverkehr' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Mdchen-im-Nachtverkehr' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/480' target='_blank'>Mdchen-im-Nachtverkehr</a></p>
                     <p class='date'>S.No: 62 | 2024-10-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 3' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 3' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/322' target='_blank'>Familie Immerscharf 3</a></p>
                     <p class='date'>S.No: 46 | 2024-10-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 4' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 4' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/328' target='_blank'>Familie Immerscharf 4</a></p>
                     <p class='date'>S.No: 47 | 2024-10-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 6' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 6' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/332' target='_blank'>Familie Immerscharf 6</a></p>
                     <p class='date'>S.No: 48 | 2024-10-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 7' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 7' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/334' target='_blank'>Familie Immerscharf 7</a></p>
                     <p class='date'>S.No: 49 | 2024-10-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 8' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 8' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/336' target='_blank'>Familie Immerscharf 8</a></p>
                     <p class='date'>S.No: 50 | 2024-10-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 5' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 5' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/346' target='_blank'>Familie Immerscharf 5</a></p>
                     <p class='date'>S.No: 51 | 2024-10-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Drei Mösen auf Männerjagd 1995' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Drei Mösen auf Männerjagd 1995' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/242' target='_blank'>Drei Mösen auf Männerjagd 1995</a></p>
                     <p class='date'>S.No: 40 | 2024-10-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 2' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 2' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/256' target='_blank'>Familie Immerscharf 2</a></p>
                     <p class='date'>S.No: 41 | 2024-10-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 1' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Familie Immerscharf 1' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/265' target='_blank'>Familie Immerscharf 1</a></p>
                     <p class='date'>S.No: 42 | 2024-10-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Haus der Unzucht (1995)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Haus der Unzucht (1995)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/276' target='_blank'>Haus der Unzucht (1995)</a></p>
                     <p class='date'>S.No: 43 | 2024-10-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Dagmar' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Dagmar' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/285' target='_blank'>Dagmar</a></p>
                     <p class='date'>S.No: 44 | 2024-10-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Pamela Lords' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Pamela Lords' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/306' target='_blank'>Pamela Lords</a></p>
                     <p class='date'>S.No: 45 | 2024-10-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Blondes Have More Fun [1979] Essex Video' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blondes Have More Fun [1979] Essex Video' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/225' target='_blank'>Blondes Have More Fun [1979] Essex Video</a></p>
                     <p class='date'>S.No: 38 | 2024-10-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Eine verdammt heisse Braut 1,2 - [1989]' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Eine verdammt heisse Braut 1,2 - [1989]' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/236' target='_blank'>Eine verdammt heisse Braut 1,2 - [1989]</a></p>
                     <p class='date'>S.No: 39 | 2024-10-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Golden Classics - 3 Klassiker Auf Einer DVD [1977]' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Golden Classics - 3 Klassiker Auf Einer DVD [1977]' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/217' target='_blank'>Golden Classics - 3 Klassiker Auf Einer DVD [1977]</a></p>
                     <p class='date'>S.No: 36 | 2024-10-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Paris… Telefon 666 [1979]' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Paris… Telefon 666 [1979]' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/221' target='_blank'>Paris… Telefon 666 [1979]</a></p>
                     <p class='date'>S.No: 37 | 2024-10-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Lesllie Bovee' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Lesllie Bovee' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/143' target='_blank'>Lesllie Bovee</a></p>
                     <p class='date'>S.No: 28 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for sensual encounters of every kind' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for sensual encounters of every kind' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/151' target='_blank'>sensual encounters of every kind</a></p>
                     <p class='date'>S.No: 29 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Deep Throat - 1972' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Deep Throat - 1972' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/168' target='_blank'>Deep Throat - 1972</a></p>
                     <p class='date'>S.No: 30 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Marilyn Chambers' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Marilyn Chambers' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/175' target='_blank'>Marilyn Chambers</a></p>
                     <p class='date'>S.No: 31 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Anna Ventura' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Anna Ventura' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/179' target='_blank'>Anna Ventura</a></p>
                     <p class='date'>S.No: 32 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Annette Haven' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Annette Haven' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/185' target='_blank'>Annette Haven</a></p>
                     <p class='date'>S.No: 33 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Desiree Cousteau' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Desiree Cousteau' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/197' target='_blank'>Desiree Cousteau</a></p>
                     <p class='date'>S.No: 34 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Liza Dwyer' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Liza Dwyer' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/201' target='_blank'>Liza Dwyer</a></p>
                     <p class='date'>S.No: 35 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Juliet Anderson' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Juliet Anderson' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/115' target='_blank'>Juliet Anderson</a></p>
                     <p class='date'>S.No: 24 | 2024-09-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Kay Parker' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Kay Parker' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/119' target='_blank'>Kay Parker</a></p>
                     <p class='date'>S.No: 25 | 2024-09-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Ashlyn Gere' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Ashlyn Gere' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/129' target='_blank'>Ashlyn Gere</a></p>
                     <p class='date'>S.No: 26 | 2024-09-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Brigitte Lahaie' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Brigitte Lahaie' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/137' target='_blank'>Brigitte Lahaie</a></p>
                     <p class='date'>S.No: 27 | 2024-09-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MIS SHORTS' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MIS SHORTS' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/112' target='_blank'>MIS SHORTS</a></p>
                     <p class='date'>S.No: 23 | 2024-09-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for e Suis Une Belle Salope' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for e Suis Une Belle Salope' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/107' target='_blank'>e Suis Une Belle Salope</a></p>
                     <p class='date'>S.No: 22 | 2024-08-19</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for ROMA 1' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for ROMA 1' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/98' target='_blank'>ROMA 1</a></p>
                     <p class='date'>S.No: 21 | 2024-07-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for A Thousand and One Erotic Nights (1982)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for A Thousand and One Erotic Nights (1982)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/94' target='_blank'>A Thousand and One Erotic Nights (1982)</a></p>
                     <p class='date'>S.No: 20 | 2024-06-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Juliette Anderson' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Juliette Anderson' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/91' target='_blank'>Juliette Anderson</a></p>
                     <p class='date'>S.No: 19 | 2024-04-17</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Secrétaire sans culotte' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Secrétaire sans culotte' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/22' target='_blank'>Secrétaire sans culotte</a></p>
                     <p class='date'>S.No: 4 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Monella (Frivolous Lola) (1998)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Monella (Frivolous Lola) (1998)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/26' target='_blank'>Monella (Frivolous Lola) (1998)</a></p>
                     <p class='date'>S.No: 5 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Cheeky By Tinto Brass' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Cheeky By Tinto Brass' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/31' target='_blank'>Cheeky By Tinto Brass</a></p>
                     <p class='date'>S.No: 6 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Caligula (1979) (Tinto Brass)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Caligula (1979) (Tinto Brass)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/34' target='_blank'>Caligula (1979) (Tinto Brass)</a></p>
                     <p class='date'>S.No: 7 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for All The Ladies Do It (1992) (Tinto Brass)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for All The Ladies Do It (1992) (Tinto Brass)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/38' target='_blank'>All The Ladies Do It (1992) (Tinto Brass)</a></p>
                     <p class='date'>S.No: 8 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Monamour (Tinto Brass)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Monamour (Tinto Brass)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/41' target='_blank'>Monamour (Tinto Brass)</a></p>
                     <p class='date'>S.No: 9 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Paprika (1991) (Tinto Brass)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Paprika (1991) (Tinto Brass)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/46' target='_blank'>Paprika (1991) (Tinto Brass)</a></p>
                     <p class='date'>S.No: 10 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Decameron: Tales of Desire (1995)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Decameron: Tales of Desire (1995)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/51' target='_blank'>Decameron: Tales of Desire (1995)</a></p>
                     <p class='date'>S.No: 11 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Emmanuelle: L’antivierge (1975)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Emmanuelle: L’antivierge (1975)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/56' target='_blank'>Emmanuelle: L’antivierge (1975)</a></p>
                     <p class='date'>S.No: 12 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Emmanuelle (1974)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Emmanuelle (1974)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/61' target='_blank'>Emmanuelle (1974)</a></p>
                     <p class='date'>S.No: 13 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Campeuses Sans Culotte' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Campeuses Sans Culotte' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/67' target='_blank'>Campeuses Sans Culotte</a></p>
                     <p class='date'>S.No: 14 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for La Rabatteuse (1978)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for La Rabatteuse (1978)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/71' target='_blank'>La Rabatteuse (1978)</a></p>
                     <p class='date'>S.No: 15 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Bad Girls (1981)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Bad Girls (1981)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/76' target='_blank'>Bad Girls (1981)</a></p>
                     <p class='date'>S.No: 16 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Hot Rackets (1979)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Hot Rackets (1979)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/81' target='_blank'>Hot Rackets (1979)</a></p>
                     <p class='date'>S.No: 17 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Le sexe qui parle (1975)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Le sexe qui parle (1975)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/87' target='_blank'>Le sexe qui parle (1975)</a></p>
                     <p class='date'>S.No: 18 | 2024-01-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Taboo 2' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Taboo 2' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/11' target='_blank'>Taboo 2</a></p>
                     <p class='date'>S.No: 1 | 2023-12-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Taboo 3' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Taboo 3' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/14' target='_blank'>Taboo 3</a></p>
                     <p class='date'>S.No: 2 | 2023-12-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Taboo' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Taboo' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1937892178/16' target='_blank'>Taboo</a></p>
                     <p class='date'>S.No: 3 | 2023-12-15</p>
                 </div>
@@ -1310,8 +1311,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 

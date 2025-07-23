@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -263,139 +264,139 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 23</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms 2025-07-07 Katie Kush, Melody Marks & Robby Echo - Just Like College - x106' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms 2025-07-07 Katie Kush, Melody Marks & Robby Echo - Just Like College - x106' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/2925' target='_blank'>NubileFilms 2025-07-07 Katie Kush, Melody Marks & Robby Echo - Just Like College - x106</a></p>
                     <p class='date'>S.No: 23 | 2025-07-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DoghouseDigital Katie Kush - Teen Anal 3 - Scene 3 - 80x - (June 04, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DoghouseDigital Katie Kush - Teen Anal 3 - Scene 3 - 80x - (June 04, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/2840' target='_blank'>DoghouseDigital Katie Kush - Teen Anal 3 - Scene 3 - 80x - (June 04, 2025)</a></p>
                     <p class='date'>S.No: 22 | 2025-06-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NaughtyAmerica Katie Kush - My Sister's Hot Friend - With the Memorial Day bash hours away, Katie Kush (pre-release) - 391x - 05' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NaughtyAmerica Katie Kush - My Sister's Hot Friend - With the Memorial Day bash hours away, Katie Kush (pre-release) - 391x - 05' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/2444' target='_blank'>NaughtyAmerica Katie Kush - My Sister's Hot Friend - With the Memorial Day bash hours away, Katie Kush (pre-release) - 391x - 05</a></p>
                     <p class='date'>S.No: 21 | 2025-05-26</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DevilsFilm Katie Kush - Visiting My Anal In-laws #2 - Scene 3 - 90x - (March 21, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DevilsFilm Katie Kush - Visiting My Anal In-laws #2 - Scene 3 - 90x - (March 21, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/2349' target='_blank'>DevilsFilm Katie Kush - Visiting My Anal In-laws #2 - Scene 3 - 90x - (March 21, 2025)</a></p>
                     <p class='date'>S.No: 20 | 2025-03-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Katie Kush - Sexy Cowgirl Katie Kush Loves Big Dicks - 03/03/25' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Katie Kush - Sexy Cowgirl Katie Kush Loves Big Dicks - 03/03/25' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/2308' target='_blank'>Penthouse Katie Kush - Sexy Cowgirl Katie Kush Loves Big Dicks - 03/03/25</a></p>
                     <p class='date'>S.No: 19 | 2025-03-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PornWorld PornBox Katie Kush - Seductive Babe Takes A BBC Ass Fucking From Her Fitness Trainer! 02/23/25' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PornWorld PornBox Katie Kush - Seductive Babe Takes A BBC Ass Fucking From Her Fitness Trainer! 02/23/25' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/2233' target='_blank'>PornWorld PornBox Katie Kush - Seductive Babe Takes A BBC Ass Fucking From Her Fitness Trainer! 02/23/25</a></p>
                     <p class='date'>S.No: 17 | 2025-02-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Bang Girlsrimming Katie Kush gives her stud neighbor a wet rim job The Stud Next Door' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Bang Girlsrimming Katie Kush gives her stud neighbor a wet rim job The Stud Next Door' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/2284' target='_blank'>Bang Girlsrimming Katie Kush gives her stud neighbor a wet rim job The Stud Next Door</a></p>
                     <p class='date'>S.No: 18 | 2025-02-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Katie Kush - New Bride Takes Huge BBC Creampie - 75x - 3000px - (03 Jan, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Katie Kush - New Bride Takes Huge BBC Creampie - 75x - 3000px - (03 Jan, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/2011' target='_blank'>Blacked Katie Kush - New Bride Takes Huge BBC Creampie - 75x - 3000px - (03 Jan, 2025)</a></p>
                     <p class='date'>S.No: 15 | 2025-01-06</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for BrattySis Re: Katie Kush, Molly Little - My Stepsisters Ass In A Box 23 Dec' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BrattySis Re: Katie Kush, Molly Little - My Stepsisters Ass In A Box 23 Dec' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/2091' target='_blank'>BrattySis Re: Katie Kush, Molly Little - My Stepsisters Ass In A Box 23 Dec</a></p>
                     <p class='date'>S.No: 16 | 2025-01-06</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for FreeuseFantasy Re: Katie Kush, Theodora Day - No Money, No Trouble' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for FreeuseFantasy Re: Katie Kush, Theodora Day - No Money, No Trouble' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/1863' target='_blank'>FreeuseFantasy Re: Katie Kush, Theodora Day - No Money, No Trouble</a></p>
                     <p class='date'>S.No: 14 | 2024-11-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Nubiles-Casting 2024-11-27 Katie Kush, Kelsey Kane & Parker Ambrose - Katie Kush cast Kelsey Kane' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Nubiles-Casting 2024-11-27 Katie Kush, Kelsey Kane & Parker Ambrose - Katie Kush cast Kelsey Kane' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/1728' target='_blank'>Nubiles-Casting 2024-11-27 Katie Kush, Kelsey Kane & Parker Ambrose - Katie Kush cast Kelsey Kane</a></p>
                     <p class='date'>S.No: 13 | 2024-11-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for razzers Katie Kush, Kelly Caprice - Free Use Maid Service' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for razzers Katie Kush, Kelly Caprice - Free Use Maid Service' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/1644' target='_blank'>razzers Katie Kush, Kelly Caprice - Free Use Maid Service</a></p>
                     <p class='date'>S.No: 12 | 2024-11-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Tera Winters Work Out The Open Positions' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Tera Winters Work Out The Open Positions' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/1287' target='_blank'>Tera Winters Work Out The Open Positions</a></p>
                     <p class='date'>S.No: 11 | 2024-10-17</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for FamilyStrokes Katie Kush, Sophia Locke & Summer Stevens - Our Stepmom Is Fucking Someone, Let’s Listen' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for FamilyStrokes Katie Kush, Sophia Locke & Summer Stevens - Our Stepmom Is Fucking Someone, Let’s Listen' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/1114' target='_blank'>FamilyStrokes Katie Kush, Sophia Locke & Summer Stevens - Our Stepmom Is Fucking Someone, Let’s Listen</a></p>
                     <p class='date'>S.No: 10 | 2024-08-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MyFamilyPies Lets Pretend We Are Married' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MyFamilyPies Lets Pretend We Are Married' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/999' target='_blank'>MyFamilyPies Lets Pretend We Are Married</a></p>
                     <p class='date'>S.No: 9 | 2024-07-31</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Naughty Nympho Katie Kush Enjoys No Strings Anal From AC Repair Guy' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Naughty Nympho Katie Kush Enjoys No Strings Anal From AC Repair Guy' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/2' target='_blank'>Porn World Naughty Nympho Katie Kush Enjoys No Strings Anal From AC Repair Guy</a></p>
                     <p class='date'>S.No: 1 | 2024-06-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms Katie Kush, Kay Lovely - The Massage' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for NubileFilms Katie Kush, Kay Lovely - The Massage' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/97' target='_blank'>NubileFilms Katie Kush, Kay Lovely - The Massage</a></p>
                     <p class='date'>S.No: 2 | 2024-06-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for BLACKED Starlet Katie Wants Co Stars BBC Off Screen' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BLACKED Starlet Katie Wants Co Stars BBC Off Screen' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/207' target='_blank'>BLACKED Starlet Katie Wants Co Stars BBC Off Screen</a></p>
                     <p class='date'>S.No: 3 | 2024-06-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DaughterSwap Kenzie Madison, Katie Kush - Steamy Daughter Pool Sex' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DaughterSwap Kenzie Madison, Katie Kush - Steamy Daughter Pool Sex' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/298' target='_blank'>DaughterSwap Kenzie Madison, Katie Kush - Steamy Daughter Pool Sex</a></p>
                     <p class='date'>S.No: 4 | 2024-06-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for I Had My Stepsisters Thanksgiving Pie - S29:E7 Katie Kush Skyler Storm' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for I Had My Stepsisters Thanksgiving Pie - S29:E7 Katie Kush Skyler Storm' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/524' target='_blank'>I Had My Stepsisters Thanksgiving Pie - S29:E7 Katie Kush Skyler Storm</a></p>
                     <p class='date'>S.No: 5 | 2024-06-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for CheatingSis Katie Kush - I Want My Stepbrother To Watch' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for CheatingSis Katie Kush - I Want My Stepbrother To Watch' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/643' target='_blank'>CheatingSis Katie Kush - I Want My Stepbrother To Watch</a></p>
                     <p class='date'>S.No: 6 | 2024-06-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Katie Kush Brazzers Frat Attack! Part 1' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Katie Kush Brazzers Frat Attack! Part 1' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/721' target='_blank'>Katie Kush Brazzers Frat Attack! Part 1</a></p>
                     <p class='date'>S.No: 7 | 2024-06-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Katie Kush Brazzers Frat Attack! Part 2' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Katie Kush Brazzers Frat Attack! Part 2' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2175156519/723' target='_blank'>Katie Kush Brazzers Frat Attack! Part 2</a></p>
                     <p class='date'>S.No: 8 | 2024-06-23</p>
                 </div>
@@ -480,8 +481,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 

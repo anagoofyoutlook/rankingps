@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -251,91 +252,91 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 15</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for RealitySis 2024-12-27 Chanel Camryn, Molly Little, Nathan Bronson, Ryan Driller & Sawyer Cassidy - Tempting Fate - x100' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for RealitySis 2024-12-27 Chanel Camryn, Molly Little, Nathan Bronson, Ryan Driller & Sawyer Cassidy - Tempting Fate - x100' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/456' target='_blank'>RealitySis 2024-12-27 Chanel Camryn, Molly Little, Nathan Bronson, Ryan Driller & Sawyer Cassidy - Tempting Fate - x100</a></p>
                     <p class='date'>S.No: 15 | 2024-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for EroticaX Molly Little - Meant To Be - 66x - (December 11, 2024)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for EroticaX Molly Little - Meant To Be - 66x - (December 11, 2024)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/385' target='_blank'>EroticaX Molly Little - Meant To Be - 66x - (December 11, 2024)</a></p>
                     <p class='date'>S.No: 14 | 2024-12-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for StepSiblingsCaught Lana Smalls, Molly Little - Two Ghosts And One Stepbro' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for StepSiblingsCaught Lana Smalls, Molly Little - Two Ghosts And One Stepbro' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/276' target='_blank'>StepSiblingsCaught Lana Smalls, Molly Little - Two Ghosts And One Stepbro</a></p>
                     <p class='date'>S.No: 13 | 2024-10-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Nubiles-Porn FamilySwap Molly Little, Pristine Edge - Naughty Or Nice We Are All Cumming This Christmas' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Nubiles-Porn FamilySwap Molly Little, Pristine Edge - Naughty Or Nice We Are All Cumming This Christmas' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/264' target='_blank'>Nubiles-Porn FamilySwap Molly Little, Pristine Edge - Naughty Or Nice We Are All Cumming This Christmas</a></p>
                     <p class='date'>S.No: 12 | 2024-02-06</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Chanel Camryn & Molly Little - Cum Is Better Than Cocoa' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Chanel Camryn & Molly Little - Cum Is Better Than Cocoa' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/257' target='_blank'>Chanel Camryn & Molly Little - Cum Is Better Than Cocoa</a></p>
                     <p class='date'>S.No: 11 | 2023-12-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen Sweet Tooth' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen Sweet Tooth' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/249' target='_blank'>Vixen Sweet Tooth</a></p>
                     <p class='date'>S.No: 10 | 2023-12-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Nubiles Porn - Stepsister Stuck In A Donut - S22:E2 - Leana Lovings, Molly Little, Theodora Day' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Nubiles Porn - Stepsister Stuck In A Donut - S22:E2 - Leana Lovings, Molly Little, Theodora Day' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/244' target='_blank'>Nubiles Porn - Stepsister Stuck In A Donut - S22:E2 - Leana Lovings, Molly Little, Theodora Day</a></p>
                     <p class='date'>S.No: 9 | 2023-11-13</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for The Cute Little Babysitter' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for The Cute Little Babysitter' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/230' target='_blank'>The Cute Little Babysitter</a></p>
                     <p class='date'>S.No: 8 | 2023-10-17</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Cheeks And Balances' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Cheeks And Balances' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/226' target='_blank'>Cheeks And Balances</a></p>
                     <p class='date'>S.No: 7 | 2023-10-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for BrattySis My Stepbrothers Fat Cock - S28:E8' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BrattySis My Stepbrothers Fat Cock - S28:E8' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/154' target='_blank'>BrattySis My Stepbrothers Fat Cock - S28:E8</a></p>
                     <p class='date'>S.No: 6 | 2023-09-13</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for FamilySwap Our Freeuse Swap Daughter - S7:E5 Katrina Colt,' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for FamilySwap Our Freeuse Swap Daughter - S7:E5 Katrina Colt,' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/2' target='_blank'>FamilySwap Our Freeuse Swap Daughter - S7:E5 Katrina Colt,</a></p>
                     <p class='date'>S.No: 1 | 2023-08-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Harley King & Molly Little - My Stepsis And I Share Everything' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Harley King & Molly Little - My Stepsis And I Share Everything' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/3' target='_blank'>Harley King & Molly Little - My Stepsis And I Share Everything</a></p>
                     <p class='date'>S.No: 2 | 2023-08-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Daughter Swap Sergeant’s Rewards System Featuring JC Wilds ,' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Daughter Swap Sergeant’s Rewards System Featuring JC Wilds ,' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/4' target='_blank'>Daughter Swap Sergeant’s Rewards System Featuring JC Wilds ,</a></p>
                     <p class='date'>S.No: 3 | 2023-08-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Alex Coal' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Alex Coal' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/5' target='_blank'>Alex Coal</a></p>
                     <p class='date'>S.No: 4 | 2023-08-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MyFamilyPies What Would I Do To My Stepbrother - S30:E2 Lexi Lore' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MyFamilyPies What Would I Do To My Stepbrother - S30:E2 Lexi Lore' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1973076760/6' target='_blank'>MyFamilyPies What Would I Do To My Stepbrother - S30:E2 Lexi Lore</a></p>
                     <p class='date'>S.No: 5 | 2023-08-21</p>
                 </div>
@@ -420,8 +421,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 

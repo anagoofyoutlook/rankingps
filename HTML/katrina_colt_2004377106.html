@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -280,343 +281,343 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 57</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Dorcel Afternoon with the girls Victoria Voxxx | Katrina Colt | Ana Foxxx' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Dorcel Afternoon with the girls Victoria Voxxx | Katrina Colt | Ana Foxxx' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/6235' target='_blank'>Dorcel Afternoon with the girls Victoria Voxxx | Katrina Colt | Ana Foxxx</a></p>
                     <p class='date'>S.No: 57 | 2025-07-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Bellesa Films Katrina Colt Lily LaBeau Episode 243 Lily & Katrina 03 07 2025' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Bellesa Films Katrina Colt Lily LaBeau Episode 243 Lily & Katrina 03 07 2025' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/6222' target='_blank'>Bellesa Films Katrina Colt Lily LaBeau Episode 243 Lily & Katrina 03 07 2025</a></p>
                     <p class='date'>S.No: 56 | 2025-07-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Katrina Colt agrees an anal deal with her real estate agent - 85 pics - 1600x1067 px - 07/01/25' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Katrina Colt agrees an anal deal with her real estate agent - 85 pics - 1600x1067 px - 07/01/25' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/6112' target='_blank'>Private Katrina Colt agrees an anal deal with her real estate agent - 85 pics - 1600x1067 px - 07/01/25</a></p>
                     <p class='date'>S.No: 55 | 2025-07-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for FamilySwap 2025-06-17 Demi Hawks, Katrina Colt, Parker Ambrose & Richard Glaze - I Saw Swapdads Dick - x108' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for FamilySwap 2025-06-17 Demi Hawks, Katrina Colt, Parker Ambrose & Richard Glaze - I Saw Swapdads Dick - x108' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/5996' target='_blank'>FamilySwap 2025-06-17 Demi Hawks, Katrina Colt, Parker Ambrose & Richard Glaze - I Saw Swapdads Dick - x108</a></p>
                     <p class='date'>S.No: 54 | 2025-06-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Katrina Colt - The Opportunity' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Katrina Colt - The Opportunity' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/5980' target='_blank'>Katrina Colt - The Opportunity</a></p>
                     <p class='date'>S.No: 53 | 2025-06-12</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for LesbianX Katrina Colt & Ella Reese - Ella & Katrina Red Lingerie Delight - 81x - (May 28, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for LesbianX Katrina Colt & Ella Reese - Ella & Katrina Red Lingerie Delight - 81x - (May 28, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/5752' target='_blank'>LesbianX Katrina Colt & Ella Reese - Ella & Katrina Red Lingerie Delight - 81x - (May 28, 2025)</a></p>
                     <p class='date'>S.No: 51 | 2025-06-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for TeamSkeet Natalie Brooks & Katrina Colt - Rave Girl Tamed - 131x - (June 02, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for TeamSkeet Natalie Brooks & Katrina Colt - Rave Girl Tamed - 131x - (June 02, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/5842' target='_blank'>TeamSkeet Natalie Brooks & Katrina Colt - Rave Girl Tamed - 131x - (June 02, 2025)</a></p>
                     <p class='date'>S.No: 52 | 2025-06-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for AdultTime 25 04 11 Ashley Lane Katie Kush Katrina Colt Confiscating And Fornicating' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for AdultTime 25 04 11 Ashley Lane Katie Kush Katrina Colt Confiscating And Fornicating' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/5655' target='_blank'>AdultTime 25 04 11 Ashley Lane Katie Kush Katrina Colt Confiscating And Fornicating</a></p>
                     <p class='date'>S.No: 50 | 2025-04-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for EroticaX Katrina Colt - Closing The Distance - 65x - (April 09, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for EroticaX Katrina Colt - Closing The Distance - 65x - (April 09, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/5585' target='_blank'>EroticaX Katrina Colt - Closing The Distance - 65x - (April 09, 2025)</a></p>
                     <p class='date'>S.No: 49 | 2025-04-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Deeper Mia Molotov, Katrina Colt - Valentines Gift - 73x - 3000px - (13 Feb, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Deeper Mia Molotov, Katrina Colt - Valentines Gift - 73x - 3000px - (13 Feb, 2025)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/5507' target='_blank'>Deeper Mia Molotov, Katrina Colt - Valentines Gift - 73x - 3000px - (13 Feb, 2025)</a></p>
                     <p class='date'>S.No: 48 | 2025-02-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Puretaboo Ashley Lane Katrina Colt Where Her Loyalties Lie' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Puretaboo Ashley Lane Katrina Colt Where Her Loyalties Lie' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/5468' target='_blank'>Puretaboo Ashley Lane Katrina Colt Where Her Loyalties Lie</a></p>
                     <p class='date'>S.No: 47 | 2025-02-10</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PervFamily My StepAunts Magic Hands - 357x - 3840x2159px - 26 Nov, 2022' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PervFamily My StepAunts Magic Hands - 357x - 3840x2159px - 26 Nov, 2022' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/5102' target='_blank'>PervFamily My StepAunts Magic Hands - 357x - 3840x2159px - 26 Nov, 2022</a></p>
                     <p class='date'>S.No: 46 | 2025-02-04</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for HerLimit Katrina Colt - No Holes Left Unfucked! 01/27/25' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for HerLimit Katrina Colt - No Holes Left Unfucked! 01/27/25' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4777' target='_blank'>HerLimit Katrina Colt - No Holes Left Unfucked! 01/27/25</a></p>
                     <p class='date'>S.No: 45 | 2025-01-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for BlacksOnBlondes Katrina Colt - Katrina Colt's Sex Parties - 01/17/25' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BlacksOnBlondes Katrina Colt - Katrina Colt's Sex Parties - 01/17/25' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4655' target='_blank'>BlacksOnBlondes Katrina Colt - Katrina Colt's Sex Parties - 01/17/25</a></p>
                     <p class='date'>S.No: 44 | 2025-01-21</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Digital PlayGround Katrina Colt - The Holdup - Episode 4 12/23/24' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Digital PlayGround Katrina Colt - The Holdup - Episode 4 12/23/24' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4617' target='_blank'>Digital PlayGround Katrina Colt - The Holdup - Episode 4 12/23/24</a></p>
                     <p class='date'>S.No: 43 | 2024-12-23</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Digital PlayGround Anna Claire Clouds, Katrina Colt - The Holdup - Episode 3 12/16/24' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Digital PlayGround Anna Claire Clouds, Katrina Colt - The Holdup - Episode 3 12/16/24' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4609' target='_blank'>Digital PlayGround Anna Claire Clouds, Katrina Colt - The Holdup - Episode 3 12/16/24</a></p>
                     <p class='date'>S.No: 42 | 2024-12-17</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen Little Dragon, Katrina Colt - Hot Seat - 81x - 3000px - (06 Dec, 2024)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen Little Dragon, Katrina Colt - Hot Seat - 81x - 3000px - (06 Dec, 2024)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4523' target='_blank'>Vixen Little Dragon, Katrina Colt - Hot Seat - 81x - 3000px - (06 Dec, 2024)</a></p>
                     <p class='date'>S.No: 41 | 2024-12-10</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DevilsFilm Katrina Colt, Nicole Doshi - Visiting My Anal In-Laws' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DevilsFilm Katrina Colt, Nicole Doshi - Visiting My Anal In-Laws' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4424' target='_blank'>DevilsFilm Katrina Colt, Nicole Doshi - Visiting My Anal In-Laws</a></p>
                     <p class='date'>S.No: 40 | 2024-12-03</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Katrina Colt - Episode 215: Katrina & Codey' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Katrina Colt - Episode 215: Katrina & Codey' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4416' target='_blank'>Katrina Colt - Episode 215: Katrina & Codey</a></p>
                     <p class='date'>S.No: 39 | 2024-11-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MomDrips Your Friend Can Cum In Too' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MomDrips Your Friend Can Cum In Too' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4300' target='_blank'>MomDrips Your Friend Can Cum In Too</a></p>
                     <p class='date'>S.No: 38 | 2024-11-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Ride That Ass' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Ride That Ass' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4285' target='_blank'>Ride That Ass</a></p>
                     <p class='date'>S.No: 37 | 2024-11-19</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Butt's Not To Like' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Butt's Not To Like' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4245' target='_blank'>Butt's Not To Like</a></p>
                     <p class='date'>S.No: 36 | 2024-11-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Scarlett Alexis - Threesome With Katrina And Scarlett' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Scarlett Alexis - Threesome With Katrina And Scarlett' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4110' target='_blank'>Scarlett Alexis - Threesome With Katrina And Scarlett</a></p>
                     <p class='date'>S.No: 35 | 2024-11-04</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Sexy new tenant Katrina Colt wants her ass pounded by a married cock' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Sexy new tenant Katrina Colt wants her ass pounded by a married cock' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/3823' target='_blank'>Sexy new tenant Katrina Colt wants her ass pounded by a married cock</a></p>
                     <p class='date'>S.No: 34 | 2024-10-17</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Sweet MILF Alines His Chakras With Her Asshole' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Sweet MILF Alines His Chakras With Her Asshole' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/3718' target='_blank'>Sweet MILF Alines His Chakras With Her Asshole</a></p>
                     <p class='date'>S.No: 33 | 2024-10-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for AdultTime Valentina Nappi, Katrina Colt - Cheating in Plain Sight' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for AdultTime Valentina Nappi, Katrina Colt - Cheating in Plain Sight' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/3209' target='_blank'>AdultTime Valentina Nappi, Katrina Colt - Cheating in Plain Sight</a></p>
                     <p class='date'>S.No: 30 | 2024-10-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Freya Parker, Katrina Colt - Lesbian Babysitters 17 - Scene 4 -Taken Care Of!' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Freya Parker, Katrina Colt - Lesbian Babysitters 17 - Scene 4 -Taken Care Of!' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/3525' target='_blank'>Freya Parker, Katrina Colt - Lesbian Babysitters 17 - Scene 4 -Taken Care Of!</a></p>
                     <p class='date'>S.No: 31 | 2024-10-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for LesbianX Freya Parker, Katrina Colt - Freya Frisky For Katrina' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for LesbianX Freya Parker, Katrina Colt - Freya Frisky For Katrina' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/3538' target='_blank'>LesbianX Freya Parker, Katrina Colt - Freya Frisky For Katrina</a></p>
                     <p class='date'>S.No: 32 | 2024-10-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Katrina Colt - Interview Makes Katrina Colt Horny' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Katrina Colt - Interview Makes Katrina Colt Horny' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/3168' target='_blank'>Penthouse Katrina Colt - Interview Makes Katrina Colt Horny</a></p>
                     <p class='date'>S.No: 29 | 2024-10-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Ella Reese, Katrina Colt - Runaway Bride Needs Pussy' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Ella Reese, Katrina Colt - Runaway Bride Needs Pussy' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/3144' target='_blank'>Ella Reese, Katrina Colt - Runaway Bride Needs Pussy</a></p>
                     <p class='date'>S.No: 28 | 2024-09-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SweetSinner Katrina Colt - Learning Curves - Scene 4 - Get On It' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SweetSinner Katrina Colt - Learning Curves - Scene 4 - Get On It' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2802' target='_blank'>SweetSinner Katrina Colt - Learning Curves - Scene 4 - Get On It</a></p>
                     <p class='date'>S.No: 26 | 2024-09-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SweetSinner Katrina Colt - Learning Curves - Scene 1 - Lessons' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SweetSinner Katrina Colt - Learning Curves - Scene 1 - Lessons' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/3115' target='_blank'>SweetSinner Katrina Colt - Learning Curves - Scene 1 - Lessons</a></p>
                     <p class='date'>S.No: 27 | 2024-09-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for AdultTime Katrina Colt - For Science!' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for AdultTime Katrina Colt - For Science!' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2762' target='_blank'>AdultTime Katrina Colt - For Science!</a></p>
                     <p class='date'>S.No: 25 | 2024-09-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DeepLush Deep Fuck' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DeepLush Deep Fuck' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2661' target='_blank'>DeepLush Deep Fuck</a></p>
                     <p class='date'>S.No: 24 | 2024-08-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for RealityJunkies My Wife Gave Me a Hall Pass 2 - Scene 2 - Free Pass' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for RealityJunkies My Wife Gave Me a Hall Pass 2 - Scene 2 - Free Pass' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2656' target='_blank'>RealityJunkies My Wife Gave Me a Hall Pass 2 - Scene 2 - Free Pass</a></p>
                     <p class='date'>S.No: 23 | 2024-08-09</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Girls Way - Demi Hawks & Katrina Colt - Oops! Wrong Selfie' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Girls Way - Demi Hawks & Katrina Colt - Oops! Wrong Selfie' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2435' target='_blank'>Girls Way - Demi Hawks & Katrina Colt - Oops! Wrong Selfie</a></p>
                     <p class='date'>S.No: 21 | 2024-07-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for LoveHerFeet Katrina Colt - Tension in the Office' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for LoveHerFeet Katrina Colt - Tension in the Office' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2448' target='_blank'>LoveHerFeet Katrina Colt - Tension in the Office</a></p>
                     <p class='date'>S.No: 22 | 2024-07-30</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for TeamSkeet Summer Col, Katrina Colt - Concept: Swapping' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for TeamSkeet Summer Col, Katrina Colt - Concept: Swapping' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2336' target='_blank'>TeamSkeet Summer Col, Katrina Colt - Concept: Swapping</a></p>
                     <p class='date'>S.No: 20 | 2024-07-04</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Jonathan Jordan XXX She wants BBC in her ass and mouth' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Jonathan Jordan XXX She wants BBC in her ass and mouth' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2196' target='_blank'>Jonathan Jordan XXX She wants BBC in her ass and mouth</a></p>
                     <p class='date'>S.No: 18 | 2024-06-20</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Brazzers Leah Gotti, Dana DeArmond, Katrina Colt - Pillow Princess Cheats Again' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Brazzers Leah Gotti, Dana DeArmond, Katrina Colt - Pillow Princess Cheats Again' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2252' target='_blank'>Brazzers Leah Gotti, Dana DeArmond, Katrina Colt - Pillow Princess Cheats Again</a></p>
                     <p class='date'>S.No: 19 | 2024-06-20</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DEEPER Workshop FREYA PARKER, KATRINA COLT' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DEEPER Workshop FREYA PARKER, KATRINA COLT' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2125' target='_blank'>DEEPER Workshop FREYA PARKER, KATRINA COLT</a></p>
                     <p class='date'>S.No: 17 | 2024-06-17</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for AdultTime Casey Calvert Katrina Colt - Stretched To Her Limits' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for AdultTime Casey Calvert Katrina Colt - Stretched To Her Limits' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/2085' target='_blank'>AdultTime Casey Calvert Katrina Colt - Stretched To Her Limits</a></p>
                     <p class='date'>S.No: 16 | 2024-06-14</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for LoveHerFeet Katrina Colt & Alexia Anders - A Lucky Fan' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for LoveHerFeet Katrina Colt & Alexia Anders - A Lucky Fan' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/1997' target='_blank'>LoveHerFeet Katrina Colt & Alexia Anders - A Lucky Fan</a></p>
                     <p class='date'>S.No: 15 | 2024-06-11</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/1993' target='_blank'>ONLYFANS</a></p>
                     <p class='date'>S.No: 14 | 2024-06-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for AdultTime - Katrina Colt - Better Her Than A Stranger' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for AdultTime - Katrina Colt - Better Her Than A Stranger' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/1911' target='_blank'>AdultTime - Katrina Colt - Better Her Than A Stranger</a></p>
                     <p class='date'>S.No: 13 | 2024-04-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for CHERRY KISS & KATRINA COLT ANAL GIRLS' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for CHERRY KISS & KATRINA COLT ANAL GIRLS' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/1837' target='_blank'>CHERRY KISS & KATRINA COLT ANAL GIRLS</a></p>
                     <p class='date'>S.No: 12 | 2024-04-19</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SinfulXXX Gizelle Blanco , Katrina Colt - Sex Date Society' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SinfulXXX Gizelle Blanco , Katrina Colt - Sex Date Society' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/1645' target='_blank'>SinfulXXX Gizelle Blanco , Katrina Colt - Sex Date Society</a></p>
                     <p class='date'>S.No: 11 | 2024-04-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for The Sex Impluse - Scene 1 - Out of Control' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for The Sex Impluse - Scene 1 - Out of Control' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/1627' target='_blank'>The Sex Impluse - Scene 1 - Out of Control</a></p>
                     <p class='date'>S.No: 10 | 2024-04-05</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for KATRINA COLT SHOWS OFF HER STAR POWER' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for KATRINA COLT SHOWS OFF HER STAR POWER' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/1414' target='_blank'>KATRINA COLT SHOWS OFF HER STAR POWER</a></p>
                     <p class='date'>S.No: 9 | 2024-04-02</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for MomSwapped Tee Time On Our Stepmoms - S3:E5 Season 3, Episode 5 Cherry Kiss, Juan El Caballo Loco, Katrina Colt, Park' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MomSwapped Tee Time On Our Stepmoms - S3:E5 Season 3, Episode 5 Cherry Kiss, Juan El Caballo Loco, Katrina Colt, Park' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/1221' target='_blank'>MomSwapped Tee Time On Our Stepmoms - S3:E5 Season 3, Episode 5 Cherry Kiss, Juan El Caballo Loco, Katrina Colt, Park</a></p>
                     <p class='date'>S.No: 8 | 2024-03-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Addicted2Girls Eliza Ibarra & Katrina Colt - YOGA GIRLS 6 - SCENE 2' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Addicted2Girls Eliza Ibarra & Katrina Colt - YOGA GIRLS 6 - SCENE 2' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/572' target='_blank'>Addicted2Girls Eliza Ibarra & Katrina Colt - YOGA GIRLS 6 - SCENE 2</a></p>
                     <p class='date'>S.No: 7 | 2024-03-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DORCEL Amuse Bouche' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DORCEL Amuse Bouche' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/392' target='_blank'>DORCEL Amuse Bouche</a></p>
                     <p class='date'>S.No: 5 | 2024-02-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for BLACKED Lithe Brunette Katrina Wraps Herself Around BBC' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BLACKED Lithe Brunette Katrina Wraps Herself Around BBC' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/425' target='_blank'>BLACKED Lithe Brunette Katrina Wraps Herself Around BBC</a></p>
                     <p class='date'>S.No: 6 | 2024-02-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy Katrina Colt - Sexy Real Estate Pro Gives Client Anal bonus' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy Katrina Colt - Sexy Real Estate Pro Gives Client Anal bonus' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/12' target='_blank'>Tushy Katrina Colt - Sexy Real Estate Pro Gives Client Anal bonus</a></p>
                     <p class='date'>S.No: 2 | 2024-02-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Sarah Taylor - Getting To Know Our Stepmoms' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Sarah Taylor - Getting To Know Our Stepmoms' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/89' target='_blank'>Sarah Taylor - Getting To Know Our Stepmoms</a></p>
                     <p class='date'>S.No: 3 | 2024-02-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Nubiles-Porn 2023-08-07 Aria Valencia, Katrina Colt - Stepmom Knows Her Way Around A Boner' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Nubiles-Porn 2023-08-07 Aria Valencia, Katrina Colt - Stepmom Knows Her Way Around A Boner' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/288' target='_blank'>Nubiles-Porn 2023-08-07 Aria Valencia, Katrina Colt - Stepmom Knows Her Way Around A Boner</a></p>
                     <p class='date'>S.No: 4 | 2024-02-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Raw Baddie BFFs Hazel and Katrina Tag Team His BBC HAZEL MOORE' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Raw Baddie BFFs Hazel and Katrina Tag Team His BBC HAZEL MOORE' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/2004377106/4' target='_blank'>Blacked Raw Baddie BFFs Hazel and Katrina Tag Team His BBC HAZEL MOORE</a></p>
                     <p class='date'>S.No: 1 | 2024-01-09</p>
                 </div>
@@ -701,8 +702,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 

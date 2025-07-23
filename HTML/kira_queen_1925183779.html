@@ -7,12 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
-        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
-        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        h1, h2 { color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }
         .hashtags { list-style-type: none; padding: 0; }
         .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
         .rank-container { 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -29,9 +29,8 @@
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }
         .grid-item { 
@@ -47,10 +46,9 @@
         }
         .grid-item video, .grid-item img { 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }
         .grid-item .title { 
             margin: 10px 0 5px; 
@@ -64,8 +62,8 @@
             color: #cccccc; 
         }
         .titles-table { 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }
@@ -88,7 +86,7 @@
         a:hover { color: #b30000; text-decoration: underline; }
         .container { 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -161,7 +159,7 @@
         .tab { 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }
@@ -185,20 +183,23 @@
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }
         #Videos { display: block; }
-        @media only screen and (max-width: 1800px) { 
-            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
         @media only screen and (max-width: 1200px) { 
-            .titles-grid { grid-template-columns: 1fr; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 200px; }
+            h1, .info, .container, .tab, .tabcontent { width: 90%; }
+            .rank-container { width: 90%; }
         }
         @media only screen and (max-width: 768px) { 
-            .container { width: 80%; max-height: 400px; } 
-            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
-            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .titles-grid { grid-template-columns: repeat(3, 1fr); } 
+            .grid-item video, .grid-item img { height: 150px; }
+            .container { width: 90%; max-height: 400px; } 
+            h1 { margin: 10px auto; font-size: 30px; }
+            .info, .tab, .tabcontent, .rank-container { width: 90%; }
+            .rank-container { flex-direction: column; gap: 10px; } 
             .chart-container { max-width: 100%; } 
             .column { flex: 0 0 80px; max-width: 80px; } 
             .mySlides img { object-fit: contain; } 
@@ -271,319 +272,319 @@
         <div id="Videos" class="tabcontent">
             <p>Total Titles: 53</p><div class='titles-grid' id='titlesGrid'>
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SmokingHawt Kira Queen' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SmokingHawt Kira Queen' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/4550' target='_blank'>SmokingHawt Kira Queen</a></p>
                     <p class='date'>S.No: 53 | 2025-05-22</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for TOODIVA Sunrise love couple blowjob porn feat kira queen by faphe' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for TOODIVA Sunrise love couple blowjob porn feat kira queen by faphe' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/4538' target='_blank'>TOODIVA Sunrise love couple blowjob porn feat kira queen by faphe</a></p>
                     <p class='date'>S.No: 52 | 2025-04-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Reality Kings Kira Queen, Thomas Stone - The New Girl' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Reality Kings Kira Queen, Thomas Stone - The New Girl' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/4450' target='_blank'>Reality Kings Kira Queen, Thomas Stone - The New Girl</a></p>
                     <p class='date'>S.No: 51 | 2024-11-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for It was my first DP' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for It was my first DP' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/4420' target='_blank'>It was my first DP</a></p>
                     <p class='date'>S.No: 50 | 2024-10-29</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Remember' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Remember' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/4254' target='_blank'>Remember</a></p>
                     <p class='date'>S.No: 49 | 2024-10-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for EnjoyX Bandage, wax and first squirt' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for EnjoyX Bandage, wax and first squirt' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/4133' target='_blank'>EnjoyX Bandage, wax and first squirt</a></p>
                     <p class='date'>S.No: 48 | 2024-09-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Kira Queen Teases With Her Big Titties' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Kira Queen Teases With Her Big Titties' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/4079' target='_blank'>Penthouse Kira Queen Teases With Her Big Titties</a></p>
                     <p class='date'>S.No: 47 | 2024-07-31</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Busty Besties Kira Queen And Jennifer Mendez Enjoy Anal Threesome With The Plumber Talent' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Busty Besties Kira Queen And Jennifer Mendez Enjoy Anal Threesome With The Plumber Talent' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/3980' target='_blank'>Porn World Busty Besties Kira Queen And Jennifer Mendez Enjoy Anal Threesome With The Plumber Talent</a></p>
                     <p class='date'>S.No: 45 | 2024-07-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Girlfriends Episode 2 - Companion - Henessy A Kira Queen' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Girlfriends Episode 2 - Companion - Henessy A Kira Queen' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/4073' target='_blank'>Girlfriends Episode 2 - Companion - Henessy A Kira Queen</a></p>
                     <p class='date'>S.No: 46 | 2024-07-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Honey Demon, Kira Queen & Kiara Lord 3some Dildo and Strapon at the Pool' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Honey Demon, Kira Queen & Kiara Lord 3some Dildo and Strapon at the Pool' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/3810' target='_blank'>Porn World Honey Demon, Kira Queen & Kiara Lord 3some Dildo and Strapon at the Pool</a></p>
                     <p class='date'>S.No: 42 | 2024-06-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt 2023-06-28 Kira Queen, Lorenzo Viota - Greatness Of Love' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt 2023-06-28 Kira Queen, Lorenzo Viota - Greatness Of Love' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/3870' target='_blank'>SexArt 2023-06-28 Kira Queen, Lorenzo Viota - Greatness Of Love</a></p>
                     <p class='date'>S.No: 43 | 2024-06-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/3872' target='_blank'>ONLYFANS</a></p>
                     <p class='date'>S.No: 44 | 2024-06-24</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for sugarbabestv secret lovers Inna Innaki Kira Queen' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for sugarbabestv secret lovers Inna Innaki Kira Queen' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/3805' target='_blank'>sugarbabestv secret lovers Inna Innaki Kira Queen</a></p>
                     <p class='date'>S.No: 41 | 2024-06-17</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for chrissy fox & kira queen fountain of love' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for chrissy fox & kira queen fountain of love' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/3685' target='_blank'>chrissy fox & kira queen fountain of love</a></p>
                     <p class='date'>S.No: 40 | 2024-05-10</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for BANGBROS Lena and Kira Bring The Heat Emilio Ardana, Lena Coxx and Kira Queen' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BANGBROS Lena and Kira Bring The Heat Emilio Ardana, Lena Coxx and Kira Queen' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/3496' target='_blank'>BANGBROS Lena and Kira Bring The Heat Emilio Ardana, Lena Coxx and Kira Queen</a></p>
                     <p class='date'>S.No: 39 | 2024-05-03</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DatingMyStepson' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DatingMyStepson' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2859' target='_blank'>DatingMyStepson</a></p>
                     <p class='date'>S.No: 38 | 2024-04-01</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for AlexRomero My Son's First Client' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for AlexRomero My Son's First Client' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2814' target='_blank'>AlexRomero My Son's First Client</a></p>
                     <p class='date'>S.No: 37 | 2024-03-25</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Karups OW - Kira Queen Busty Beauty' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Karups OW - Kira Queen Busty Beauty' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2810' target='_blank'>Karups OW - Kira Queen Busty Beauty</a></p>
                     <p class='date'>S.No: 36 | 2024-02-28</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SUPERPRIVATEX KIRA QUEEN DEEPTHROATING HER MASSAGE GUY' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SUPERPRIVATEX KIRA QUEEN DEEPTHROATING HER MASSAGE GUY' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2800' target='_blank'>SUPERPRIVATEX KIRA QUEEN DEEPTHROATING HER MASSAGE GUY</a></p>
                     <p class='date'>S.No: 35 | 2024-02-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Dream Date With BBC' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Dream Date With BBC' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2182' target='_blank'>Porn World Dream Date With BBC</a></p>
                     <p class='date'>S.No: 26 | 2024-02-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Gallery - Sexy Cops in Interracial DP OrgyDARRELL DEEPS , DELLAI EVELINE , ERIK EVERHARD , JOSH , KIRA QU' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Gallery - Sexy Cops in Interracial DP OrgyDARRELL DEEPS , DELLAI EVELINE , ERIK EVERHARD , JOSH , KIRA QU' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2263' target='_blank'>Penthouse Gallery - Sexy Cops in Interracial DP OrgyDARRELL DEEPS , DELLAI EVELINE , ERIK EVERHARD , JOSH , KIRA QU</a></p>
                     <p class='date'>S.No: 27 | 2024-02-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Kira Queen, Eveline Dellai - Loves a Surprise Orgy' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Kira Queen, Eveline Dellai - Loves a Surprise Orgy' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2375' target='_blank'>Penthouse Kira Queen, Eveline Dellai - Loves a Surprise Orgy</a></p>
                     <p class='date'>S.No: 28 | 2024-02-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PornWorld Kira Queen, Eve Sweet - Kira Queen and Eve Sweet Enjoy a Double Dildo in the Wellness Center' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PornWorld Kira Queen, Eve Sweet - Kira Queen and Eve Sweet Enjoy a Double Dildo in the Wellness Center' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2452' target='_blank'>PornWorld Kira Queen, Eve Sweet - Kira Queen and Eve Sweet Enjoy a Double Dildo in the Wellness Center</a></p>
                     <p class='date'>S.No: 29 | 2024-02-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for PornWorld Kira Queen - Golf Instructor With BBC Slams Student Kira Queen in Broad Daylight' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PornWorld Kira Queen - Golf Instructor With BBC Slams Student Kira Queen in Broad Daylight' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2516' target='_blank'>PornWorld Kira Queen - Golf Instructor With BBC Slams Student Kira Queen in Broad Daylight</a></p>
                     <p class='date'>S.No: 30 | 2024-02-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DDFNetwork Inna Innaki, Kira Queen, Verona Sky, Mary Kalisy - Girls Girls Girls, Group Sex Orgy' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DDFNetwork Inna Innaki, Kira Queen, Verona Sky, Mary Kalisy - Girls Girls Girls, Group Sex Orgy' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2567' target='_blank'>DDFNetwork Inna Innaki, Kira Queen, Verona Sky, Mary Kalisy - Girls Girls Girls, Group Sex Orgy</a></p>
                     <p class='date'>S.No: 31 | 2024-02-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Sex Crazed Office Sluts Kira Queen And Irina Cage Treat New Guy To Threesome' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Sex Crazed Office Sluts Kira Queen And Irina Cage Treat New Guy To Threesome' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2597' target='_blank'>Sex Crazed Office Sluts Kira Queen And Irina Cage Treat New Guy To Threesome</a></p>
                     <p class='date'>S.No: 32 | 2024-02-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Brazzers.com Kira Queen, Liya Silver - Watch Me Instead' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Brazzers.com Kira Queen, Liya Silver - Watch Me Instead' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2660' target='_blank'>Brazzers.com Kira Queen, Liya Silver - Watch Me Instead</a></p>
                     <p class='date'>S.No: 33 | 2024-02-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DDFNetwork Kira Queen, Misha Maver - Black Friday Hardcore Threesome' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DDFNetwork Kira Queen, Misha Maver - Black Friday Hardcore Threesome' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2742' target='_blank'>DDFNetwork Kira Queen, Misha Maver - Black Friday Hardcore Threesome</a></p>
                     <p class='date'>S.No: 34 | 2024-02-15</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Adelle Booty So Dirty' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Adelle Booty So Dirty' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/590' target='_blank'>Adelle Booty So Dirty</a></p>
                     <p class='date'>S.No: 12 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Alyssia Kent - Raunchy Roomies Share Boy-Toy' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Alyssia Kent - Raunchy Roomies Share Boy-Toy' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/699' target='_blank'>Alyssia Kent - Raunchy Roomies Share Boy-Toy</a></p>
                     <p class='date'>S.No: 13 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for HotLegsAndFeet.com - Alyssia Kent And Kira Queen Leggy Lesbian Sex' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for HotLegsAndFeet.com - Alyssia Kent And Kira Queen Leggy Lesbian Sex' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/775' target='_blank'>HotLegsAndFeet.com - Alyssia Kent And Kira Queen Leggy Lesbian Sex</a></p>
                     <p class='date'>S.No: 14 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt Apt 44 Episode 1' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt Apt 44 Episode 1' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/866' target='_blank'>SexArt Apt 44 Episode 1</a></p>
                     <p class='date'>S.No: 15 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Aruna Aghora Aruna And Kira' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Aruna Aghora Aruna And Kira' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/1015' target='_blank'>Aruna Aghora Aruna And Kira</a></p>
                     <p class='date'>S.No: 16 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Billie Star Dirty Double Penetration Spa Orgy' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Billie Star Dirty Double Penetration Spa Orgy' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/1132' target='_blank'>Billie Star Dirty Double Penetration Spa Orgy</a></p>
                     <p class='date'>S.No: 17 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Blonde MILF Brittany Bardot Double Fisted' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blonde MILF Brittany Bardot Double Fisted' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/1266' target='_blank'>Blonde MILF Brittany Bardot Double Fisted</a></p>
                     <p class='date'>S.No: 18 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Busty BFF Brunettes Kira Queen and Bambola Share a Stiff Cock' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Busty BFF Brunettes Kira Queen and Bambola Share a Stiff Cock' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/1328' target='_blank'>Busty BFF Brunettes Kira Queen and Bambola Share a Stiff Cock</a></p>
                     <p class='date'>S.No: 19 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Busty Vixen Bangs Young Brit' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Busty Vixen Bangs Young Brit' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/1466' target='_blank'>Busty Vixen Bangs Young Brit</a></p>
                     <p class='date'>S.No: 20 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Candy Alexa An Average Day in a Shared Flat part1' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Candy Alexa An Average Day in a Shared Flat part1' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/1533' target='_blank'>Candy Alexa An Average Day in a Shared Flat part1</a></p>
                     <p class='date'>S.No: 21 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Candy Alexa An Average Day in a Shared Flat Part 2 What About Intimity' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Candy Alexa An Average Day in a Shared Flat Part 2 What About Intimity' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/1582' target='_blank'>Candy Alexa An Average Day in a Shared Flat Part 2 What About Intimity</a></p>
                     <p class='date'>S.No: 22 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Candy Alexa threesome with hotel butler' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Candy Alexa threesome with hotel butler' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/1671' target='_blank'>Candy Alexa threesome with hotel butler</a></p>
                     <p class='date'>S.No: 23 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Catching On To Stepmom' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Catching On To Stepmom' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/1841' target='_blank'>Catching On To Stepmom</a></p>
                     <p class='date'>S.No: 24 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Dorothy Black Curvaceous' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Dorothy Black Curvaceous' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2012' target='_blank'>Dorothy Black Curvaceous</a></p>
                     <p class='date'>S.No: 25 | 2024-02-08</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Slutty Business Kira Queen and Sylvia Buntarka Seal Deal' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Slutty Business Kira Queen and Sylvia Buntarka Seal Deal' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/241' target='_blank'>Porn World Slutty Business Kira Queen and Sylvia Buntarka Seal Deal</a></p>
                     <p class='date'>S.No: 10 | 2024-02-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for BUSTY HOUSEWIFE' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BUSTY HOUSEWIFE' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/337' target='_blank'>BUSTY HOUSEWIFE</a></p>
                     <p class='date'>S.No: 11 | 2024-02-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Massage Queen' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Massage Queen' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/104' target='_blank'>Massage Queen</a></p>
                     <p class='date'>S.No: 9 | 2024-02-06</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse KIRA QUEEN CUMS FOR AN EROTIC MASSAGE' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse KIRA QUEEN CUMS FOR AN EROTIC MASSAGE' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/61' target='_blank'>Penthouse KIRA QUEEN CUMS FOR AN EROTIC MASSAGE</a></p>
                     <p class='date'>S.No: 8 | 2024-01-27</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for DatingMyStepson Going Overboard On Her Pussy - S2:E2 Season 2, Episode 2' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DatingMyStepson Going Overboard On Her Pussy - S2:E2 Season 2, Episode 2' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/50' target='_blank'>DatingMyStepson Going Overboard On Her Pussy - S2:E2 Season 2, Episode 2</a></p>
                     <p class='date'>S.No: 7 | 2024-01-17</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Busty BFFs Anissa Kate And Kira Queen Share Glass Dildo By The Pool' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Busty BFFs Anissa Kate And Kira Queen Share Glass Dildo By The Pool' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/24' target='_blank'>Porn World Busty BFFs Anissa Kate And Kira Queen Share Glass Dildo By The Pool</a></p>
                     <p class='date'>S.No: 5 | 2023-12-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Bi Babes Anissa Kate And Kira Queen Get Their Holes Stuffed In Tasty Threesome Talent' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Bi Babes Anissa Kate And Kira Queen Get Their Holes Stuffed In Tasty Threesome Talent' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/30' target='_blank'>Porn World Bi Babes Anissa Kate And Kira Queen Get Their Holes Stuffed In Tasty Threesome Talent</a></p>
                     <p class='date'>S.No: 6 | 2023-12-07</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Naughty Hairdresser Shalina Devine' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Naughty Hairdresser Shalina Devine' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/11' target='_blank'>Porn World Naughty Hairdresser Shalina Devine</a></p>
                     <p class='date'>S.No: 3 | 2023-10-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt Look Into My Eyes (2023)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt Look Into My Eyes (2023)' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/16' target='_blank'>SexArt Look Into My Eyes (2023)</a></p>
                     <p class='date'>S.No: 4 | 2023-10-16</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Kira Queen is the Busty Boss in Charge' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Penthouse Kira Queen is the Busty Boss in Charge' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/2' target='_blank'>Penthouse Kira Queen is the Busty Boss in Charge</a></p>
                     <p class='date'>S.No: 1 | 2023-08-18</p>
                 </div>
             
                 <div class='grid-item'>
-                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Lesbo Lovers Kira Queen And Sapphire Astrea Share Big Dick Stud' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Lesbo Lovers Kira Queen And Sapphire Astrea Share Big Dick Stud' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>
                     <p class='title'><a href='https://t.me/c/1925183779/5' target='_blank'>Porn World Lesbo Lovers Kira Queen And Sapphire Astrea Share Big Dick Stud</a></p>
                     <p class='date'>S.No: 2 | 2023-08-18</p>
                 </div>
@@ -668,8 +669,8 @@
                             grid: { color: '#3b4a6b' }
                         }, 
                         x: { 
-                            title: { display: true, text: 'Date', color: '#e6b800' },
-                            ticks: { color: '#ffffff' },
+                            title: { display: true, text: 'Date', color: '#e6b800' }, 
+                            ticks: { color: '#ffffff' }, 
                             grid: { color: '#3b4a6b' }
                         } 
                     }, 
