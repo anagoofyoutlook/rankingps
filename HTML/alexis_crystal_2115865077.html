@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexis Crystal</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
+        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        .hashtags { list-style-type: none; padding: 0; }
+        .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
+        .rank-container { 
+            width: 80%; 
+            margin: 20px auto; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+        }
+        .rank-number { font-size: 48px; font-weight: bold; color: #e6b800; display: inline-block; }
+        @keyframes countUp { from { content: "0"; } to { content: attr(data-rank); } }
+        .rank-number::before { content: "0"; animation: countUp 2s ease-out forwards; display: inline-block; min-width: 60px; }
+        .chart-container { max-width: 400px; width: 100%; background-color: #2a3a5c; padding: 10px; border-radius: 5px; }
+        canvas { width: 100% !important; height: auto !important; }
+        .titles-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+            margin: 20px auto; 
+            max-width: 1800px; 
+            width: 80%; 
+            box-sizing: border-box; 
+        }
+        .grid-item { 
+            background-color: #2a3a5c; 
+            padding: 10px; 
+            border-radius: 5px; 
+            text-align: center; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            width: 100%; 
+            box-sizing: border-box; 
+        }
+        .grid-item video, .grid-item img { 
+            width: 100%; 
+            max-width: 600px; 
+            height: 300px; 
+            object-fit: cover; 
+            border-radius: 5px; 
+        }
+        .grid-item .title { 
+            margin: 10px 0 5px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            color: #e6b800; 
+        }
+        .grid-item .date { 
+            margin: 0; 
+            font-size: 14px; 
+            color: #cccccc; 
+        }
+        .titles-table { 
+            width: 80%; 
+            margin: 20px auto; 
+            border-collapse: collapse; 
+            background-color: #2a3a5c; 
+        }
+        .titles-table th, .titles-table td { 
+            padding: 10px; 
+            border: 1px solid #3b4a6b; 
+            text-align: left; 
+            vertical-align: middle; 
+            color: #ffffff; 
+        }
+        .titles-table th { 
+            background-color: #e6b800; 
+            color: #1e2a44; 
+            cursor: pointer; 
+        }
+        .titles-table th:hover { 
+            background-color: #b30000; 
+        }
+        a { color: #e6b800; text-decoration: none; }
+        a:hover { color: #b30000; text-decoration: underline; }
+        .container { 
+            position: relative; 
+            width: 80%; 
+            margin: 20px auto; 
+            height: auto; 
+            max-height: 600px; 
+            display: block; 
+            overflow: hidden; 
+            background-color: #2a3a5c; 
+        }
+        .mySlides { 
+            display: none; 
+            width: 100%; 
+            height: auto; 
+            aspect-ratio: 16/9; 
+        }
+        .mySlides img { 
+            width: 100%; 
+            height: auto; 
+            object-fit: contain; 
+        }
+        .cursor { cursor: pointer; }
+        .prev, .next { 
+            cursor: pointer; 
+            position: absolute; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            width: auto; 
+            padding: 16px; 
+            color: #e6b800; 
+            font-weight: bold; 
+            font-size: 20px; 
+            border-radius: 0 3px 3px 0; 
+            user-select: none; 
+            -webkit-user-select: none; 
+            z-index: 10; 
+        }
+        .prev { left: 0; }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: #b30000; }
+        .numbertext { 
+            color: #e6b800; 
+            font-size: 12px; 
+            padding: 8px 12px; 
+            position: absolute; 
+            top: 0; 
+            z-index: 10; 
+        }
+        .caption-container { 
+            text-align: center; 
+            background-color: #1e2a44; 
+            padding: 2px 16px; 
+            color: #e6b800; 
+        }
+        .row { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin-top: 10px; 
+        }
+        .column { 
+            flex: 0 0 100.0%; 
+            max-width: 100px; 
+            padding: 5px; 
+        }
+        .demo { 
+            opacity: 0.6; 
+            width: 100%; 
+            height: auto; 
+            object-fit: cover; 
+        }
+        .active, .demo:hover { opacity: 1; }
+        .tab { 
+            overflow: hidden; 
+            margin: 20px auto; 
+            width: 80%; 
+            background-color: #2a3a5c; 
+            border-radius: 5px 5px 0 0; 
+        }
+        .tab button { 
+            background-color: #2a3a5c; 
+            color: #e6b800; 
+            float: left; 
+            border: none; 
+            outline: none; 
+            cursor: pointer; 
+            padding: 14px 16px; 
+            transition: 0.3s; 
+            font-size: 17px; 
+            width: 50%; 
+        }
+        .tab button:hover { background-color: #b30000; }
+        .tab button.active { background-color: #3b4a6b; }
+        .tabcontent { 
+            display: none; 
+            padding: 6px 12px; 
+            border-top: none; 
+            background-color: #2a3a5c; 
+            margin: 0 auto; 
+            width: 80%; 
+            border-radius: 0 0 5px 5px; 
+        }
+        #Videos { display: block; }
+        @media only screen and (max-width: 1800px) { 
+            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
+        }
+        @media only screen and (max-width: 1200px) { 
+            .titles-grid { grid-template-columns: 1fr; } 
+        }
+        @media only screen and (max-width: 768px) { 
+            .container { width: 80%; max-height: 400px; } 
+            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
+            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .chart-container { max-width: 100%; } 
+            .column { flex: 0 0 80px; max-width: 80px; } 
+            .mySlides img { object-fit: contain; } 
+            .tab button { font-size: 14px; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Alexis Crystal</h1>
+    <div class="rank-container">
+        <div class="chart-container"><h2>Rank History</h2><canvas id="rankChart"></canvas></div>
+        <p>Rank: <span class="rank-number" data-rank="13"></span></p>
+    </div>
+    <div class="container">
+<div class="mySlides"><div class="numbertext">1 / 1</div><img src="https://via.placeholder.com/1920x800" style="width:100%;height:auto;"></div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="caption-container"><p id="caption"></p></div>
+            <div class="row">
+        <div class="column"><img class="demo cursor" src="https://via.placeholder.com/1920x800" style="width:100%" onclick="currentSlide(1)" alt="Alexis Crystal Photo 1"></div></div></div>
+    <div class="info"><p>Scenes: 3696</p><p>Last Scene: 53 days</p></div>
+    <div class="info">
+        <h2>Rating Hashtag Counts (#FIVE, #FOUR, #Three)</h2><ul class="hashtags"><li class="hashtag-item">#FIVE: 21</li>
+<li class="hashtag-item">#FOUR: 14</li>
+<li class="hashtag-item">#THREE: 5</li>
+</ul>
+        <h2>Scene Type Hashtag Counts</h2><ul class="hashtags"><li class="hashtag-item">#FF: 8</li>
+<li class="hashtag-item">#FFM: 4</li>
+<li class="hashtag-item">#FM: 20</li>
+<li class="hashtag-item">#FMM: 1</li>
+<li class="hashtag-item">#FMMM: 1</li>
+<li class="hashtag-item">#ORGY: 2</li>
+</ul>
+        <h2>Other Hashtag Counts</h2><ul class="hashtags"><li class="hashtag-item">#AlexisCrystal: 2</li>
+<li class="hashtag-item">#AtheneaRose: 1</li>
+<li class="hashtag-item">#Bang: 1</li>
+<li class="hashtag-item">#EvilAngel: 1</li>
+<li class="hashtag-item">#FFMMM: 1</li>
+<li class="hashtag-item">#InTheCrack: 1</li>
+<li class="hashtag-item">#MassageRooms: 1</li>
+<li class="hashtag-item">#NoPhotos: 3</li>
+<li class="hashtag-item">#OF: 1</li>
+<li class="hashtag-item">#PornFidelity: 1</li>
+<li class="hashtag-item">#Private: 2</li>
+<li class="hashtag-item">#RealityKings: 1</li>
+<li class="hashtag-item">#SEXART: 3</li>
+<li class="hashtag-item">#SOLO: 3</li>
+<li class="hashtag-item">#SensuallHeat: 1</li>
+<li class="hashtag-item">#Spizoo: 1</li>
+<li class="hashtag-item">#TeamSkeet: 1</li>
+<li class="hashtag-item">#TheWhiteBoxxx: 1</li>
+</ul>
+    </div>
+    <div class="info">
+        <h2>Titles</h2>
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'Videos')">Videos</button>
+            <button class="tablinks" onclick="openTab(event, 'Table')">Table</button>
+        </div>
+        <div id="Videos" class="tabcontent">
+            <p>Total Titles: 36</p><div class='titles-grid' id='titlesGrid'>
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Spizoo Alexis Crystal Receives Hardcore Anal and Vaginal Fucking - 05/28/25' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/3631' target='_blank'>Spizoo Alexis Crystal Receives Hardcore Anal and Vaginal Fucking - 05/28/25</a></p>
+                    <p class='date'>S.No: 36 | 2025-05-30</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for RealityKings Alexis Crystal - Guess What I Have In My Pussy - 75x - 05.25.2025' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/3550' target='_blank'>RealityKings Alexis Crystal - Guess What I Have In My Pussy - 75x - 05.25.2025</a></p>
+                    <p class='date'>S.No: 35 | 2025-05-26</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Alexis Crystal - Feeling Blue - 208 mb, 267 pics, 2160x1441 px' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/3276' target='_blank'>Alexis Crystal - Feeling Blue - 208 mb, 267 pics, 2160x1441 px</a></p>
+                    <p class='date'>S.No: 34 | 2025-05-05</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MassageRooms Alexis Crystal - Perfect small tits? Czech. - 30x - 04.18.2025' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/3241' target='_blank'>MassageRooms Alexis Crystal - Perfect small tits? Czech. - 30x - 04.18.2025</a></p>
+                    <p class='date'>S.No: 33 | 2025-04-29</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for InTheCrack Alexis Crystal - Collection # 1963 - x 179 - 4500px - February 23, 2025' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/3056' target='_blank'>InTheCrack Alexis Crystal - Collection # 1963 - x 179 - 4500px - February 23, 2025</a></p>
+                    <p class='date'>S.No: 32 | 2025-04-14</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt 2025-03-21 MitziX & Alexis Crystal - Steal My Love - x165' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/2789' target='_blank'>SexArt 2025-03-21 MitziX & Alexis Crystal - Steal My Love - x165</a></p>
+                    <p class='date'>S.No: 30 | 2025-03-24</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Alexis Crystal - Summer Celebrations with Anal and Creampie (31.10.2020) - 87x' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/2964' target='_blank'>Private Alexis Crystal - Summer Celebrations with Anal and Creampie (31.10.2020) - 87x</a></p>
+                    <p class='date'>S.No: 31 | 2025-03-24</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for EvilAngel Alexis Crystal - Double Penetration Temptation #05 - Scene 2 - 60x - (February 20, 2025)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/2724' target='_blank'>EvilAngel Alexis Crystal - Double Penetration Temptation #05 - Scene 2 - 60x - (February 20, 2025)</a></p>
+                    <p class='date'>S.No: 29 | 2025-02-21</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for TheWhiteBoxxx Alexis Crystal - Ass Gaped By My Boss - 200x - 3240 x 2160px - February 16, 2025' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/2514' target='_blank'>TheWhiteBoxxx Alexis Crystal - Ass Gaped By My Boss - 200x - 3240 x 2160px - February 16, 2025</a></p>
+                    <p class='date'>S.No: 28 | 2025-02-18</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Alexis Crystal and Jenny Doll stack pussies during this threesome' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/2505' target='_blank'>Alexis Crystal and Jenny Doll stack pussies during this threesome</a></p>
+                    <p class='date'>S.No: 27 | 2025-02-03</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt 2024-12-22 Alexis Crystal & Liam Salvatore - Warmth Found - x147' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/2349' target='_blank'>SexArt 2024-12-22 Alexis Crystal & Liam Salvatore - Warmth Found - x147</a></p>
+                    <p class='date'>S.No: 26 | 2024-12-23</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Arousal Avenue' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/2211' target='_blank'>Arousal Avenue</a></p>
+                    <p class='date'>S.No: 25 | 2024-11-20</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for TheLifeErotic Alexis Crystal - Squirting Time 1' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/2124' target='_blank'>TheLifeErotic Alexis Crystal - Squirting Time 1</a></p>
+                    <p class='date'>S.No: 24 | 2024-09-19</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PornFidelity Alexis Crystal - Alexis Likes It' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/1874' target='_blank'>PornFidelity Alexis Crystal - Alexis Likes It</a></p>
+                    <p class='date'>S.No: 23 | 2024-08-21</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for PornBox Alexis Crystal, Nicole Love - New Introductions Chapter 2: Naughty Nymphos Tempt New Flatmates Into DP Gangbang!' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/1726' target='_blank'>PornBox Alexis Crystal, Nicole Love - New Introductions Chapter 2: Naughty Nymphos Tempt New Flatmates Into DP Gangbang!</a></p>
+                    <p class='date'>S.No: 21 | 2024-07-04</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for POrn Box Alexis Crystal - Nicole Love pleasure each others Holes- New Introductions- Chapter 1' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/1810' target='_blank'>POrn Box Alexis Crystal - Nicole Love pleasure each others Holes- New Introductions- Chapter 1</a></p>
+                    <p class='date'>S.No: 22 | 2024-07-04</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Alexis Crystal - Room Service' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/1717' target='_blank'>Alexis Crystal - Room Service</a></p>
+                    <p class='date'>S.No: 20 | 2024-07-01</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Morning Routine - Alexis Crystal, Lilly Bella' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/1703' target='_blank'>Morning Routine - Alexis Crystal, Lilly Bella</a></p>
+                    <p class='date'>S.No: 19 | 2024-06-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for InTheCrack Alexis Crystal - Collection # 1910' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/1567' target='_blank'>InTheCrack Alexis Crystal - Collection # 1910</a></p>
+                    <p class='date'>S.No: 18 | 2024-06-12</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Alexis Crystal Charlie Red Massage Ends In A Threesome' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/1314' target='_blank'>Alexis Crystal Charlie Red Massage Ends In A Threesome</a></p>
+                    <p class='date'>S.No: 17 | 2024-06-05</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Cops & Robbers: Gangbang Punishment with Kristy Black, Alexis Crystal, and Katiana Lure GP2219' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/1217' target='_blank'>Cops & Robbers: Gangbang Punishment with Kristy Black, Alexis Crystal, and Katiana Lure GP2219</a></p>
+                    <p class='date'>S.No: 16 | 2024-06-04</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for StrapLezz Alexis Crystal & Isabella De Laa - After Hours 1' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/1111' target='_blank'>StrapLezz Alexis Crystal & Isabella De Laa - After Hours 1</a></p>
+                    <p class='date'>S.No: 15 | 2024-06-02</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt 2024-05-17 Lee Anne & Alexis Crystal - Sensual Symphony' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/994' target='_blank'>SexArt 2024-05-17 Lee Anne & Alexis Crystal - Sensual Symphony</a></p>
+                    <p class='date'>S.No: 14 | 2024-05-22</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for My Summer Episode 3 – Girls Emylia Argan and Alexis Crystal' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/982' target='_blank'>My Summer Episode 3 – Girls Emylia Argan and Alexis Crystal</a></p>
+                    <p class='date'>S.No: 13 | 2024-05-09</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SPIZOO Alexis Crystal Takes On Her Secret Lover’s Big Cock' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/813' target='_blank'>SPIZOO Alexis Crystal Takes On Her Secret Lover’s Big Cock</a></p>
+                    <p class='date'>S.No: 11 | 2024-04-25</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Porn World Horny Housekeeper Alexis Crystal’s Holes Plugged in Airtight DP' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/910' target='_blank'>Porn World Horny Housekeeper Alexis Crystal’s Holes Plugged in Airtight DP</a></p>
+                    <p class='date'>S.No: 12 | 2024-04-25</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Alexis Crystal and Angel Wicky Share a Stud in an Anal Threesome' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/708' target='_blank'>Private Alexis Crystal and Angel Wicky Share a Stud in an Anal Threesome</a></p>
+                    <p class='date'>S.No: 10 | 2024-04-22</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Bangs Original Glamkore: Alexis Crystal' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/226' target='_blank'>Bangs Original Glamkore: Alexis Crystal</a></p>
+                    <p class='date'>S.No: 9 | 2024-04-05</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for It’s All Crystal Clear' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/131' target='_blank'>It’s All Crystal Clear</a></p>
+                    <p class='date'>S.No: 8 | 2024-03-01</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Private Alexis Crystal - The Horniest Model Gets the Hardest Fuck' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/26' target='_blank'>Private Alexis Crystal - The Horniest Model Gets the Hardest Fuck</a></p>
+                    <p class='date'>S.No: 7 | 2024-02-28</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/22' target='_blank'>ONLYFANS</a></p>
+                    <p class='date'>S.No: 6 | 2024-02-24</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Charlie Red Massage Sins' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/18' target='_blank'>Charlie Red Massage Sins</a></p>
+                    <p class='date'>S.No: 5 | 2023-12-30</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for 21Naturals Horny Yoga' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/14' target='_blank'>21Naturals Horny Yoga</a></p>
+                    <p class='date'>S.No: 4 | 2023-11-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt Pulsation' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/10' target='_blank'>SexArt Pulsation</a></p>
+                    <p class='date'>S.No: 3 | 2023-11-14</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for AnalVids Valentine's Orgy PART 2 The Final Orgy DP - ATOGM Alexis Crystal Billie Star Katy Rose Clara Mia Zuzu Sweet Cathy Crown' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/7' target='_blank'>AnalVids Valentine's Orgy PART 2 The Final Orgy DP - ATOGM Alexis Crystal Billie Star Katy Rose Clara Mia Zuzu Sweet Cathy Crown</a></p>
+                    <p class='date'>S.No: 2 | 2023-11-13</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for FakeHub Gym Bitches Athenea Rose' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/2115865077/2' target='_blank'>FakeHub Gym Bitches Athenea Rose</a></p>
+                    <p class='date'>S.No: 1 | 2023-10-23</p>
+                </div>
+            </div>
+        </div>
+        <div id="Table" class="tabcontent">
+            <table class='titles-table' id='titlesTable'><thead><tr><th onclick='sortTitlesTable(0)'>S.No</th><th onclick='sortTitlesTable(1)'>Items</th><th onclick='sortTitlesTable(2)'>Date</th></tr></thead><tbody id='titlesTableBody'><tr><td>36</td><td><a href='https://t.me/c/2115865077/3631' target='_blank'>Spizoo Alexis Crystal Receives Hardcore Anal and Vaginal Fucking - 05/28/25</a></td><td>2025-05-30</td></tr><tr><td>35</td><td><a href='https://t.me/c/2115865077/3550' target='_blank'>RealityKings Alexis Crystal - Guess What I Have In My Pussy - 75x - 05.25.2025</a></td><td>2025-05-26</td></tr><tr><td>34</td><td><a href='https://t.me/c/2115865077/3276' target='_blank'>Alexis Crystal - Feeling Blue - 208 mb, 267 pics, 2160x1441 px</a></td><td>2025-05-05</td></tr><tr><td>33</td><td><a href='https://t.me/c/2115865077/3241' target='_blank'>MassageRooms Alexis Crystal - Perfect small tits? Czech. - 30x - 04.18.2025</a></td><td>2025-04-29</td></tr><tr><td>32</td><td><a href='https://t.me/c/2115865077/3056' target='_blank'>InTheCrack Alexis Crystal - Collection # 1963 - x 179 - 4500px - February 23, 2025</a></td><td>2025-04-14</td></tr><tr><td>30</td><td><a href='https://t.me/c/2115865077/2789' target='_blank'>SexArt 2025-03-21 MitziX & Alexis Crystal - Steal My Love - x165</a></td><td>2025-03-24</td></tr><tr><td>31</td><td><a href='https://t.me/c/2115865077/2964' target='_blank'>Private Alexis Crystal - Summer Celebrations with Anal and Creampie (31.10.2020) - 87x</a></td><td>2025-03-24</td></tr><tr><td>29</td><td><a href='https://t.me/c/2115865077/2724' target='_blank'>EvilAngel Alexis Crystal - Double Penetration Temptation #05 - Scene 2 - 60x - (February 20, 2025)</a></td><td>2025-02-21</td></tr><tr><td>28</td><td><a href='https://t.me/c/2115865077/2514' target='_blank'>TheWhiteBoxxx Alexis Crystal - Ass Gaped By My Boss - 200x - 3240 x 2160px - February 16, 2025</a></td><td>2025-02-18</td></tr><tr><td>27</td><td><a href='https://t.me/c/2115865077/2505' target='_blank'>Alexis Crystal and Jenny Doll stack pussies during this threesome</a></td><td>2025-02-03</td></tr><tr><td>26</td><td><a href='https://t.me/c/2115865077/2349' target='_blank'>SexArt 2024-12-22 Alexis Crystal & Liam Salvatore - Warmth Found - x147</a></td><td>2024-12-23</td></tr><tr><td>25</td><td><a href='https://t.me/c/2115865077/2211' target='_blank'>Arousal Avenue</a></td><td>2024-11-20</td></tr><tr><td>24</td><td><a href='https://t.me/c/2115865077/2124' target='_blank'>TheLifeErotic Alexis Crystal - Squirting Time 1</a></td><td>2024-09-19</td></tr><tr><td>23</td><td><a href='https://t.me/c/2115865077/1874' target='_blank'>PornFidelity Alexis Crystal - Alexis Likes It</a></td><td>2024-08-21</td></tr><tr><td>21</td><td><a href='https://t.me/c/2115865077/1726' target='_blank'>PornBox Alexis Crystal, Nicole Love - New Introductions Chapter 2: Naughty Nymphos Tempt New Flatmates Into DP Gangbang!</a></td><td>2024-07-04</td></tr><tr><td>22</td><td><a href='https://t.me/c/2115865077/1810' target='_blank'>POrn Box Alexis Crystal - Nicole Love pleasure each others Holes- New Introductions- Chapter 1</a></td><td>2024-07-04</td></tr><tr><td>20</td><td><a href='https://t.me/c/2115865077/1717' target='_blank'>Alexis Crystal - Room Service</a></td><td>2024-07-01</td></tr><tr><td>19</td><td><a href='https://t.me/c/2115865077/1703' target='_blank'>Morning Routine - Alexis Crystal, Lilly Bella</a></td><td>2024-06-17</td></tr><tr><td>18</td><td><a href='https://t.me/c/2115865077/1567' target='_blank'>InTheCrack Alexis Crystal - Collection # 1910</a></td><td>2024-06-12</td></tr><tr><td>17</td><td><a href='https://t.me/c/2115865077/1314' target='_blank'>Alexis Crystal Charlie Red Massage Ends In A Threesome</a></td><td>2024-06-05</td></tr><tr><td>16</td><td><a href='https://t.me/c/2115865077/1217' target='_blank'>Cops & Robbers: Gangbang Punishment with Kristy Black, Alexis Crystal, and Katiana Lure GP2219</a></td><td>2024-06-04</td></tr><tr><td>15</td><td><a href='https://t.me/c/2115865077/1111' target='_blank'>StrapLezz Alexis Crystal & Isabella De Laa - After Hours 1</a></td><td>2024-06-02</td></tr><tr><td>14</td><td><a href='https://t.me/c/2115865077/994' target='_blank'>SexArt 2024-05-17 Lee Anne & Alexis Crystal - Sensual Symphony</a></td><td>2024-05-22</td></tr><tr><td>13</td><td><a href='https://t.me/c/2115865077/982' target='_blank'>My Summer Episode 3 – Girls Emylia Argan and Alexis Crystal</a></td><td>2024-05-09</td></tr><tr><td>11</td><td><a href='https://t.me/c/2115865077/813' target='_blank'>SPIZOO Alexis Crystal Takes On Her Secret Lover’s Big Cock</a></td><td>2024-04-25</td></tr><tr><td>12</td><td><a href='https://t.me/c/2115865077/910' target='_blank'>Porn World Horny Housekeeper Alexis Crystal’s Holes Plugged in Airtight DP</a></td><td>2024-04-25</td></tr><tr><td>10</td><td><a href='https://t.me/c/2115865077/708' target='_blank'>Private Alexis Crystal and Angel Wicky Share a Stud in an Anal Threesome</a></td><td>2024-04-22</td></tr><tr><td>9</td><td><a href='https://t.me/c/2115865077/226' target='_blank'>Bangs Original Glamkore: Alexis Crystal</a></td><td>2024-04-05</td></tr><tr><td>8</td><td><a href='https://t.me/c/2115865077/131' target='_blank'>It’s All Crystal Clear</a></td><td>2024-03-01</td></tr><tr><td>7</td><td><a href='https://t.me/c/2115865077/26' target='_blank'>Private Alexis Crystal - The Horniest Model Gets the Hardest Fuck</a></td><td>2024-02-28</td></tr><tr><td>6</td><td><a href='https://t.me/c/2115865077/22' target='_blank'>ONLYFANS</a></td><td>2024-02-24</td></tr><tr><td>5</td><td><a href='https://t.me/c/2115865077/18' target='_blank'>Charlie Red Massage Sins</a></td><td>2023-12-30</td></tr><tr><td>4</td><td><a href='https://t.me/c/2115865077/14' target='_blank'>21Naturals Horny Yoga</a></td><td>2023-11-17</td></tr><tr><td>3</td><td><a href='https://t.me/c/2115865077/10' target='_blank'>SexArt Pulsation</a></td><td>2023-11-14</td></tr><tr><td>2</td><td><a href='https://t.me/c/2115865077/7' target='_blank'>AnalVids Valentine's Orgy PART 2 The Final Orgy DP - ATOGM Alexis Crystal Billie Star Katy Rose Clara Mia Zuzu Sweet Cathy Crown</a></td><td>2023-11-13</td></tr><tr><td>1</td><td><a href='https://t.me/c/2115865077/2' target='_blank'>FakeHub Gym Bitches Athenea Rose</a></td><td>2023-10-23</td></tr></tbody></table>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) { 
+            clearInterval(autoSlide); 
+            showSlides(slideIndex += n); 
+            autoSlide = setInterval(() => plusSlides(1), 3000); 
+        }
+        function currentSlide(n) { 
+            clearInterval(autoSlide); 
+            showSlides(slideIndex = n); 
+            autoSlide = setInterval(() => plusSlides(1), 3000); 
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) { 
+                slides[i].style.display = "none"; 
+            }
+            for (i = 0; i < dots.length; i++) { 
+                dots[i].className = dots[i].className.replace(" active", ""); 
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+        let autoSlide = setInterval(() => plusSlides(1), 3000);
+
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Chart.js for rank history
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('rankChart').getContext('2d');
+            const historyData = [];
+            const dates = historyData.map(entry => entry.date);
+            const ranks = historyData.map(entry => entry.rank);
+            new Chart(ctx, {
+                type: 'line',
+                data: { 
+                    labels: dates, 
+                    datasets: [{
+                        label: 'Rank Over Time', 
+                        data: ranks, 
+                        borderColor: '#e6b800', 
+                        backgroundColor: 'rgba(230, 184, 0, 0.2)', 
+                        fill: true, 
+                        tension: 0.4 
+                    }] 
+                },
+                options: { 
+                    scales: { 
+                        y: { 
+                            beginAtZero: true, 
+                            title: { display: true, text: 'Rank', color: '#e6b800' }, 
+                            ticks: { stepSize: 1, color: '#ffffff' }, 
+                            suggestedMax: 353,
+                            grid: { color: '#3b4a6b' }
+                        }, 
+                        x: { 
+                            title: { display: true, text: 'Date', color: '#e6b800' },
+                            ticks: { color: '#ffffff' },
+                            grid: { color: '#3b4a6b' }
+                        } 
+                    }, 
+                    plugins: { 
+                        legend: { display: true, labels: { color: '#e6b800' } } 
+                    } 
+                }
+            });
+
+            // Add hover-to-play for videos in titles grid
+            const videos = document.querySelectorAll('.grid-item video');
+            videos.forEach(video => {
+                video.addEventListener('mouseover', () => {
+                    video.play().catch(error => {
+                        console.error('Error playing video:', error);
+                    });
+                });
+                video.addEventListener('mouseout', () => {
+                    video.pause();
+                });
+            });
+
+            // Initialize titles table sorted by S.No descending (highest ID at top)
+            sortTitlesTable(0, -1); // Sort by S.No column, highest first
+        });
+
+        // Titles table and grid sorting
+        let titlesSortDirections = [-1, 0, 0]; // S.No starts descending
+        function sortTitlesTable(columnIndex, forceDirection) {
+            const tbody = document.getElementById('titlesTableBody');
+            const rows = Array.from(tbody.getElementsByTagName('tr'));
+            const direction = forceDirection !== undefined ? forceDirection : (titlesSortDirections[columnIndex] === 1 ? -1 : 1);
+            rows.sort((a, b) => {
+                let aValue = a.cells[columnIndex].innerText;
+                let bValue = b.cells[columnIndex].innerText;
+                if (columnIndex === 0) { // S.No column
+                    aValue = parseInt(aValue);
+                    bValue = parseInt(bValue);
+                    return direction * (aValue - bValue);
+                } else if (columnIndex === 2) { // Date column
+                    aValue = new Date(aValue);
+                    bValue = new Date(bValue);
+                    return direction * (aValue - bValue);
+                } else if (columnIndex === 1) { // Items column
+                    return direction * aValue.localeCompare(bValue);
+                }
+                return 0;
+            });
+            while (tbody.firstChild) { 
+                tbody.removeChild(tbody.firstChild); 
+            }
+            rows.forEach(row => tbody.appendChild(row));
+            titlesSortDirections[columnIndex] = direction;
+            titlesSortDirections = titlesSortDirections.map((d, i) => i === columnIndex ? d : 0);
+            // Sync grid with table
+            sortTitlesGrid(columnIndex, direction);
+        }
+
+        function sortTitlesGrid(columnIndex, direction) {
+            const grid = document.getElementById('titlesGrid');
+            const items = Array.from(grid.getElementsByClassName('grid-item'));
+            items.sort((a, b) => {
+                let aValue, bValue;
+                if (columnIndex === 0) { // S.No
+                    aValue = parseInt(a.querySelector('.date').innerText.split('S.No: ')[1].split(' | ')[0]);
+                    bValue = parseInt(b.querySelector('.date').innerText.split('S.No: ')[1].split(' | ')[0]);
+                    return direction * (aValue - bValue);
+                } else if (columnIndex === 1) { // Items
+                    aValue = a.querySelector('.title').innerText;
+                    bValue = b.querySelector('.title').innerText;
+                    return direction * aValue.localeCompare(bValue);
+                } else if (columnIndex === 2) { // Date
+                    aValue = new Date(a.querySelector('.date').innerText.split(' | ')[1]);
+                    bValue = new Date(b.querySelector('.date').innerText.split(' | ')[1]);
+                    return direction * (aValue - bValue);
+                }
+                return 0;
+            });
+            while (grid.firstChild) { 
+                grid.removeChild(grid.firstChild); 
+            }
+            items.forEach(item => grid.appendChild(item));
+        }
+    </script>
+</body>
+</html>

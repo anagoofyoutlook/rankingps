@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jia Lissa</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }
+        h1, h2 { color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }
+        .info { background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        .hashtags { list-style-type: none; padding: 0; }
+        .hashtag-item { background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }
+        .rank-container { 
+            width: 80%; 
+            margin: 20px auto; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+        }
+        .rank-number { font-size: 48px; font-weight: bold; color: #e6b800; display: inline-block; }
+        @keyframes countUp { from { content: "0"; } to { content: attr(data-rank); } }
+        .rank-number::before { content: "0"; animation: countUp 2s ease-out forwards; display: inline-block; min-width: 60px; }
+        .chart-container { max-width: 400px; width: 100%; background-color: #2a3a5c; padding: 10px; border-radius: 5px; }
+        canvas { width: 100% !important; height: auto !important; }
+        .titles-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+            margin: 20px auto; 
+            max-width: 1800px; 
+            width: 80%; 
+            box-sizing: border-box; 
+        }
+        .grid-item { 
+            background-color: #2a3a5c; 
+            padding: 10px; 
+            border-radius: 5px; 
+            text-align: center; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            width: 100%; 
+            box-sizing: border-box; 
+        }
+        .grid-item video, .grid-item img { 
+            width: 100%; 
+            max-width: 600px; 
+            height: 300px; 
+            object-fit: cover; 
+            border-radius: 5px; 
+        }
+        .grid-item .title { 
+            margin: 10px 0 5px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            color: #e6b800; 
+        }
+        .grid-item .date { 
+            margin: 0; 
+            font-size: 14px; 
+            color: #cccccc; 
+        }
+        .titles-table { 
+            width: 80%; 
+            margin: 20px auto; 
+            border-collapse: collapse; 
+            background-color: #2a3a5c; 
+        }
+        .titles-table th, .titles-table td { 
+            padding: 10px; 
+            border: 1px solid #3b4a6b; 
+            text-align: left; 
+            vertical-align: middle; 
+            color: #ffffff; 
+        }
+        .titles-table th { 
+            background-color: #e6b800; 
+            color: #1e2a44; 
+            cursor: pointer; 
+        }
+        .titles-table th:hover { 
+            background-color: #b30000; 
+        }
+        a { color: #e6b800; text-decoration: none; }
+        a:hover { color: #b30000; text-decoration: underline; }
+        .container { 
+            position: relative; 
+            width: 80%; 
+            margin: 20px auto; 
+            height: auto; 
+            max-height: 600px; 
+            display: block; 
+            overflow: hidden; 
+            background-color: #2a3a5c; 
+        }
+        .mySlides { 
+            display: none; 
+            width: 100%; 
+            height: auto; 
+            aspect-ratio: 16/9; 
+        }
+        .mySlides img { 
+            width: 100%; 
+            height: auto; 
+            object-fit: contain; 
+        }
+        .cursor { cursor: pointer; }
+        .prev, .next { 
+            cursor: pointer; 
+            position: absolute; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            width: auto; 
+            padding: 16px; 
+            color: #e6b800; 
+            font-weight: bold; 
+            font-size: 20px; 
+            border-radius: 0 3px 3px 0; 
+            user-select: none; 
+            -webkit-user-select: none; 
+            z-index: 10; 
+        }
+        .prev { left: 0; }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: #b30000; }
+        .numbertext { 
+            color: #e6b800; 
+            font-size: 12px; 
+            padding: 8px 12px; 
+            position: absolute; 
+            top: 0; 
+            z-index: 10; 
+        }
+        .caption-container { 
+            text-align: center; 
+            background-color: #1e2a44; 
+            padding: 2px 16px; 
+            color: #e6b800; 
+        }
+        .row { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin-top: 10px; 
+        }
+        .column { 
+            flex: 0 0 100.0%; 
+            max-width: 100px; 
+            padding: 5px; 
+        }
+        .demo { 
+            opacity: 0.6; 
+            width: 100%; 
+            height: auto; 
+            object-fit: cover; 
+        }
+        .active, .demo:hover { opacity: 1; }
+        .tab { 
+            overflow: hidden; 
+            margin: 20px auto; 
+            width: 80%; 
+            background-color: #2a3a5c; 
+            border-radius: 5px 5px 0 0; 
+        }
+        .tab button { 
+            background-color: #2a3a5c; 
+            color: #e6b800; 
+            float: left; 
+            border: none; 
+            outline: none; 
+            cursor: pointer; 
+            padding: 14px 16px; 
+            transition: 0.3s; 
+            font-size: 17px; 
+            width: 50%; 
+        }
+        .tab button:hover { background-color: #b30000; }
+        .tab button.active { background-color: #3b4a6b; }
+        .tabcontent { 
+            display: none; 
+            padding: 6px 12px; 
+            border-top: none; 
+            background-color: #2a3a5c; 
+            margin: 0 auto; 
+            width: 80%; 
+            border-radius: 0 0 5px 5px; 
+        }
+        #Videos { display: block; }
+        @media only screen and (max-width: 1800px) { 
+            .titles-grid { grid-template-columns: repeat(2, 1fr); } 
+        }
+        @media only screen and (max-width: 1200px) { 
+            .titles-grid { grid-template-columns: 1fr; } 
+        }
+        @media only screen and (max-width: 768px) { 
+            .container { width: 80%; max-height: 400px; } 
+            h1 { width: 80%; margin: 10px auto; font-size: 30px; }
+            .rank-container { width: 80%; flex-direction: column; gap: 10px; } 
+            .chart-container { max-width: 100%; } 
+            .column { flex: 0 0 80px; max-width: 80px; } 
+            .mySlides img { object-fit: contain; } 
+            .tab button { font-size: 14px; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Jia Lissa</h1>
+    <div class="rank-container">
+        <div class="chart-container"><h2>Rank History</h2><canvas id="rankChart"></canvas></div>
+        <p>Rank: <span class="rank-number" data-rank="5"></span></p>
+    </div>
+    <div class="container">
+<div class="mySlides"><div class="numbertext">1 / 1</div><img src="https://via.placeholder.com/1920x800" style="width:100%;height:auto;"></div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="caption-container"><p id="caption"></p></div>
+            <div class="row">
+        <div class="column"><img class="demo cursor" src="https://via.placeholder.com/1920x800" style="width:100%" onclick="currentSlide(1)" alt="Jia Lissa Photo 1"></div></div></div>
+    <div class="info"><p>Scenes: 4627</p><p>Last Scene: 19 days</p></div>
+    <div class="info">
+        <h2>Rating Hashtag Counts (#FIVE, #FOUR, #Three)</h2><ul class="hashtags"><li class="hashtag-item">#FIVE: 31</li>
+<li class="hashtag-item">#FOUR: 12</li>
+<li class="hashtag-item">#THREE: 3</li>
+</ul>
+        <h2>Scene Type Hashtag Counts</h2><ul class="hashtags"><li class="hashtag-item">#FF: 8</li>
+<li class="hashtag-item">#FFM: 15</li>
+<li class="hashtag-item">#FFMM: 2</li>
+<li class="hashtag-item">#FM: 15</li>
+<li class="hashtag-item">#FMM: 1</li>
+</ul>
+        <h2>Other Hashtag Counts</h2><ul class="hashtags"><li class="hashtag-item">#Blacked: 6</li>
+<li class="hashtag-item">#Brazzers: 1</li>
+<li class="hashtag-item">#DeepThroat: 1</li>
+<li class="hashtag-item">#DorcelClub: 2</li>
+<li class="hashtag-item">#FFF: 1</li>
+<li class="hashtag-item">#FREEONES: 1</li>
+<li class="hashtag-item">#FRESHPORNO: 1</li>
+<li class="hashtag-item">#FaceSitting: 1</li>
+<li class="hashtag-item">#Facial: 3</li>
+<li class="hashtag-item">#Futanari: 1</li>
+<li class="hashtag-item">#GalleryOnly: 4</li>
+<li class="hashtag-item">#GizelleBlanco: 1</li>
+<li class="hashtag-item">#Hairy: 3</li>
+<li class="hashtag-item">#Interracial: 2</li>
+<li class="hashtag-item">#JiaLissa: 15</li>
+<li class="hashtag-item">#Jia_LIssa: 1</li>
+<li class="hashtag-item">#Jia_Lissa: 3</li>
+<li class="hashtag-item">#LIST: 1</li>
+<li class="hashtag-item">#MetArt: 3</li>
+<li class="hashtag-item">#NaturalTits: 3</li>
+<li class="hashtag-item">#NoPhotos: 1</li>
+<li class="hashtag-item">#OF: 6</li>
+<li class="hashtag-item">#Outdoors: 1</li>
+<li class="hashtag-item">#Redhead: 2</li>
+<li class="hashtag-item">#Rimming: 2</li>
+<li class="hashtag-item">#SEXART: 1</li>
+<li class="hashtag-item">#SOLO: 7</li>
+<li class="hashtag-item">#ScarlettJones: 2</li>
+<li class="hashtag-item">#Slayed: 2</li>
+<li class="hashtag-item">#SmallTits: 1</li>
+<li class="hashtag-item">#TUSHY: 1</li>
+<li class="hashtag-item">#Tattoo: 2</li>
+<li class="hashtag-item">#Threesome: 3</li>
+<li class="hashtag-item">#Tushy: 2</li>
+<li class="hashtag-item">#VIXEN: 5</li>
+<li class="hashtag-item">#Vika_Lita: 1</li>
+<li class="hashtag-item">#VivThomas: 3</li>
+<li class="hashtag-item">#WhiteBoxxx: 1</li>
+<li class="hashtag-item">#babes: 2</li>
+<li class="hashtag-item">#facefitnesseveryday: 1</li>
+<li class="hashtag-item">#jialissa: 1</li>
+<li class="hashtag-item">#lasirena69: 1</li>
+<li class="hashtag-item">#vixen: 2</li>
+</ul>
+    </div>
+    <div class="info">
+        <h2>Titles</h2>
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'Videos')">Videos</button>
+            <button class="tablinks" onclick="openTab(event, 'Table')">Table</button>
+        </div>
+        <div id="Videos" class="tabcontent">
+            <p>Total Titles: 43</p><div class='titles-grid' id='titlesGrid'>
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Futanari Jia’s Punishment' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/4683' target='_blank'>Futanari Jia’s Punishment</a></p>
+                    <p class='date'>S.No: 43 | 2025-04-28</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for VivThomas Emily Mayers, Jia Lissa - Passionate Session (24.06.2021) - 130x' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/4527' target='_blank'>VivThomas Emily Mayers, Jia Lissa - Passionate Session (24.06.2021) - 130x</a></p>
+                    <p class='date'>S.No: 42 | 2025-01-09</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for VivThomas Hayli Sanders & Jia Lissa - Work Can Wait - x115 - 8688px (25-05-2020)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2261' target='_blank'>VivThomas Hayli Sanders & Jia Lissa - Work Can Wait - x115 - 8688px (25-05-2020)</a></p>
+                    <p class='date'>S.No: 23 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SexArt Auburn' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2388' target='_blank'>SexArt Auburn</a></p>
+                    <p class='date'>S.No: 24 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Jia Lissa, Liya Silver Together' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2515' target='_blank'>Blacked Jia Lissa, Liya Silver Together</a></p>
+                    <p class='date'>S.No: 25 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for BLACKED Secret Session' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2551' target='_blank'>BLACKED Secret Session</a></p>
+                    <p class='date'>S.No: 26 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked The Real Thing' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2668' target='_blank'>Blacked The Real Thing</a></p>
+                    <p class='date'>S.No: 27 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Jia Lissa, Stacy Cruz - Best Friends Share (02.09.2019) - 118x' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2807' target='_blank'>Blacked Jia Lissa, Stacy Cruz - Best Friends Share (02.09.2019) - 118x</a></p>
+                    <p class='date'>S.No: 28 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Jia Lissa & Lika Star - Fierce Competition (121x) [3000X2000] 28/11/2021' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2930' target='_blank'>Blacked Jia Lissa & Lika Star - Fierce Competition (121x) [3000X2000] 28/11/2021</a></p>
+                    <p class='date'>S.No: 29 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Jia Lissa - Go Ahead Have Fun - x57 - 3000px - (01 Nov, 2019)' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/3056' target='_blank'>Blacked Jia Lissa - Go Ahead Have Fun - x57 - 3000px - (01 Nov, 2019)</a></p>
+                    <p class='date'>S.No: 30 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Brazzers Jia Lissa - Fucking The Hotel Staff' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/3118' target='_blank'>Brazzers Jia Lissa - Fucking The Hotel Staff</a></p>
+                    <p class='date'>S.No: 31 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MetArt Jia Lissa - Ginger Snap - 120 Photos - Jul 01, 2021' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/3290' target='_blank'>MetArt Jia Lissa - Ginger Snap - 120 Photos - Jul 01, 2021</a></p>
+                    <p class='date'>S.No: 32 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MetArt Jia Lissa - Sheer Perfection (May 03, 2020) 120x' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/3456' target='_blank'>MetArt Jia Lissa - Sheer Perfection (May 03, 2020) 120x</a></p>
+                    <p class='date'>S.No: 33 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for MetArt Jia Lissa - Summer Sun - 120 Photos - Apr 25, 2021' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/3582' target='_blank'>MetArt Jia Lissa - Summer Sun - 120 Photos - Apr 25, 2021</a></p>
+                    <p class='date'>S.No: 34 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen JIA LISSA, AGATHA VEGA - Jia Episode 1 - 113 Photos - 3000px - Sep 13, 2021' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/3712' target='_blank'>Vixen JIA LISSA, AGATHA VEGA - Jia Episode 1 - 113 Photos - 3000px - Sep 13, 2021</a></p>
+                    <p class='date'>S.No: 35 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for VivThomas Jia Lissa & Sybil A - Beautiful 140x 8688 × 5792 05-10-2018' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/3830' target='_blank'>VivThomas Jia Lissa & Sybil A - Beautiful 140x 8688 × 5792 05-10-2018</a></p>
+                    <p class='date'>S.No: 36 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy Jia Episode 4' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/3977' target='_blank'>Tushy Jia Episode 4</a></p>
+                    <p class='date'>S.No: 37 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen Jia Lissa - Passion For Fashion (30.03.2019) - 65x' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/3980' target='_blank'>Vixen Jia Lissa - Passion For Fashion (30.03.2019) - 65x</a></p>
+                    <p class='date'>S.No: 38 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen Jia Lissa , Red Fox - I Couldn't Wait To Meet Him 01/09/19 | 3000 px | 161 pics | 217 MB' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/4051' target='_blank'>Vixen Jia Lissa , Red Fox - I Couldn't Wait To Meet Him 01/09/19 | 3000 px | 161 pics | 217 MB</a></p>
+                    <p class='date'>S.No: 39 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for https://t.me/c/1689321840/4051' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/4218' target='_blank'>https://t.me/c/1689321840/4051</a></p>
+                    <p class='date'>S.No: 40 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for VIXEN Tying Up Loose Ends Lena Reif, Jia Lissa' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/4342' target='_blank'>VIXEN Tying Up Loose Ends Lena Reif, Jia Lissa</a></p>
+                    <p class='date'>S.No: 41 | 2024-12-17</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen Jia Lissa and Ellie Leen A Time And Place' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2146' target='_blank'>Vixen Jia Lissa and Ellie Leen A Time And Place</a></p>
+                    <p class='date'>S.No: 22 | 2024-06-14</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Jia Lissa, Lily Blossom - Hotel Vixen Season 2 Episode 8 Satisfied Customer' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2028' target='_blank'>Blacked Jia Lissa, Lily Blossom - Hotel Vixen Season 2 Episode 8 Satisfied Customer</a></p>
+                    <p class='date'>S.No: 21 | 2024-06-11</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for ONLYFANS' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2007' target='_blank'>ONLYFANS</a></p>
+                    <p class='date'>S.No: 20 | 2024-06-06</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for VIXEN Jia Episode 3 JIA LISSA, SONYA BLAZE' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/1875' target='_blank'>VIXEN Jia Episode 3 JIA LISSA, SONYA BLAZE</a></p>
+                    <p class='date'>S.No: 19 | 2024-06-05</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Vixen Jia Lissa, Lacy Lennon - Unforgettable' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/750' target='_blank'>Vixen Jia Lissa, Lacy Lennon - Unforgettable</a></p>
+                    <p class='date'>S.No: 18 | 2024-03-01</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for VIXEN Jia Lissa, Tori Black / When In Paris' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/563' target='_blank'>VIXEN Jia Lissa, Tori Black / When In Paris</a></p>
+                    <p class='date'>S.No: 17 | 2024-02-28</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Slayed Jia Lissa, Scarlett Jones - Makes Jilted Jia Forget All About Boyfriend' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/421' target='_blank'>Slayed Jia Lissa, Scarlett Jones - Makes Jilted Jia Forget All About Boyfriend</a></p>
+                    <p class='date'>S.No: 16 | 2024-02-07</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for VIXEN Pornstar Jia Gives Into Her Real Lust For Co star' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/279' target='_blank'>VIXEN Pornstar Jia Gives Into Her Real Lust For Co star</a></p>
+                    <p class='date'>S.No: 15 | 2024-01-19</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for SLAYED Dollhouse 3 JIA LISSA & MERRY PIE' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/215' target='_blank'>SLAYED Dollhouse 3 JIA LISSA & MERRY PIE</a></p>
+                    <p class='date'>S.No: 14 | 2024-01-09</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for JIA LISSA FOR MY WIFEJIA LISSA | VIKA LITA' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/207' target='_blank'>JIA LISSA FOR MY WIFEJIA LISSA | VIKA LITA</a></p>
+                    <p class='date'>S.No: 13 | 2023-12-14</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy DP' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/182' target='_blank'>Tushy DP</a></p>
+                    <p class='date'>S.No: 11 | 2023-12-07</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Jia Lissa's Desires' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/194' target='_blank'>Jia Lissa's Desires</a></p>
+                    <p class='date'>S.No: 12 | 2023-12-07</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for FreeOnes' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/164' target='_blank'>FreeOnes</a></p>
+                    <p class='date'>S.No: 10 | 2023-10-23</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Fresh porn' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/139' target='_blank'>Fresh porn</a></p>
+                    <p class='date'>S.No: 7 | 2023-10-16</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for DEEPER Lawless P5' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/142' target='_blank'>DEEPER Lawless P5</a></p>
+                    <p class='date'>S.No: 8 | 2023-10-16</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for TUSHY Hotel Vixen Episode 9: Irresistible Jia' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/152' target='_blank'>TUSHY Hotel Vixen Episode 9: Irresistible Jia</a></p>
+                    <p class='date'>S.No: 9 | 2023-10-16</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Slyde ModelJiaLissa GizelleBlanco' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/26' target='_blank'>Slyde ModelJiaLissa GizelleBlanco</a></p>
+                    <p class='date'>S.No: 6 | 2023-09-04</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for VIXEN I Love Paris' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/23' target='_blank'>VIXEN I Love Paris</a></p>
+                    <p class='date'>S.No: 5 | 2023-08-23</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for A Girl Knows Three Honey Bunnies Jia Lissa, Liya Silver, Sonya Blaze' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/2' target='_blank'>A Girl Knows Three Honey Bunnies Jia Lissa, Liya Silver, Sonya Blaze</a></p>
+                    <p class='date'>S.No: 1 | 2023-08-21</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Tushy Jia4' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/11' target='_blank'>Tushy Jia4</a></p>
+                    <p class='date'>S.No: 2 | 2023-08-21</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for Blacked Jia 2 LITTLE DRAGON' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/18' target='_blank'>Blacked Jia 2 LITTLE DRAGON</a></p>
+                    <p class='date'>S.No: 3 | 2023-08-21</p>
+                </div>
+            
+                <div class='grid-item'>
+                    <img src='https://via.placeholder.com/600x300' alt='Media for White Boxx' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>
+                    <p class='title'><a href='https://t.me/c/1689321840/19' target='_blank'>White Boxx</a></p>
+                    <p class='date'>S.No: 4 | 2023-08-21</p>
+                </div>
+            </div>
+        </div>
+        <div id="Table" class="tabcontent">
+            <table class='titles-table' id='titlesTable'><thead><tr><th onclick='sortTitlesTable(0)'>S.No</th><th onclick='sortTitlesTable(1)'>Items</th><th onclick='sortTitlesTable(2)'>Date</th></tr></thead><tbody id='titlesTableBody'><tr><td>43</td><td><a href='https://t.me/c/1689321840/4683' target='_blank'>Futanari Jia’s Punishment</a></td><td>2025-04-28</td></tr><tr><td>42</td><td><a href='https://t.me/c/1689321840/4527' target='_blank'>VivThomas Emily Mayers, Jia Lissa - Passionate Session (24.06.2021) - 130x</a></td><td>2025-01-09</td></tr><tr><td>23</td><td><a href='https://t.me/c/1689321840/2261' target='_blank'>VivThomas Hayli Sanders & Jia Lissa - Work Can Wait - x115 - 8688px (25-05-2020)</a></td><td>2024-12-17</td></tr><tr><td>24</td><td><a href='https://t.me/c/1689321840/2388' target='_blank'>SexArt Auburn</a></td><td>2024-12-17</td></tr><tr><td>25</td><td><a href='https://t.me/c/1689321840/2515' target='_blank'>Blacked Jia Lissa, Liya Silver Together</a></td><td>2024-12-17</td></tr><tr><td>26</td><td><a href='https://t.me/c/1689321840/2551' target='_blank'>BLACKED Secret Session</a></td><td>2024-12-17</td></tr><tr><td>27</td><td><a href='https://t.me/c/1689321840/2668' target='_blank'>Blacked The Real Thing</a></td><td>2024-12-17</td></tr><tr><td>28</td><td><a href='https://t.me/c/1689321840/2807' target='_blank'>Blacked Jia Lissa, Stacy Cruz - Best Friends Share (02.09.2019) - 118x</a></td><td>2024-12-17</td></tr><tr><td>29</td><td><a href='https://t.me/c/1689321840/2930' target='_blank'>Blacked Jia Lissa & Lika Star - Fierce Competition (121x) [3000X2000] 28/11/2021</a></td><td>2024-12-17</td></tr><tr><td>30</td><td><a href='https://t.me/c/1689321840/3056' target='_blank'>Blacked Jia Lissa - Go Ahead Have Fun - x57 - 3000px - (01 Nov, 2019)</a></td><td>2024-12-17</td></tr><tr><td>31</td><td><a href='https://t.me/c/1689321840/3118' target='_blank'>Brazzers Jia Lissa - Fucking The Hotel Staff</a></td><td>2024-12-17</td></tr><tr><td>32</td><td><a href='https://t.me/c/1689321840/3290' target='_blank'>MetArt Jia Lissa - Ginger Snap - 120 Photos - Jul 01, 2021</a></td><td>2024-12-17</td></tr><tr><td>33</td><td><a href='https://t.me/c/1689321840/3456' target='_blank'>MetArt Jia Lissa - Sheer Perfection (May 03, 2020) 120x</a></td><td>2024-12-17</td></tr><tr><td>34</td><td><a href='https://t.me/c/1689321840/3582' target='_blank'>MetArt Jia Lissa - Summer Sun - 120 Photos - Apr 25, 2021</a></td><td>2024-12-17</td></tr><tr><td>35</td><td><a href='https://t.me/c/1689321840/3712' target='_blank'>Vixen JIA LISSA, AGATHA VEGA - Jia Episode 1 - 113 Photos - 3000px - Sep 13, 2021</a></td><td>2024-12-17</td></tr><tr><td>36</td><td><a href='https://t.me/c/1689321840/3830' target='_blank'>VivThomas Jia Lissa & Sybil A - Beautiful 140x 8688 × 5792 05-10-2018</a></td><td>2024-12-17</td></tr><tr><td>37</td><td><a href='https://t.me/c/1689321840/3977' target='_blank'>Tushy Jia Episode 4</a></td><td>2024-12-17</td></tr><tr><td>38</td><td><a href='https://t.me/c/1689321840/3980' target='_blank'>Vixen Jia Lissa - Passion For Fashion (30.03.2019) - 65x</a></td><td>2024-12-17</td></tr><tr><td>39</td><td><a href='https://t.me/c/1689321840/4051' target='_blank'>Vixen Jia Lissa , Red Fox - I Couldn't Wait To Meet Him 01/09/19 | 3000 px | 161 pics | 217 MB</a></td><td>2024-12-17</td></tr><tr><td>40</td><td><a href='https://t.me/c/1689321840/4218' target='_blank'>https://t.me/c/1689321840/4051</a></td><td>2024-12-17</td></tr><tr><td>41</td><td><a href='https://t.me/c/1689321840/4342' target='_blank'>VIXEN Tying Up Loose Ends Lena Reif, Jia Lissa</a></td><td>2024-12-17</td></tr><tr><td>22</td><td><a href='https://t.me/c/1689321840/2146' target='_blank'>Vixen Jia Lissa and Ellie Leen A Time And Place</a></td><td>2024-06-14</td></tr><tr><td>21</td><td><a href='https://t.me/c/1689321840/2028' target='_blank'>Blacked Jia Lissa, Lily Blossom - Hotel Vixen Season 2 Episode 8 Satisfied Customer</a></td><td>2024-06-11</td></tr><tr><td>20</td><td><a href='https://t.me/c/1689321840/2007' target='_blank'>ONLYFANS</a></td><td>2024-06-06</td></tr><tr><td>19</td><td><a href='https://t.me/c/1689321840/1875' target='_blank'>VIXEN Jia Episode 3 JIA LISSA, SONYA BLAZE</a></td><td>2024-06-05</td></tr><tr><td>18</td><td><a href='https://t.me/c/1689321840/750' target='_blank'>Vixen Jia Lissa, Lacy Lennon - Unforgettable</a></td><td>2024-03-01</td></tr><tr><td>17</td><td><a href='https://t.me/c/1689321840/563' target='_blank'>VIXEN Jia Lissa, Tori Black / When In Paris</a></td><td>2024-02-28</td></tr><tr><td>16</td><td><a href='https://t.me/c/1689321840/421' target='_blank'>Slayed Jia Lissa, Scarlett Jones - Makes Jilted Jia Forget All About Boyfriend</a></td><td>2024-02-07</td></tr><tr><td>15</td><td><a href='https://t.me/c/1689321840/279' target='_blank'>VIXEN Pornstar Jia Gives Into Her Real Lust For Co star</a></td><td>2024-01-19</td></tr><tr><td>14</td><td><a href='https://t.me/c/1689321840/215' target='_blank'>SLAYED Dollhouse 3 JIA LISSA & MERRY PIE</a></td><td>2024-01-09</td></tr><tr><td>13</td><td><a href='https://t.me/c/1689321840/207' target='_blank'>JIA LISSA FOR MY WIFEJIA LISSA | VIKA LITA</a></td><td>2023-12-14</td></tr><tr><td>11</td><td><a href='https://t.me/c/1689321840/182' target='_blank'>Tushy DP</a></td><td>2023-12-07</td></tr><tr><td>12</td><td><a href='https://t.me/c/1689321840/194' target='_blank'>Jia Lissa's Desires</a></td><td>2023-12-07</td></tr><tr><td>10</td><td><a href='https://t.me/c/1689321840/164' target='_blank'>FreeOnes</a></td><td>2023-10-23</td></tr><tr><td>7</td><td><a href='https://t.me/c/1689321840/139' target='_blank'>Fresh porn</a></td><td>2023-10-16</td></tr><tr><td>8</td><td><a href='https://t.me/c/1689321840/142' target='_blank'>DEEPER Lawless P5</a></td><td>2023-10-16</td></tr><tr><td>9</td><td><a href='https://t.me/c/1689321840/152' target='_blank'>TUSHY Hotel Vixen Episode 9: Irresistible Jia</a></td><td>2023-10-16</td></tr><tr><td>6</td><td><a href='https://t.me/c/1689321840/26' target='_blank'>Slyde ModelJiaLissa GizelleBlanco</a></td><td>2023-09-04</td></tr><tr><td>5</td><td><a href='https://t.me/c/1689321840/23' target='_blank'>VIXEN I Love Paris</a></td><td>2023-08-23</td></tr><tr><td>1</td><td><a href='https://t.me/c/1689321840/2' target='_blank'>A Girl Knows Three Honey Bunnies Jia Lissa, Liya Silver, Sonya Blaze</a></td><td>2023-08-21</td></tr><tr><td>2</td><td><a href='https://t.me/c/1689321840/11' target='_blank'>Tushy Jia4</a></td><td>2023-08-21</td></tr><tr><td>3</td><td><a href='https://t.me/c/1689321840/18' target='_blank'>Blacked Jia 2 LITTLE DRAGON</a></td><td>2023-08-21</td></tr><tr><td>4</td><td><a href='https://t.me/c/1689321840/19' target='_blank'>White Boxx</a></td><td>2023-08-21</td></tr></tbody></table>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) { 
+            clearInterval(autoSlide); 
+            showSlides(slideIndex += n); 
+            autoSlide = setInterval(() => plusSlides(1), 3000); 
+        }
+        function currentSlide(n) { 
+            clearInterval(autoSlide); 
+            showSlides(slideIndex = n); 
+            autoSlide = setInterval(() => plusSlides(1), 3000); 
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) { 
+                slides[i].style.display = "none"; 
+            }
+            for (i = 0; i < dots.length; i++) { 
+                dots[i].className = dots[i].className.replace(" active", ""); 
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+        let autoSlide = setInterval(() => plusSlides(1), 3000);
+
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Chart.js for rank history
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('rankChart').getContext('2d');
+            const historyData = [];
+            const dates = historyData.map(entry => entry.date);
+            const ranks = historyData.map(entry => entry.rank);
+            new Chart(ctx, {
+                type: 'line',
+                data: { 
+                    labels: dates, 
+                    datasets: [{
+                        label: 'Rank Over Time', 
+                        data: ranks, 
+                        borderColor: '#e6b800', 
+                        backgroundColor: 'rgba(230, 184, 0, 0.2)', 
+                        fill: true, 
+                        tension: 0.4 
+                    }] 
+                },
+                options: { 
+                    scales: { 
+                        y: { 
+                            beginAtZero: true, 
+                            title: { display: true, text: 'Rank', color: '#e6b800' }, 
+                            ticks: { stepSize: 1, color: '#ffffff' }, 
+                            suggestedMax: 353,
+                            grid: { color: '#3b4a6b' }
+                        }, 
+                        x: { 
+                            title: { display: true, text: 'Date', color: '#e6b800' },
+                            ticks: { color: '#ffffff' },
+                            grid: { color: '#3b4a6b' }
+                        } 
+                    }, 
+                    plugins: { 
+                        legend: { display: true, labels: { color: '#e6b800' } } 
+                    } 
+                }
+            });
+
+            // Add hover-to-play for videos in titles grid
+            const videos = document.querySelectorAll('.grid-item video');
+            videos.forEach(video => {
+                video.addEventListener('mouseover', () => {
+                    video.play().catch(error => {
+                        console.error('Error playing video:', error);
+                    });
+                });
+                video.addEventListener('mouseout', () => {
+                    video.pause();
+                });
+            });
+
+            // Initialize titles table sorted by S.No descending (highest ID at top)
+            sortTitlesTable(0, -1); // Sort by S.No column, highest first
+        });
+
+        // Titles table and grid sorting
+        let titlesSortDirections = [-1, 0, 0]; // S.No starts descending
+        function sortTitlesTable(columnIndex, forceDirection) {
+            const tbody = document.getElementById('titlesTableBody');
+            const rows = Array.from(tbody.getElementsByTagName('tr'));
+            const direction = forceDirection !== undefined ? forceDirection : (titlesSortDirections[columnIndex] === 1 ? -1 : 1);
+            rows.sort((a, b) => {
+                let aValue = a.cells[columnIndex].innerText;
+                let bValue = b.cells[columnIndex].innerText;
+                if (columnIndex === 0) { // S.No column
+                    aValue = parseInt(aValue);
+                    bValue = parseInt(bValue);
+                    return direction * (aValue - bValue);
+                } else if (columnIndex === 2) { // Date column
+                    aValue = new Date(aValue);
+                    bValue = new Date(bValue);
+                    return direction * (aValue - bValue);
+                } else if (columnIndex === 1) { // Items column
+                    return direction * aValue.localeCompare(bValue);
+                }
+                return 0;
+            });
+            while (tbody.firstChild) { 
+                tbody.removeChild(tbody.firstChild); 
+            }
+            rows.forEach(row => tbody.appendChild(row));
+            titlesSortDirections[columnIndex] = direction;
+            titlesSortDirections = titlesSortDirections.map((d, i) => i === columnIndex ? d : 0);
+            // Sync grid with table
+            sortTitlesGrid(columnIndex, direction);
+        }
+
+        function sortTitlesGrid(columnIndex, direction) {
+            const grid = document.getElementById('titlesGrid');
+            const items = Array.from(grid.getElementsByClassName('grid-item'));
+            items.sort((a, b) => {
+                let aValue, bValue;
+                if (columnIndex === 0) { // S.No
+                    aValue = parseInt(a.querySelector('.date').innerText.split('S.No: ')[1].split(' | ')[0]);
+                    bValue = parseInt(b.querySelector('.date').innerText.split('S.No: ')[1].split(' | ')[0]);
+                    return direction * (aValue - bValue);
+                } else if (columnIndex === 1) { // Items
+                    aValue = a.querySelector('.title').innerText;
+                    bValue = b.querySelector('.title').innerText;
+                    return direction * aValue.localeCompare(bValue);
+                } else if (columnIndex === 2) { // Date
+                    aValue = new Date(a.querySelector('.date').innerText.split(' | ')[1]);
+                    bValue = new Date(b.querySelector('.date').innerText.split(' | ')[1]);
+                    return direction * (aValue - bValue);
+                }
+                return 0;
+            });
+            while (grid.firstChild) { 
+                grid.removeChild(grid.firstChild); 
+            }
+            items.forEach(item => grid.appendChild(item));
+        }
+    </script>
+</body>
+</html>
