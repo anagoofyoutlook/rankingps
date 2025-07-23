@@ -79,7 +79,7 @@ with open(temp_json_file, 'r', encoding='utf-8') as f:
 # Clean up the temporary JSON file
 try:
     os.remove(temp_json_file)
-    print(f"Cleaned up temporary file: {temp_json_file}")
+    print(f"Removed temporary file: {temp_json_file}")
 except OSError as e:
     print(f"Warning: Could not remove {temp_json_file}: {e}")
 
@@ -87,15 +87,17 @@ except OSError as e:
 chats = data.get('chats', {}).get('list', [])
 print(f"Found {len(chats)} chats in result.json")
 if not chats:
-    print("No chats found in 'result.json'. Please verify the file content.")
+    print("No chats found in 'result.json'. Exiting.")
     exit(1)
 
 # Define CSV columns
 csv_columns = [
-    'date', 'group name', 'total messages', 'Datedifference',
-    'count of the hashtag "#FIVE"', 'count of the hashtag "#FOUR"',
-    'count of the hashtag "#Three"', 'count of the hashtag "#SceneType"',
-    'score', 'rank', 'total titles'
+    'date', 'group name', 'rank', 'last rank', 'up down', 'total messages', 'Datedifference',
+    'count of the hashtag "#FIVE"',
+    'count of the hashtag "#FOUR"',
+    'count of the hashtag "#Three"',
+    'count of the hashtag "#SceneType"',
+    'score', 'total titles'
 ]
 
 # Define history CSV columns
@@ -103,18 +105,27 @@ history_columns = ['date', 'group name', 'rank']
 
 # Load existing history data
 history_data = {}
+current_date = datetime.now().strftime('%Y-%m-%d')
 if os.path.exists(history_csv_file):
     with open(history_csv_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
             group = row.get('group name', 'Unknown')
+            date = row.get('date', '')
             try:
-                rank = int(float(row.get('rank', '0')))
+                rank = int(row.get('rank', '0'))
                 if group not in history_data:
-                    history_data[group] = []
-                history_data[group].append({'date': row.get('date', ''), 'rank': rank})
+                    history_data[group] = {}
+                if date != current_date:  # Exclude current date entries
+                    # Store entries by date, keep the lowest (highest-ranking) rank
+                    if date not in history_data[group] or rank < history_data[group][date]['rank']:
+                        history_data[group][date] = {'date': date, 'rank': rank}
             except (ValueError, TypeError) as e:
-                print(f"Skipping invalid rank for group '{group}': {row}. Error: {e}")
+                print(f"Skipping invalid rank for group '{group}' on date '{date}': {row}. Error: {e}")
+    # Convert history_data[group] from dict to list
+    for group in history_data:
+        history_data[group] = list(history_data[group].values())
+        history_data[group].sort(key=lambda x: x['date'])  # Sort by date for chart
     print(f"Loaded {sum(len(v) for v in history_data.values())} history entries from {history_csv_file}")
 else:
     print(f"No existing {history_csv_file} found")
@@ -123,7 +134,6 @@ else:
 all_data = []
 max_messages = 0
 date_diffs = []
-current_date = datetime.now().strftime('%Y-%m-%d')
 
 # Function to sanitize filenames
 def sanitize_filename(name):
@@ -250,9 +260,9 @@ for chat in chats:
         titles_grid = f"<p>Total Titles: {titles_count}</p><div class='titles-grid' id='titlesGrid'>"
         for t in titles:
             media_element = (
-                f"<img src='{t['media_path']}' alt='Media for {t['title']}' style='width:100%;max-width:600px;height:300px;object-fit:cover;'>"
+                f"<img src='{t['media_path']}' alt='Media for {t['title']}' style='width:100%;height:300px;object-fit:cover;border-radius:5px;'>"
                 if t['is_gif'] or t['media_path'] == 'https://via.placeholder.com/600x300'
-                else f"<video src='{t['media_path']}' style='width:100%;max-width:600px;height:300px;object-fit:cover;' loop muted playsinline></video>"
+                else f"<video src='{t['media_path']}' style='width:100%;height:300px;object-fit:cover;border-radius:5px;' loop muted playsinline></video>"
             )
             titles_grid += f"""
                 <div class='grid-item'>
@@ -307,12 +317,12 @@ for chat in chats:
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <style>
         body {{ font-family: Arial, sans-serif; margin: 20px; background-color: #1e2a44; color: #ffffff; text-align: center; }}
-        h1, h2 {{ color: #e6b800; width: 80%; margin: 20px auto; text-align: center; font-size: 36px; }}
-        .info {{ background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; }}
+        h1, h2 {{ color: #e6b800; width: 90%; margin: 20px auto; text-align: center; font-size: 36px; }}
+        .info {{ background-color: #2a3a5c; padding: 10px; border-radius: 5px; margin-bottom: 20px; width: 90%; margin-left: auto; margin-right: auto; }}
         .hashtags {{ list-style-type: none; padding: 0; }}
         .hashtag-item {{ background-color: #3b4a6b; margin: 5px 0; padding: 5px; border-radius: 3px; display: inline-block; width: 200px; color: #ffffff; }}
         .rank-container {{ 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             display: flex; 
             justify-content: center; 
@@ -329,9 +339,8 @@ for chat in chats:
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 20px; 
-            margin: 20px auto; 
-            max-width: 1800px; 
-            width: 80%; 
+            margin: 20px 0; 
+            width: 100%; 
             box-sizing: border-box; 
         }}
         .grid-item {{ 
@@ -347,10 +356,9 @@ for chat in chats:
         }}
         .grid-item video, .grid-item img {{ 
             width: 100%; 
-            max-width: 600px; 
             height: 300px; 
-            object-fit: cover; 
             border-radius: 5px; 
+            object-fit: cover; 
         }}
         .grid-item .title {{ 
             margin: 10px 0 5px; 
@@ -364,8 +372,8 @@ for chat in chats:
             color: #cccccc; 
         }}
         .titles-table {{ 
-            width: 80%; 
-            margin: 20px auto; 
+            width: 100%; 
+            margin: 20px 0; 
             border-collapse: collapse; 
             background-color: #2a3a5c; 
         }}
@@ -388,7 +396,7 @@ for chat in chats:
         a:hover {{ color: #b30000; text-decoration: underline; }}
         .container {{ 
             position: relative; 
-            width: 80%; 
+            width: 90%; 
             margin: 20px auto; 
             height: auto; 
             max-height: 600px; 
@@ -461,7 +469,7 @@ for chat in chats:
         .tab {{ 
             overflow: hidden; 
             margin: 20px auto; 
-            width: 80%; 
+            width: 90%; 
             background-color: #2a3a5c; 
             border-radius: 5px 5px 0 0; 
         }}
@@ -485,20 +493,23 @@ for chat in chats:
             border-top: none; 
             background-color: #2a3a5c; 
             margin: 0 auto; 
-            width: 80%; 
+            width: 90%; 
             border-radius: 0 0 5px 5px; 
         }}
         #Videos {{ display: block; }}
-        @media only screen and (max-width: 1800px) {{ 
-            .titles-grid {{ grid-template-columns: repeat(2, 1fr); }} 
-        }}
         @media only screen and (max-width: 1200px) {{ 
-            .titles-grid {{ grid-template-columns: 1fr; }} 
+            .titles-grid {{ grid-template-columns: repeat(3, 1fr); }} 
+            .grid-item video, .grid-item img {{ height: 200px; }}
+            h1, .info, .container, .tab, .tabcontent {{ width: 90%; }}
+            .rank-container {{ width: 90%; }}
         }}
         @media only screen and (max-width: 768px) {{ 
-            .container {{ width: 80%; max-height: 400px; }} 
-            h1 {{ width: 80%; margin: 10px auto; font-size: 30px; }}
-            .rank-container {{ width: 80%; flex-direction: column; gap: 10px; }} 
+            .titles-grid {{ grid-template-columns: repeat(3, 1fr); }} 
+            .grid-item video, .grid-item img {{ height: 150px; }}
+            .container {{ width: 90%; max-height: 400px; }} 
+            h1 {{ margin: 10px auto; font-size: 30px; }}
+            .info, .tab, .tabcontent, .rank-container {{ width: 90%; }}
+            .rank-container {{ flex-direction: column; gap: 10px; }} 
             .chart-container {{ max-width: 100%; }} 
             .column {{ flex: 0 0 80px; max-width: 80px; }} 
             .mySlides img {{ object-fit: contain; }} 
@@ -607,8 +618,8 @@ for chat in chats:
                             grid: {{ color: '#3b4a6b' }}
                         }}, 
                         x: {{ 
-                            title: {{ display: true, text: 'Date', color: '#e6b800' }},
-                            ticks: {{ color: '#ffffff' }},
+                            title: {{ display: true, text: 'Date', color: '#e6b800' }}, 
+                            ticks: {{ color: '#ffffff' }}, 
                             grid: {{ color: '#3b4a6b' }}
                         }} 
                     }}, 
@@ -697,6 +708,14 @@ for chat in chats:
 </html>
 """
 
+        # Find last rank and its date from history_data
+        last_rank = 'N/A'
+        last_rank_date = 'N/A'
+        if group_name in history_data and history_data[group_name]:
+            sorted_history = sorted(history_data[group_name], key=lambda x: x['date'], reverse=True)
+            last_rank = sorted_history[0]['rank']
+            last_rank_date = sorted_history[0]['date']
+
         sanitized_name = sanitize_filename(group_name)
         html_file = f"{sanitized_name}_{group_id}.html"
         html_filename = os.path.join(html_subfolder, html_file)
@@ -712,6 +731,9 @@ for chat in chats:
             'count of the hashtag "#SceneType"': scene_type_count,
             'score': 0,
             'rank': 0,
+            'last rank': last_rank,
+            'last rank date': last_rank_date,
+            'up down': 'N/A',  # Will be calculated after ranking
             'total titles': titles_count,
             'html_file': html_file,
             'html_content': html_content,
@@ -740,6 +762,9 @@ for entry in all_data:
 sorted_data = sorted(all_data, key=lambda x: x['score'], reverse=True)
 for i, entry in enumerate(sorted_data, 1):
     entry['rank'] = i
+    # Calculate up down (last_rank - rank)
+    if entry['last rank'] != 'N/A':
+        entry['up down'] = int(entry['last rank']) - i
     history_data[entry['group name']].append({'date': current_date, 'rank': i})
     html_content_with_rank = entry['html_content'].replace('RANK_PLACEHOLDER', str(i))
     html_path = os.path.join(html_subfolder, entry['html_file'])
@@ -769,6 +794,50 @@ if new_history_rows:
 else:
     print(f"No new history entries to append to {history_csv_file}")
 
+# Generate top 5 up, down, and unchanged table
+up_groups = [entry for entry in sorted_data if entry['up down'] != 'N/A' and entry['up down'] > 0]
+down_groups = [entry for entry in sorted_data if entry['up down'] != 'N/A' and entry['up down'] < 0]
+unchanged_groups = [entry for entry in sorted_data if entry['up down'] == 0]
+
+# Sort by up_down (primary) and rank (secondary, ascending for higher rank)
+up_groups = sorted(up_groups, key=lambda x: (x['up down'], -x['rank']), reverse=True)[:5]
+down_groups = sorted(down_groups, key=lambda x: (x['up down'], -x['rank']), reverse=True)[:5]
+unchanged_groups = sorted(unchanged_groups, key=lambda x: x['rank'])[:5]  # Sort by rank ascending
+
+top_movers_rows = ''
+if up_groups or down_groups or unchanged_groups:
+    for group_list, title in [(up_groups, 'Top 5 Up'), (down_groups, 'Top 5 Down'), (unchanged_groups, 'Top 5 Unchanged')]:
+        if group_list:
+            top_movers_rows += f'<tr><th style="background-color: #b30000;">{title}</th></tr><tr>'
+            for entry in group_list:
+                group_name = escape(entry['group name'])
+                photo_src = entry['photo_file_name'] if entry['photo_file_name'] else 'https://via.placeholder.com/300'
+                html_link = f"HTML/{entry['html_file']}"
+                last_rank = entry['last rank']
+                last_rank_date = entry['last rank date']
+                last_rank_display = f"{last_rank} ({last_rank_date})" if last_rank != 'N/A' else 'N/A'
+                up_down = entry['up down']
+                if up_down > 0:
+                    up_down_content = f"{up_down} <img src='Photos/up.png' alt='Up' class='up-down-img'>"
+                elif up_down < 0:
+                    up_down_content = f"{up_down} <img src='Photos/down.png' alt='Down' class='up-down-img'>"
+                else:
+                    up_down_content = f"{up_down} <img src='Photos/0.png' alt='No Change' class='up-down-img'>"
+                top_movers_rows += f"""
+                    <td>
+                        <div class="mover-info">
+                            <p><strong>Name:</strong> <a href="{html_link}" target="_blank">{group_name}</a></p>
+                            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="{photo_src}" alt="{group_name}" style="width:300px;height:300px;object-fit:cover;"></div><div class="flip-card-back"><a href="{html_link}" target="_blank" style="color: #e6b800; text-decoration: none;"><h1>{group_name}</h1></a></div></div></div>
+                            <p><strong>Rank:</strong> {entry['rank']}</p>
+                            <p><strong>Last Rank:</strong> {last_rank_display}</p>
+                            <p><strong>Up Down:</strong> {up_down_content}</p>
+                        </div>
+                    </td>
+                """
+            top_movers_rows += '</tr>'
+else:
+    top_movers_rows = '<tr><td>No significant rank changes</td></tr>'
+
 # Generate ranking HTML
 total_groups = len(sorted_data)
 table_rows = ''
@@ -777,9 +846,24 @@ for entry in sorted_data:
     photo_src = entry['photo_file_name'] if entry['photo_file_name'] else 'https://via.placeholder.com/300'
     html_link = f"HTML/{entry['html_file']}"
     last_scene = f"{entry['Datedifference']} days" if entry['Datedifference'] != 'N/A' else 'N/A'
+    last_rank = entry['last rank']
+    last_rank_date = entry['last rank date']
+    last_rank_display = f"{last_rank} ({last_rank_date})" if last_rank != 'N/A' else 'N/A'
+    up_down = entry['up down']
+    # Add image based on up_down value
+    up_down_content = up_down
+    if up_down != 'N/A':
+        if up_down > 0:
+            up_down_content = f"{up_down} <img src='Photos/up.png' alt='Up' class='up-down-img'>"
+        elif up_down < 0:
+            up_down_content = f"{up_down} <img src='Photos/down.png' alt='Down' class='up-down-img'>"
+        else:  # up_down == 0
+            up_down_content = f"{up_down} <img src='Photos/0.png' alt='No Change' class='up-down-img'>"
     table_rows += f"""
     <tr>
         <td>{entry['rank']}</td>
+        <td>{last_rank_display}</td>
+        <td>{up_down_content}</td>
         <td><a href="{html_link}" target="_blank">{group_name}</a></td>
         <td><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="{photo_src}" alt="{group_name}" style="width:300px;height:300px;object-fit:cover;"></div><div class="flip-card-back"><a href="{html_link}" target="_blank" style="color: #e6b800; text-decoration: none;"><h1>{group_name}</h1></a></div></div></div></td>
         <td>{last_scene}</td>
@@ -806,45 +890,64 @@ ranking_html_content = f"""<!DOCTYPE html>
         th {{ background-color: #e6b800; color: #1e2a44; cursor: pointer; }}
         th:hover {{ background-color: #b30000; }}
         tr:hover {{ background-color: #3b4a6b; }}
+        .up-down-img {{ width: 20px; height: 20px; vertical-align: middle; }}
         a {{ text-decoration: none; color: #e6b800; }}
         a:hover {{ color: #b30000; text-decoration: underline; }}
-        .flip-card {{ background-color: transparent; width: 300px; height: 300px; perspective: 1000px; margin: auto; }}
+        .flip-card {{ background-color: transparent; width: 300px; height: 300px; perspective: 1000px; margin: 10px auto; }}
         .flip-card-inner {{ position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); }}
         .flip-card:hover .flip-card-inner {{ transform: rotateY(180deg); }}
         .flip-card-front, .flip-card-back {{ position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 5px; }}
         .flip-card-front {{ background-color: #2a3a5c; color: #ffffff; }}
         .flip-card-back {{ background-color: #3b4a6b; color: #e6b800; transform: rotateY(180deg); display: flex; justify-content: center; align-items: center; flex-direction: column; }}
         .flip-card-back h1 {{ margin: 0; font-size: 24px; word-wrap: break-word; padding: 10px; }}
+        .mover-info {{ display: flex; flex-direction: column; align-items: center; gap: 10px; width: 320px; }}
+        .mover-info p {{ margin: 5px 0; font-size: 16px; }}
+        #topMoversTable td {{ min-width: 340px; }}
         @media only screen and (max-width: 1200px) {{ 
             table {{ width: 90%; }} 
             .flip-card {{ width: 200px; height: 200px; }} 
             .flip-card-back h1 {{ font-size: 18px; }}
             th, td {{ font-size: 14px; padding: 10px; }}
+            .mover-info {{ width: 220px; }}
+            .mover-info p {{ font-size: 14px; }}
+            #topMoversTable td {{ min-width: 240px; }}
         }}
         @media only screen and (max-width: 768px) {{ 
             table {{ width: 95%; }} 
             .flip-card {{ width: 150px; height: 150px; }} 
             .flip-card-back h1 {{ font-size: 16px; }}
             th, td {{ font-size: 12px; padding: 8px; }}
+            .mover-info {{ width: 170px; }}
+            .mover-info p {{ font-size: 12px; }}
+            #topMoversTable td {{ min-width: 190px; }}
+            #topMoversTable {{ display: block; overflow-x: auto; white-space: nowrap; }}
         }}
     </style>
 </head>
 <body>
     <h1>PS Ranking - {current_date}</h1>
+    <h2>Top Movers</h2>
+    <table id="topMoversTable">
+        <tbody>
+            {top_movers_rows}
+        </tbody>
+    </table>
     <h2>Total Number of Groups: {total_groups}</h2>
     <table id="rankingTable">
         <thead>
             <tr>
                 <th onclick="sortTable(0)">Rank</th>
-                <th onclick="sortTable(1)">Group Name</th>
+                <th onclick="sortTable(1)">Last Rank</th>
+                <th onclick="sortTable(2)">Up Down</th>
+                <th onclick="sortTable(3)">Group Name</th>
                 <th>Photo</th>
-                <th onclick="sortTable(3)">Last Scene</th>
-                <th onclick="sortTable(4)">Total Titles</th>
-                <th onclick="sortTable(5)">#FIVE</th>
-                <th onclick="sortTable(6)">#FOUR</th>
-                <th onclick="sortTable(7)">#Three</th>
-                <th onclick="sortTable(8)">Thumbnails</th>
-                <th onclick="sortTable(9)">Score</th>
+                <th onclick="sortTable(5)">Last Scene</th>
+                <th onclick="sortTable(6)">Total Titles</th>
+                <th onclick="sortTable(7)">#FIVE</th>
+                <th onclick="sortTable(8)">#FOUR</th>
+                <th onclick="sortTable(9)">#Three</th>
+                <th onclick="sortTable(10)">Thumbnails</th>
+                <th onclick="sortTable(11)">Score</th>
             </tr>
         </thead>
         <tbody id="tableBody">
@@ -852,19 +955,34 @@ ranking_html_content = f"""<!DOCTYPE html>
         </tbody>
     </table>
     <script>
-        let sortDirections = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let sortDirections = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         function sortTable(columnIndex) {{
-            if (columnIndex === 2) return; // Skip Photo column
+            if (columnIndex === 4) return; // Skip Photo column
             const tbody = document.getElementById('tableBody');
             const rows = Array.from(tbody.getElementsByTagName('tr'));
-            const isNumeric = [true, false, false, true, true, true, true, true, true, true];
+            const isNumeric = [true, true, true, false, false, true, true, true, true, true, true, true];
             const direction = sortDirections[columnIndex] === 1 ? -1 : 1;
 
             rows.sort((a, b) => {{
-                let aValue = a.cells[columnIndex].innerText;
-                let bValue = b.cells[columnIndex].innerText;
+                let aValue = a.cells[columnIndex].textContent;
+                let bValue = b.cells[columnIndex].textContent;
 
-                if (columnIndex === 3) {{ // Last Scene column
+                if (columnIndex === 1) {{ // Last Rank
+                    if (aValue === 'N/A' && bValue === 'N/A') return 0;
+                    if (aValue === 'N/A') return direction * 1;
+                    if (bValue === 'N/A') return direction * -1;
+                    // Extract rank from "rank (date)" format
+                    aValue = parseFloat(aValue.split(' ')[0]);
+                    bValue = parseFloat(bValue.split(' ')[0]);
+                    return direction * (aValue - bValue);
+                }} else if (columnIndex === 2) {{ // Up Down
+                    if (aValue === 'N/A' && bValue === 'N/A') return 0;
+                    if (aValue === 'N/A') return direction * 1;
+                    if (bValue === 'N/A') return direction * -1;
+                    aValue = parseFloat(aValue.split(' ')[0]);
+                    bValue = parseFloat(bValue.split(' ')[0]);
+                    return direction * (aValue - bValue);
+                }} else if (columnIndex === 5) {{ // Last Scene
                     if (aValue === 'N/A' && bValue === 'N/A') return 0;
                     if (aValue === 'N/A') return direction * 1;
                     if (bValue === 'N/A') return direction * -1;
